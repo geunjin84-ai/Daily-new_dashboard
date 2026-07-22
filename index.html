@@ -3,60 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>지식 대시보드 2.0</title>
+  <title>지식 대시보드 2.0 (매경 모드)</title>
   
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#ffffff">
 
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f4f6f8; margin: 0; padding: 20px; color: #333; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f4f6f8; margin: 0; padding: 15px; color: #333; }
     .container { max-width: 1000px; margin: 0 auto; }
-    h1 { text-align: center; margin-bottom: 20px; font-size: 1.5rem; }
+    h1 { text-align: center; margin-bottom: 15px; font-size: 1.4rem; color: #111; }
     
-    /* 검색창 & 태그 */
-    .search-box { background: white; padding: 15px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px; }
-    .input-group { display: flex; gap: 8px; margin-bottom: 10px; }
-    .input-group input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.95rem; }
-    .input-group button { padding: 10px 16px; background: #007bff; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
-    
-    .tags-container { display: flex; flex-wrap: wrap; gap: 8px; }
-    .tag { background: #e9ecef; color: #495057; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
+    /* 검색창 */
+    .search-box { background: white; padding: 12px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 15px; }
+    .input-group { display: flex; gap: 8px; margin-bottom: 8px; }
+    .input-group input { flex: 1; padding: 8px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.9rem; }
+    .input-group button { padding: 8px 14px; background: #007bff; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+    .tags-container { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag { background: #e9ecef; color: #495057; padding: 4px 10px; border-radius: 15px; font-size: 0.8rem; display: flex; align-items: center; gap: 4px; }
     .tag .remove-btn { cursor: pointer; color: #ff4d4f; font-weight: bold; }
 
-    /* 뉴스 그리드 카드 */
-    .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-    .category-card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-    .category-title { font-size: 1.1rem; font-weight: bold; border-bottom: 2px solid #007bff; padding-bottom: 8px; margin-bottom: 15px; color: #007bff; }
-    
-    .news-item { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 12px; cursor: pointer; }
-    .news-item:last-child { border-bottom: none; }
-    .news-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 6px; }
-    .news-title { font-weight: 600; color: #222; line-height: 1.4; font-size: 0.98rem; }
-    .time-badge { font-size: 0.75rem; color: #888; white-space: nowrap; background: #f1f3f5; padding: 2px 6px; border-radius: 4px; }
-    .news-summary { font-size: 0.85rem; color: #555; background: #f8f9fa; padding: 8px; border-radius: 6px; }
+    /* 카테고리 토글 칩 필터 */
+    .category-filter { background: white; padding: 12px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 15px; }
+    .filter-title { font-size: 0.85rem; font-weight: bold; color: #666; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
+    .filter-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .chip { padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; border: 1px solid #ddd; background: #f8f9fa; color: #666; cursor: pointer; transition: all 0.2s; user-select: none; }
+    .chip.active { background: #007bff; color: white; border-color: #007bff; }
+    .btn-reset { font-size: 0.75rem; color: #007bff; background: none; border: none; cursor: pointer; text-decoration: underline; }
 
-    /* AI 3줄 요약 팝업 모달 */
-    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box; }
-    .modal-content { background: white; border-radius: 16px; max-width: 500px; width: 100%; padding: 24px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); position: relative; }
-    .modal-title { font-size: 1.1rem; font-weight: bold; margin-bottom: 15px; color: #111; line-height: 1.4; }
-    .modal-detail-list { background: #f8f9fa; padding: 15px 15px 15px 35px; border-radius: 10px; margin-bottom: 20px; }
-    .modal-detail-list li { margin-bottom: 8px; font-size: 0.9rem; color: #444; line-height: 1.5; }
-    .modal-detail-list li:last-child { margin-bottom: 0; }
-    .modal-actions { display: flex; gap: 10px; }
-    .btn-link { flex: 1; text-align: center; background: #007bff; color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.9rem; }
-    .btn-close { background: #e9ecef; color: #495057; border: none; padding: 12px 16px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+    /* 뉴스 그리드 */
+    .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
+    .category-card { background: white; border-radius: 12px; padding: 16px; box-shadow: 0 3px 5px rgba(0,0,0,0.04); }
+    .category-title { font-size: 1.05rem; font-weight: bold; border-bottom: 2px solid #007bff; padding-bottom: 6px; margin-bottom: 12px; color: #007bff; }
     
-    .no-results { text-align: center; color: #888; grid-column: 1 / -1; padding: 40px; }
+    .news-item { margin-bottom: 12px; border-bottom: 1px solid #f1f1f1; padding-bottom: 10px; cursor: pointer; }
+    .news-item:last-child { border-bottom: none; }
+    .news-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 4px; }
+    .news-title { font-weight: 600; color: #222; line-height: 1.35; font-size: 0.92rem; }
+    .time-badge { font-size: 0.7rem; color: #888; white-space: nowrap; background: #f1f3f5; padding: 2px 5px; border-radius: 4px; }
+    .news-summary { font-size: 0.82rem; color: #555; background: #f8f9fa; padding: 6px 8px; border-radius: 6px; margin-top: 4px; }
+
+    /* 팝업 모달 */
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box; }
+    .modal-content { background: white; border-radius: 16px; max-width: 500px; width: 100%; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+    .modal-title { font-size: 1.05rem; font-weight: bold; margin-bottom: 12px; color: #111; line-height: 1.4; }
+    .modal-detail-list { background: #f8f9fa; padding: 12px 12px 12px 28px; border-radius: 8px; margin-bottom: 15px; }
+    .modal-detail-list li { margin-bottom: 6px; font-size: 0.88rem; color: #444; line-height: 1.45; }
+    .modal-detail-list li:last-child { margin-bottom: 0; }
+    .modal-actions { display: flex; gap: 8px; }
+    .btn-link { flex: 1; text-align: center; background: #007bff; color: white; padding: 10px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.85rem; }
+    .btn-close { background: #e9ecef; color: #495057; border: none; padding: 10px 14px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+    
+    .no-results { text-align: center; color: #888; grid-column: 1 / -1; padding: 30px; font-size: 0.9rem; }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>📰 지식 대시보드 2.0</h1>
+    <h1>📰 지식 대시보드 2.0 (매경 섹션)</h1>
     
+    <div class="category-filter">
+      <div class="filter-title">
+        <span>📌 표시할 섹션 선택 (터치하여 켜기/끄기)</span>
+        <button class="btn-reset" onclick="resetCategories()">전체 선택</button>
+      </div>
+      <div class="filter-chips" id="filter-chips"></div>
+    </div>
+
     <div class="search-box">
       <div class="input-group">
-        <input type="text" id="keyword-input" placeholder="검색어 입력 후 [추가] (예: AI, 금리)" onkeypress="if(event.key==='Enter') addKeyword()">
+        <input type="text" id="keyword-input" placeholder="검색어 입력 후 [추가] (예: 삼성, 주가)" onkeypress="if(event.key==='Enter') addKeyword()">
         <button onclick="addKeyword()">추가</button>
       </div>
       <div class="tags-container" id="tags-container"></div>
@@ -68,10 +83,10 @@
   <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
     <div class="modal-content" onclick="event.stopPropagation()">
       <div class="modal-title" id="modal-title">기사 제목</div>
-      <div style="font-size:0.8rem; color:#007bff; font-weight:bold; margin-bottom:8px;">💡 AI 3줄 요약</div>
+      <div style="font-size:0.78rem; color:#007bff; font-weight:bold; margin-bottom:6px;">💡 AI 3줄 상세 요약</div>
       <ul class="modal-detail-list" id="modal-details"></ul>
       <div class="modal-actions">
-        <a id="modal-link" class="btn-link" href="#" target="_blank">기사 원문 보기</a>
+        <a id="modal-link" class="btn-link" href="#" target="_blank">원문 보기</a>
         <button class="btn-close" onclick="closeModalDirect()">닫기</button>
       </div>
     </div>
@@ -80,8 +95,8 @@
   <script>
     let rawNewsData = {};
     let activeKeywords = [];
+    let enabledCategories = JSON.parse(localStorage.getItem('enabledCategories')) || null;
 
-    // 상대적 시간 계산 (예: 15분 전, 2시간 전)
     function timeAgo(dateString) {
       if (!dateString) return '';
       const now = new Date();
@@ -99,10 +114,44 @@
       try {
         const response = await fetch('./data.json?t=' + new Date().getTime());
         rawNewsData = await response.json();
+        
+        if (!enabledCategories) {
+          enabledCategories = Object.keys(rawNewsData);
+        }
+        
+        renderCategoryChips();
         renderNews();
       } catch (err) {
         document.getElementById('news-grid').innerHTML = '<div class="no-results">수집된 뉴스를 불러오는 중입니다. 잠시 후 새로고침 해주세요.</div>';
       }
+    }
+
+    function renderCategoryChips() {
+      const container = document.getElementById('filter-chips');
+      const allCategories = Object.keys(rawNewsData);
+      
+      container.innerHTML = allCategories.map(cat => {
+        const isActive = enabledCategories.includes(cat);
+        return `<div class="chip ${isActive ? 'active' : ''}" onclick="toggleCategory('${cat}')">${cat}</div>`;
+      }).join('');
+    }
+
+    function toggleCategory(cat) {
+      if (enabledCategories.includes(cat)) {
+        enabledCategories = enabledCategories.filter(c => c !== cat);
+      } else {
+        enabledCategories.push(cat);
+      }
+      localStorage.setItem('enabledCategories', JSON.stringify(enabledCategories));
+      renderCategoryChips();
+      renderNews();
+    }
+
+    function resetCategories() {
+      enabledCategories = Object.keys(rawNewsData);
+      localStorage.setItem('enabledCategories', JSON.stringify(enabledCategories));
+      renderCategoryChips();
+      renderNews();
     }
 
     function addKeyword() {
@@ -125,10 +174,7 @@
     function renderTags() {
       const container = document.getElementById('tags-container');
       container.innerHTML = activeKeywords.map(kw => `
-        <span class="tag">
-          # ${kw}
-          <span class="remove-btn" onclick="removeKeyword('${kw}')">&times;</span>
-        </span>
+        <span class="tag"># ${kw} <span class="remove-btn" onclick="removeKeyword('${kw}')">&times;</span></span>
       `).join('');
     }
 
@@ -138,6 +184,8 @@
       let hasArticles = false;
 
       for (const [category, articles] of Object.entries(rawNewsData)) {
+        if (!enabledCategories.includes(category)) continue;
+
         const filtered = articles.filter(item => {
           if (activeKeywords.length === 0) return true;
           const content = (item.title + ' ' + item.summary).toLowerCase();
@@ -152,7 +200,6 @@
           let html = `<div class="category-title">${category}</div>`;
           filtered.forEach((item, index) => {
             const timeStr = timeAgo(item.date);
-            // 각 기사를 클릭하면 3줄 요약 팝업 호출
             html += `
               <div class="news-item" onclick="openModal('${category}', ${index})">
                 <div class="news-header">
@@ -169,11 +216,10 @@
       }
 
       if (!hasArticles) {
-        grid.innerHTML = '<div class="no-results">조건에 맞는 기사가 없습니다.</div>';
+        grid.innerHTML = '<div class="no-results">선택한 섹션에 조건에 맞는 기사가 없습니다.</div>';
       }
     }
 
-    // AI 3줄 요약 팝업 열기
     function openModal(category, index) {
       const item = rawNewsData[category][index];
       document.getElementById('modal-title').innerText = item.title;
