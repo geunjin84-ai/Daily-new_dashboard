@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>지식 대시보드 2.0</title>
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f4f6f8; margin: 0; padding: 20px; color: #333; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    h1 { text-align: center; margin-bottom: 20px; font-size: 1.5rem; }
+    
+    /* 검색창 & 태그 */
+    .search-box { background: white; padding: 15px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px; }
+    .input-group { display: flex; gap: 8px; margin-bottom: 10px; }
+    .input-group input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.95rem; }
+    .input-group button { padding: 10px 16px; background: #007bff; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+    
+    .tags-container { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { background: #e9ecef; color: #495057; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
+    .tag .remove-btn { cursor: pointer; color: #ff4d4f; font-weight: bold; }
+
+    /* 뉴스 그리드 카드 */
+    .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .category-card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+    .category-title { font-size: 1.1rem; font-weight: bold; border-bottom: 2px solid #007bff; padding-bottom: 8px; margin-bottom: 15px; color: #007bff; }
+    
+    .news-item { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 12px; cursor: pointer; }
+    .news-item:last-child { border-bottom: none; }
+    .news-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 6px; }
+    .news-title { font-weight: 600; color: #222; line-height: 1.4; font-size: 0.98rem; }
+    .time-badge { font-size: 0.75rem; color: #888; white-space: nowrap; background: #f1f3f5; padding: 2px 6px; border-radius: 4px; }
+    .news-summary { font-size: 0.85rem; color: #555; background: #f8f9fa; padding: 8px; border-radius: 6px; }
+
+    /* AI 3줄 요약 팝업 모달 */
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box; }
+    .modal-content { background: white; border-radius: 16px; max-width: 500px; width: 100%; padding: 24px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); position: relative; }
+    .modal-title { font-size: 1.1rem; font-weight: bold; margin-bottom: 15px; color: #111; line-height: 1.4; }
+    .modal-detail-list { background: #f8f9fa; padding: 15px 15px 15px 35px; border-radius: 10px; margin-bottom: 20px; }
+    .modal-detail-list li { margin-bottom: 8px; font-size: 0.9rem; color: #444; line-height: 1.5; }
+    .modal-detail-list li:last-child { margin-bottom: 0; }
+    .modal-actions { display: flex; gap: 10px; }
+    .btn-link { flex: 1; text-align: center; background: #007bff; color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.9rem; }
+    .btn-close { background: #e9ecef; color: #495057; border: none; padding: 12px 16px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+    
+    .no-results { text-align: center; color: #888; grid-column: 1 / -1; padding: 40px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📰 지식 대시보드 2.0</h1>
+    
+    <div class="search-box">
+      <div class="input-group">
+        <input type="text" id="keyword-input" placeholder="검색어 입력 후 [추가] (예: AI, 금리)" onkeypress="if(event.key==='Enter') addKeyword()">
+        <button onclick="addKeyword()">추가</button>
+      </div>
+      <div class="tags-container" id="tags-container"></div>
+    </div>
+
+    <div class="grid-container" id="news-grid"></div>
+  </div>
+
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <div class="modal-title" id="modal-title">기사 제목</div>
+      <div style="font-size:0.8rem; color:#007bff; font-weight:bold; margin-bottom:8px;">💡 AI 3줄 요약</div>
+      <ul class="modal-detail-list" id="modal-details"></ul>
+      <div class="modal-actions">
+        <a id="modal-link" class="btn-link" href="#" target="_blank">기사 원문 보기</a>
+        <button class="btn-close" onclick="closeModalDirect()">닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let rawNewsData = {};
+    let activeKeywords = [];
+
+    // 상대적 시간 계산 (예: 15분 전, 2시간 전)
+    function timeAgo(dateString) {
+      if (!dateString) return '';
+      const now = new Date();
+      const past = new Date(dateString);
+      const diffMinutes = Math.floor((now - past) / (1000 * 60));
+      
+      if (diffMinutes < 1) return '방금 전';
+      if (diffMinutes < 60) return `${diffMinutes}분 전`;
+      const diffHours = Math.floor(diffMinutes / 60);
+      if (diffHours < 24) return `${diffHours}시간 전`;
+      return `${Math.floor(diffHours / 24)}일 전`;
+    }
+
+    async function fetchNewsData() {
+      try {
+        const response = await fetch('./data.json?t=' + new Date().getTime());
+        rawNewsData = await response.json();
+        renderNews();
+      } catch (err) {
+        document.getElementById('news-grid').innerHTML = '<div class="no-results">수집된 뉴스를 불러오는 중입니다. 잠시 후 새로고침 해주세요.</div>';
+      }
+    }
+
+    function addKeyword() {
+      const input = document.getElementById('keyword-input');
+      const text = input.value.trim();
+      if (text && !activeKeywords.includes(text)) {
+        activeKeywords.push(text);
+        input.value = '';
+        renderTags();
+        renderNews();
+      }
+    }
+
+    function removeKeyword(keyword) {
+      activeKeywords = activeKeywords.filter(k => k !== keyword);
+      renderTags();
+      renderNews();
+    }
+
+    function renderTags() {
+      const container = document.getElementById('tags-container');
+      container.innerHTML = activeKeywords.map(kw => `
+        <span class="tag">
+          # ${kw}
+          <span class="remove-btn" onclick="removeKeyword('${kw}')">&times;</span>
+        </span>
+      `).join('');
+    }
+
+    function renderNews() {
+      const grid = document.getElementById('news-grid');
+      grid.innerHTML = '';
+      let hasArticles = false;
+
+      for (const [category, articles] of Object.entries(rawNewsData)) {
+        const filtered = articles.filter(item => {
+          if (activeKeywords.length === 0) return true;
+          const content = (item.title + ' ' + item.summary).toLowerCase();
+          return activeKeywords.some(kw => content.includes(kw.toLowerCase()));
+        });
+
+        if (filtered.length > 0) {
+          hasArticles = true;
+          const card = document.createElement('div');
+          card.className = 'category-card';
+          
+          let html = `<div class="category-title">${category}</div>`;
+          filtered.forEach((item, index) => {
+            const timeStr = timeAgo(item.date);
+            // 각 기사를 클릭하면 3줄 요약 팝업 호출
+            html += `
+              <div class="news-item" onclick="openModal('${category}', ${index})">
+                <div class="news-header">
+                  <span class="news-title">${item.title}</span>
+                  ${timeStr ? `<span class="time-badge">${timeStr}</span>` : ''}
+                </div>
+                <div class="news-summary">💡 ${item.summary}</div>
+              </div>
+            `;
+          });
+          card.innerHTML = html;
+          grid.appendChild(card);
+        }
+      }
+
+      if (!hasArticles) {
+        grid.innerHTML = '<div class="no-results">조건에 맞는 기사가 없습니다.</div>';
+      }
+    }
+
+    // AI 3줄 요약 팝업 열기
+    function openModal(category, index) {
+      const item = rawNewsData[category][index];
+      document.getElementById('modal-title').innerText = item.title;
+      document.getElementById('modal-link').href = item.link;
+      
+      const detailsList = document.getElementById('modal-details');
+      if (item.detail && item.detail.length > 0) {
+        detailsList.innerHTML = item.detail.map(d => `<li>${d}</li>`).join('');
+      } else {
+        detailsList.innerHTML = `<li>${item.summary}</li>`;
+      }
+      
+      document.getElementById('modal-overlay').style.display = 'flex';
+    }
+
+    function closeModal(event) {
+      if (event.target.id === 'modal-overlay') closeModalDirect();
+    }
+
+    function closeModalDirect() {
+      document.getElementById('modal-overlay').style.display = 'none';
+    }
+
+    fetchNewsData();
+  </script>
+</body>
+</html>
