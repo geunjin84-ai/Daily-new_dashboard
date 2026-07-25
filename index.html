@@ -37,6 +37,7 @@
     .chip-container { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 15px; }
     .chip { padding: 6px 12px; border-radius: 20px; font-size: 0.78rem; border: 1px solid #ddd; background: var(--card); cursor: pointer; color: var(--sub); font-weight: 600; }
     .chip.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .chip.btn-ctrl { background: #6c757d; color: #fff; border-color: #6c757d; }
     
     .news-group { margin-bottom: 20px; }
     .news-group-title { color: var(--accent); font-size: 0.95rem; font-weight: bold; margin: 15px 0 8px 0; border-left: 3px solid var(--accent); padding-left: 8px; }
@@ -144,7 +145,6 @@
       }
     }
 
-    // 영어 학습 세트 새로고침 (안전 장치 완비)
     function refreshDaily(e) {
       if (e) {
         e.stopPropagation();
@@ -182,7 +182,6 @@
       }
     }
 
-    // 스마트폰/PC 내장 음성 재생 기능
     function playTTS(e) {
       if (e) e.stopPropagation();
       if (!currentQuoteEN) return;
@@ -198,7 +197,6 @@
       }
     }
 
-    // 금융 약어 풀네임 자동 매칭
     function formatTerm(term) {
       if (!term) return "";
       const enRegex = /([A-Z]{2,})/g;
@@ -218,7 +216,6 @@
       return term;
     }
 
-    // 경제 교실 새로고침
     function refreshFinance(e) {
       if (e) {
         e.stopPropagation();
@@ -281,18 +278,44 @@
       });
     }
 
+    // 전체선택 / 전체해제 기능이 포함된 카테고리 칩 렌더링
     function renderChips() {
       const container = document.getElementById('filter-chips');
       container.innerHTML = '';
       if (!db.articles) return;
-      
-      Object.keys(db.articles).forEach(cat => {
+
+      const allCats = Object.keys(db.articles);
+
+      // 1. 전체선택 버튼
+      const selectAllBtn = document.createElement('div');
+      selectAllBtn.className = 'chip btn-ctrl';
+      selectAllBtn.innerText = '✅ 전체선택';
+      selectAllBtn.onclick = () => {
+        enabledCats = [...allCats];
+        document.querySelectorAll('.chip.cat-chip').forEach(c => c.classList.add('active'));
+        renderNews();
+      };
+      container.appendChild(selectAllBtn);
+
+      // 2. 전체해제 버튼
+      const deselectAllBtn = document.createElement('div');
+      deselectAllBtn.className = 'chip btn-ctrl';
+      deselectAllBtn.innerText = '❌ 전체해제';
+      deselectAllBtn.onclick = () => {
+        enabledCats = [];
+        document.querySelectorAll('.chip.cat-chip').forEach(c => c.classList.remove('active'));
+        renderNews();
+      };
+      container.appendChild(deselectAllBtn);
+
+      // 3. 개별 카테고리 칩 생성
+      allCats.forEach(cat => {
         const chip = document.createElement('div');
-        chip.className = 'chip active';
+        chip.className = 'chip cat-chip active';
         chip.innerText = cat;
         chip.onclick = () => {
           chip.classList.toggle('active');
-          enabledCats = Array.from(document.querySelectorAll('.chip.active')).map(c => c.innerText);
+          enabledCats = Array.from(document.querySelectorAll('.chip.cat-chip.active')).map(c => c.innerText);
           renderNews();
         };
         container.appendChild(chip);
