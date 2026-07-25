@@ -7,8 +7,12 @@ from difflib import SequenceMatcher
 import re
 
 # 1. Gemini 설정
-genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
-model = genai.GenerativeModel('gemini-1.5-flash')
+api_key = os.environ.get("GEMINI_API_KEY")
+if api_key:
+    genai.configure(api_key=api_key)
+    model = genai.GenerativeModel('gemini-1.5-flash')
+else:
+    model = None
 
 # 2. RSS 피드 정의
 RSS_FEEDS = {
@@ -38,17 +42,14 @@ def is_duplicate(new_title, existing_titles, threshold=0.65):
     return False
 
 def generate_multi_learning():
-    """새로고침 기능을 위해 금융 5세트 + 왕초보 패턴 영어 5세트 데이터 생성"""
+    """새로고침 기능을 위해 금융 5세트 + 왕초보용 일상 영어 표현 세트 5개 생성"""
+    if not model:
+        return get_fallback_learning()
+
     try:
         prompt = """
         초보자를 위한 금융/주식 학습 세트 5개와 왕초보용 일상 영어 표현 세트 5개를 생성해줘.
-        반드시 다음 JSON 규격을 엄격하게 지켜서 정확한 JSON 텍스트만 반환해줘.
-
-        [영어 세트 구성 조건]:
-        1. 영단어는 중학교 수준의 완전히 기초적인 일상 생활 필수 단어(예: Water, Coffee, Time, Happy 등) 3개로 구성할 것.
-        2. 'pattern'은 일상생활이나 해외여행에서 가장 자주 쓰는 초보자용 만능 회화 뼈대 문장(예: Can I get ~?, I want to ~?, Where is ~?) 1개를 선정할 것.
-        3. 3개의 기초 단어가 이 만능 패턴 안에 대입되어 바로 써먹을 수 있는 아주 짧고 실용적인 일상 대화 문장 예시를 만들 것.
-        4. 'question'은 왕초보가 단어 하나로라도 툭 뱉어 답할 수 있는 매우 쉽고 간단한 AI의 1줄 일상 질문과 예시 답변 힌트를 제공할 것.
+        반드시 다음 JSON 규격을 엄격하게 지켜서 순수 JSON 텍스트만 반환해줘.
 
         [출력 JSON 양식]:
         {
@@ -81,30 +82,73 @@ def generate_multi_learning():
     except Exception as e:
         print(f"Learning Gen Error: {e}")
         
-    # 예외 발생 시 폴백 데이터 (구조 보장)
+    return get_fallback_learning()
+
+def get_fallback_learning():
     return {
-        "finance_sets": [{
-            "stock": {"term": "PER", "concept": "버는 돈 대비 주가 수준", "analogy": "1년 이익 대비 가게 매매가 비율", "signal": "🟢 10배 이하 저평가", "mts": "종목검색 ➔ 기업정보"},
-            "economy": {"title": "기준금리", "concept": "금리의 기준점", "impact": "대출 및 예금 이자 영향"},
-            "quiz": {"q": "PER이 낮으면?", "opts": ["저평가", "고평가"], "ans": 0, "exp": "이익 대비 주가가 싼 상태입니다."}
-        }],
-        "daily_sets": [{
-            "pattern": "Can I get ~ ? (~ 좀 주시겠어요?)",
-            "words": [
-                {"word": "Water (물)", "example": "Can I get water?", "meaning": "물 좀 주시겠어요?"},
-                {"word": "Coffee (커피)", "example": "Can I get coffee?", "meaning": "커피 좀 주시겠어요?"},
-                {"word": "The bill (계산서)", "example": "Can I get the bill?", "meaning": "계산서 좀 주시겠어요?"}
-            ],
-            "quote": {"en": "Stay hungry, stay foolish.", "ko": "늘 갈망하고 우직하게 나아가라.", "author": "Steve Jobs"},
-            "question": {"q": "How are you today?", "hint": "I am good! 이라고 답변해보세요."}
-        }]
+        "finance_sets": [
+            {"stock": {"term": "PER", "concept": "버는 돈 대비 주가 수준", "analogy": "1년 이익 대비 가게 매매가 비율", "signal": "🟢 10배 이하 저평가", "mts": "종목검색 ➔ 기업정보"}, "economy": {"title": "기준금리", "concept": "금리의 기준점", "impact": "대출 및 예금 이자 영향"}, "quiz": {"q": "PER이 낮으면?", "opts": ["저평가", "고평가"], "ans": 0, "exp": "이익 대비 주가가 싼 상태입니다."}},
+            {"stock": {"term": "PBR", "concept": "가진 재산 대비 주가 수준", "analogy": "가게 장비 다 판 값과 주가의 비교", "signal": "🟢 1배 미만 저평가", "mts": "종목검색 ➔ 재무지표"}, "economy": {"title": "환율", "concept": "외국 돈과의 교환 비율", "impact": "수출입 물가 및 해외주식 영향"}, "quiz": {"q": "PBR 1배 미만은?", "opts": ["재산 가치보다 주가가 쌈", "비쌈"], "ans": 0, "exp": "청산 가치보다 주가가 낮습니다."}}
+        ],
+        "daily_sets": [
+            {
+                "pattern": "Can I get ~ ? (~ 좀 주시겠어요?)",
+                "words": [
+                    {"word": "Water (물)", "example": "Can I get water?", "meaning": "물 좀 주시겠어요?"},
+                    {"word": "Coffee (커피)", "example": "Can I get coffee?", "meaning": "커피 좀 주시겠어요?"},
+                    {"word": "The bill (계산서)", "example": "Can I get the bill?", "meaning": "계산서 좀 주시겠어요?"}
+                ],
+                "quote": {"en": "Stay hungry, stay foolish.", "ko": "늘 갈망하고 우직하게 나아가라.", "author": "Steve Jobs"},
+                "question": {"q": "How are you today?", "hint": "I am good! 이라고 답변해보세요."}
+            }
+        ]
     }
 
 def get_ai_summaries(title, snippet):
+    if not model:
+        return title[:30], [title, "-", "-"]
     try:
         prompt = f"제목:{title}\n내용:{snippet}\n위 기사를 한국어로 1줄 요약과 3줄 상세 내용을 작성해줘.\n양식:\n1줄: [내용]\n3줄:\n- [내용]\n- [내용]\n- [내용]"
         response = model.generate_content(prompt)
         lines = response.text.strip().split('\n')
         one = lines[0].replace('1줄:', '').strip()
         three = [l.strip() for l in lines if l.strip().startswith('-')]
-        return one
+        return one, three[:3]
+    except Exception as e:
+        print(f"Summary Error: {e}")
+        return title[:30], ["정보를 불러오지 못했습니다.", "-", "-"]
+
+def fetch_and_process():
+    learning_data = generate_multi_learning()
+    processed_articles = {}
+    
+    for category, urls in RSS_FEEDS.items():
+        processed_articles[category] = []
+        titles = []
+        for url in urls:
+            try:
+                feed = feedparser.parse(url)
+                for entry in feed.entries[:8]:
+                    if is_duplicate(entry.title, titles): 
+                        continue
+                    titles.append(entry.title)
+                    s1, s3 = get_ai_summaries(entry.title, getattr(entry, 'summary', ''))
+                    
+                    pub_date = entry.get('published_parsed', time.localtime())
+                    iso_date = time.strftime('%Y-%m-%dT%H:%M:%S', pub_date)
+                    
+                    processed_articles[category].append({
+                        "title": entry.title,
+                        "link": entry.link,
+                        "summary": s1,
+                        "detail": s3,
+                        "date": iso_date
+                    })
+            except Exception as e:
+                print(f"Error fetching {url}: {e}")
+                
+    with open("data.json", "w", encoding="utf-8") as f:
+        json.dump({"learning": learning_data, "articles": processed_articles}, f, ensure_ascii=False, indent=2)
+
+if __name__ == "__main__":
+    fetch_and_process()
