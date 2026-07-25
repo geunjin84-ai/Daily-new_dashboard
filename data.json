@@ -35,16 +35,85 @@
         "economy": {
           "title": "환율",
           "concept": "외국 돈과의 교환 비율",
-          "impact": "수출입 물가 및 해외주식 영향"
+          "impact": "수출입 물가 영향"
         },
         "quiz": {
           "q": "PBR 1배 미만은?",
           "opts": [
-            "재산 가치보다 주가가 쌈",
-            "비쌈"
+            "저평가",
+            "고평가"
           ],
           "ans": 0,
-          "exp": "청산 가치보다 주가가 낮습니다."
+          "exp": "재산 가치보다 주가가 낮습니다."
+        }
+      },
+      {
+        "stock": {
+          "term": "ROE",
+          "concept": "투자한 돈으로 얼마나 버는가",
+          "analogy": "자본금 대비 연간 순이익 비율",
+          "signal": "🟢 10% 이상 우수",
+          "mts": "기업분석 ➔ 투자지표"
+        },
+        "economy": {
+          "title": "인플레이션",
+          "concept": "물가가 지속적으로 오르는 현상",
+          "impact": "화폐 가치가 떨어져요."
+        },
+        "quiz": {
+          "q": "ROE가 높으면?",
+          "opts": [
+            "경영 효율이 좋음",
+            "나쁨"
+          ],
+          "ans": 0,
+          "exp": "투입한 자본 대비 돈을 잘 번다는 뜻입니다."
+        }
+      },
+      {
+        "stock": {
+          "term": "원자재 가격",
+          "concept": "석유, 구리 등 기초 자재 값",
+          "analogy": "제품을 만들기 위한 원가 재료비",
+          "signal": "🔴 상승 시 기업 비용 증가",
+          "mts": "해외시장 ➔ 원자재"
+        },
+        "economy": {
+          "title": "무역수지",
+          "concept": "수출액과 수입액의 차이",
+          "impact": "적자가 지속되면 환율이 올라요."
+        },
+        "quiz": {
+          "q": "무역수지 흑자란?",
+          "opts": [
+            "수출이 수입보다 많음",
+            "수입이 많음"
+          ],
+          "ans": 0,
+          "exp": "벌어들인 외화가 더 많다는 뜻입니다."
+        }
+      },
+      {
+        "stock": {
+          "term": "시가총액",
+          "concept": "기업의 총 덩치(가격)",
+          "analogy": "주식 수 x 현재 주가",
+          "signal": "🟢 덩치가 클수록 안정적",
+          "mts": "종목 검색 ➔ 기본정보"
+        },
+        "economy": {
+          "title": "스태그플레이션",
+          "concept": "불경기인데 물가도 오르는 현상",
+          "impact": "서민 경제에 가장 부담이 큽니다."
+        },
+        "quiz": {
+          "q": "시가총액 계산법은?",
+          "opts": [
+            "주가 × 발행주식수",
+            "매출액 × 자산"
+          ],
+          "ans": 0,
+          "exp": "기업의 전체 가치를 나타내는 척도입니다."
         }
       }
     ],
@@ -75,7 +144,123 @@
         },
         "question": {
           "q": "How are you today?",
-          "hint": "I am good! 이라고 답변해보세요."
+          "hint": "I am good! 또는 I am tired. 라고 대답해보세요."
+        }
+      },
+      {
+        "pattern": "I want to ~ (~하고 싶어요)",
+        "words": [
+          {
+            "word": "Go home (집에 가다)",
+            "example": "I want to go home.",
+            "meaning": "집에 가고 싶어요."
+          },
+          {
+            "word": "Drink water (물을 마시다)",
+            "example": "I want to drink water.",
+            "meaning": "물 마시고 싶어요."
+          },
+          {
+            "word": "Buy this (이걸 사다)",
+            "example": "I want to buy this.",
+            "meaning": "이것을 사고 싶어요."
+          }
+        ],
+        "quote": {
+          "en": "Change your thoughts and you change your world.",
+          "ko": "생각을 바꾸면 세상이 바뀐다.",
+          "author": "Norman Vincent Peale"
+        },
+        "question": {
+          "q": "What do you want to eat today?",
+          "hint": "I want to eat pizza! 처럼 단어나 문장으로 말해보세요."
+        }
+      },
+      {
+        "pattern": "Where is the ~ ? (~은 어디에 있나요?)",
+        "words": [
+          {
+            "word": "Restroom (화장실)",
+            "example": "Where is the restroom?",
+            "meaning": "화장실이 어디인가요?"
+          },
+          {
+            "word": "Station (역)",
+            "example": "Where is the station?",
+            "meaning": "역이 어디인가요?"
+          },
+          {
+            "word": "Hotel (호텔)",
+            "example": "Where is the hotel?",
+            "meaning": "호텔이 어디인가요?"
+          }
+        ],
+        "quote": {
+          "en": "Success is not final, failure is not fatal.",
+          "ko": "성공은 영원하지 않고, 실패는 치명적이지 않다.",
+          "author": "Winston Churchill"
+        },
+        "question": {
+          "q": "Where are you now?",
+          "hint": "I am at home. 또는 Office. 라고 답해보세요."
+        }
+      },
+      {
+        "pattern": "Thank you for ~ (~해 주셔서 감사합니다)",
+        "words": [
+          {
+            "word": "The help (도움)",
+            "example": "Thank you for the help.",
+            "meaning": "도와주셔서 감사합니다."
+          },
+          {
+            "word": "The food (음식)",
+            "example": "Thank you for the food.",
+            "meaning": "음식 잘 먹었습니다."
+          },
+          {
+            "word": "Everything (모든 것)",
+            "example": "Thank you for everything.",
+            "meaning": " 모든 것에 감사드립니다."
+          }
+        ],
+        "quote": {
+          "en": "Happiness depends upon ourselves.",
+          "ko": "행복은 우리 자신에게 달려 있다.",
+          "author": "Aristotle"
+        },
+        "question": {
+          "q": "Who are you thankful for?",
+          "hint": "My family. 또는 My friend. 처럼 툭 뱉어보세요."
+        }
+      },
+      {
+        "pattern": "It is too ~ (너무 ~해요)",
+        "words": [
+          {
+            "word": "Hot (더운)",
+            "example": "It is too hot.",
+            "meaning": "날씨가 너무 더워요."
+          },
+          {
+            "word": "Cold (추운)",
+            "example": "날씨가 너무 추워요.",
+            "meaning": "It is too cold."
+          },
+          {
+            "word": "Expensive (비싼)",
+            "example": "It is too expensive.",
+            "meaning": "이거 너무 비싸요."
+          }
+        ],
+        "quote": {
+          "en": "Don't count the days, make the days count.",
+          "ko": "날짜를 세지 말고, 하루하루를 의미 있게 보내라.",
+          "author": "Muhammad Ali"
+        },
+        "question": {
+          "q": "How is the weather today?",
+          "hint": "It is hot! 또는 It is nice. 라고 답해보세요."
         }
       }
     ]
@@ -281,7 +466,7 @@
           "-",
           "-"
         ],
-        "date": "2026-07-25T20:03:30"
+        "date": "2026-07-25T20:44:10"
       },
       {
         "title": "India’s Education Minister Steps Down in Victory for Cockroach Party Protesters",
