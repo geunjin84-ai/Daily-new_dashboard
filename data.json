@@ -40,7 +40,7 @@
         "quiz": {
           "q": "PBR이 1배 미만이라는 의미는?",
           "opts": [
-            "재산보다 주가가 저렴함",
+            "장부상 재산보다 주가가 저렴함",
             "비쌈"
           ],
           "ans": 0,
@@ -67,13 +67,13 @@
             "돈을 못 버는 기업"
           ],
           "ans": 0,
-          "exp": "자본 대비 돈을 효율적으로 잘 번다는 뜻입니다."
+          "exp": "투입한 자본 대비 돈을 효율적으로 잘 번다는 의미입니다."
         }
       },
       {
         "stock": {
           "term": "CPI",
-          "concept": "소비자 물가 변동 지수",
+          "concept": "소비자가 사는 물건들의 평균 가격 변동",
           "analogy": "장바구니 물가 성적표",
           "signal": "🔴 3% 이상 상승 시 인플레 우려",
           "mts": "해외 경제 지표 -> 미국 CPI"
@@ -84,20 +84,20 @@
           "impact": "적자가 지속되면 환율이 올라요."
         },
         "quiz": {
-          "q": "무역수지 흑자는 어떤 상황일까요?",
+          "q": "무역수지 흑자는 어떤 상황을 뜻할까요?",
           "opts": [
             "수출이 수입보다 많음",
-            "수입이 많음"
+            "수입이 수출보다 많음"
           ],
           "ans": 0,
-          "exp": "벌어들인 외화가 더 많은 상태입니다."
+          "exp": "벌어들인 외화가 수입으로 나간 돈보다 많은 유익한 상태입니다."
         }
       },
       {
         "stock": {
           "term": "시가총액",
-          "concept": "기업의 총 가치 크기",
-          "analogy": "주식 수 x 현재 주가",
+          "concept": "기업의 총 덩치와 가격",
+          "analogy": "주식 수와 현재 주가를 곱한 값",
           "signal": "🟢 덩치가 클수록 안정적",
           "mts": "종목 검색 -> 기본정보"
         },
@@ -113,7 +113,7 @@
             "매출액과 자산을 곱함"
           ],
           "ans": 0,
-          "exp": "현재 주가에 발행된 총 주식 수를 곱합니다."
+          "exp": "현재 주가에 발행된 총 주식 수를 곱해 산출합니다."
         }
       }
     ],
@@ -169,98 +169,11 @@
         "quote": {
           "en": "Change your thoughts and you change your world.",
           "ko": "생각을 바꾸면 세상이 바뀐다.",
-          "author": "Norman Peale"
+          "author": "Norman Vincent Peale"
         },
         "question": {
           "q": "What do you want to eat today?",
           "hint": "I want to eat pizza! 라고 문장으로 말해보세요."
-        }
-      },
-      {
-        "pattern": "Where is the ~ ? (~은 어디에 있나요?)",
-        "words": [
-          {
-            "word": "Restroom (화장실)",
-            "example": "Where is the restroom?",
-            "meaning": "화장실이 어디인가요?"
-          },
-          {
-            "word": "Station (역)",
-            "example": "Where is the station?",
-            "meaning": "역이 어디인가요?"
-          },
-          {
-            "word": "Hotel (호텔)",
-            "example": "Where is the hotel?",
-            "meaning": "호텔이 어디인가요?"
-          }
-        ],
-        "quote": {
-          "en": "Success is not final, failure is not fatal.",
-          "ko": "성공은 영원하지 않고, 실패는 치명적이지 않다.",
-          "author": "Winston Churchill"
-        },
-        "question": {
-          "q": "Where are you now?",
-          "hint": "I am at home. 또는 Office. 라고 답해보세요."
-        }
-      },
-      {
-        "pattern": "Thank you for ~ (~해 주셔서 감사합니다)",
-        "words": [
-          {
-            "word": "The help (도움)",
-            "example": "Thank you for the help.",
-            "meaning": "도와주셔서 감사합니다."
-          },
-          {
-            "word": "The food (음식)",
-            "example": "Thank you for the food.",
-            "meaning": "음식 잘 먹었습니다."
-          },
-          {
-            "word": "Everything (모든 것)",
-            "example": "Thank you for everything.",
-            "meaning": "모든 것에 감사드립니다."
-          }
-        ],
-        "quote": {
-          "en": "Happiness depends upon ourselves.",
-          "ko": "행복은 우리 자신에게 달려 있다.",
-          "author": "Aristotle"
-        },
-        "question": {
-          "q": "Who are you thankful for?",
-          "hint": "My family. 또는 My friend. 라고 툭 뱉어보세요."
-        }
-      },
-      {
-        "pattern": "It is too ~ (너무 ~해요)",
-        "words": [
-          {
-            "word": "Hot (더운)",
-            "example": "It is too hot.",
-            "meaning": "날씨가 너무 더워요."
-          },
-          {
-            "word": "Cold (추운)",
-            "example": "It is too cold.",
-            "meaning": "날씨가 너무 추워요."
-          },
-          {
-            "word": "Expensive (비싼)",
-            "example": "It is too expensive.",
-            "meaning": "이거 너무 비싸요."
-          }
-        ],
-        "quote": {
-          "en": "Don't count the days, make the days count.",
-          "ko": "날짜를 세지 말고, 하루하루를 의미 있게 보내라.",
-          "author": "Muhammad Ali"
-        },
-        "question": {
-          "q": "How is the weather today?",
-          "hint": "It is hot! 또는 It is nice. 라고 답해보세요."
         }
       }
     ]
@@ -270,7 +183,7 @@
       {
         "title": "한국선 191만원, 미국에서는 290만원…똑같은 하이닉스인데 가격 차이 왜?",
         "link": "https://www.mk.co.kr/news/stock/12107470",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -281,7 +194,7 @@
       {
         "title": "“원자재 투자, 아무나 하면 큰일나요”...가격 보다 중요한 한 가지 [Book]",
         "link": "https://www.mk.co.kr/news/culture/12107465",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -292,7 +205,7 @@
       {
         "title": "“사람 좋다고? 술 마셔봤어?”...인간 본성·내면 들추는 ‘양날의 검’ [Book]",
         "link": "https://www.mk.co.kr/news/culture/12107464",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -303,21 +216,308 @@
       {
         "title": "우주서 찍은 지구, 남극이 위였다…당신이 속아온 ‘동서남북’ 진실 [Book]",
         "link": "https://www.mk.co.kr/news/culture/12107463",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
         "date": "2026-07-25T20:50:42"
+      },
+      {
+        "title": "인간도 공룡도 조연에 불과하다…‘이들’에게 생명을 빚지고 있기에 [Book]",
+        "link": "https://www.mk.co.kr/news/culture/12107462",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T20:50:31"
+      },
+      {
+        "title": "“살 땐 좋았지? 중고차로 팔 땐 300만원 손해” … ‘돈 낭비’ 車, 이유는",
+        "link": "https://www.mk.co.kr/news/business/12105907",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T20:00:00"
+      },
+      {
+        "title": "李대통령 “다른 나라 추격해온 韓, 이제 선도자 되겠다”",
+        "link": "https://www.chosun.com/politics/politics_general/2026/07/26/6XNONAMUTJDUNDZ7MLDQVDD4KA/",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T21:24:00"
+      },
+      {
+        "title": "오세훈 1심 유죄 후폭풍… ‘장·한 전쟁’ 재점화 조짐",
+        "link": "https://www.chosun.com/politics/2026/07/26/FKCMWQ7CENEN5OTDAGKZBRX5KI/",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T18:00:00"
+      },
+      {
+        "title": "일본 사우나의 여성 ‘투명인간’",
+        "link": "https://www.chosun.com/politics/diplomacy-defense/2026/07/26/X6WA3RV2UZA7JP5FD5UJMEWD7Y/",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T20:30:00"
+      },
+      {
+        "title": "보완수사권 vs 부정선거론 사안 달라도 묘하게 닮았다",
+        "link": "https://www.chosun.com/politics/2026/07/26/HCB2TJHUCZGMPAKX7PEETCINOU/",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T20:30:00"
+      },
+      {
+        "title": "[단독] '정이한 자작극' 트레이너의 연인은 개혁신당 부산시당 여성위원장",
+        "link": "https://www.chosun.com/politics/2026/07/26/XX6UYNQIA5DY5J3EHVUVQQECAQ/",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T20:00:00"
+      },
+      {
+        "title": "李 “주식 약간 조정 중” 젠슨 황 “다시 오를겁니다”",
+        "link": "https://www.chosun.com/politics/politics_general/2026/07/25/W7W377UKTNG6ZFNPCNPWSVA6QU/",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T03:11:57"
+      },
+      {
+        "title": "서울 주택가에서 또래 여고생에게 흉기 휘두른 10대 남성 구속",
+        "link": "https://www.khan.co.kr/article/202607252139001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T21:34:14"
+      },
+      {
+        "title": "유럽연합 “한국은 러시아 LNG 수입해도 제재 면제”···이 대통령 “경제에 큰 도움”",
+        "link": "https://www.khan.co.kr/article/202607252109001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T21:34:14"
+      },
+      {
+        "title": "내일도 전국 대부분 지역 폭염특보 이어져···소나기 내리며 ‘찜통더위’ 기승",
+        "link": "https://www.khan.co.kr/article/202607252054001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T21:34:14"
+      },
+      {
+        "title": "1234회 로또 1등 ‘1, 15, 19, 31, 35, 43’···1등 18명 당첨금 각 15억9513만원",
+        "link": "https://www.khan.co.kr/article/202607252053001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T21:34:14"
+      },
+      {
+        "title": "장동혁, 장외투쟁 김해·대구서 마무리···“법원도 합수본도 못믿어” ‘올공’행은 계속",
+        "link": "https://www.khan.co.kr/article/202607252027001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T21:34:14"
+      },
+      {
+        "title": "잠실 개표소 시위 중 경찰 향해 욕한 3명···‘특수공무집행방해’ 검찰 송치",
+        "link": "https://www.khan.co.kr/article/202607251938001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T21:34:14"
       }
     ],
-    "신문 사설": [],
+    "신문 사설": [
+      {
+        "title": "[사설]美 강제노동 관세 12.5% 부과… ‘15% 상한’ 반드시 지켜내야",
+        "link": "https://www.donga.com/news/Opinion/article/all/20260724/134362014/2",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-24T14:30:00"
+      },
+      {
+        "title": "[사설]의원은 상임위 두고 멱살과 욕설, 대표는 장외로… 콩가루 野",
+        "link": "https://www.donga.com/news/Opinion/article/all/20260724/134362018/2",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-24T14:27:00"
+      },
+      {
+        "title": "[사설]美 사우디에 우라늄 농축 허용… 韓엔 52년간 ‘절대 불가’ 족쇄",
+        "link": "https://www.donga.com/news/Opinion/article/all/20260724/134362016/2",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-24T14:24:00"
+      },
+      {
+        "title": "신천지 與 입당 의혹[횡설수설/신광영]",
+        "link": "https://www.donga.com/news/Opinion/article/all/20260724/134362142/2",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-24T14:18:00"
+      },
+      {
+        "title": "[동아광장/정소연]노인 노린 ‘꾼’보다 제도가 먼저 움직여야 한다",
+        "link": "https://www.donga.com/news/Opinion/article/all/20260724/134362144/2",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-24T14:15:00"
+      },
+      {
+        "title": "[오늘과 내일/한애란]인사이트부터 삼전닉스까지",
+        "link": "https://www.donga.com/news/Opinion/article/all/20260724/134362021/2",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-24T14:12:00"
+      },
+      {
+        "title": "“원자재 투자, 아무나 하면 큰일나요”...가격 보다 중요한 한 가지 [Book]",
+        "link": "https://www.mk.co.kr/news/culture/12107465",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T20:51:12"
+      },
+      {
+        "title": "“사람 좋다고? 술 마셔봤어?”...인간 본성·내면 들추는 ‘양날의 검’ [Book]",
+        "link": "https://www.mk.co.kr/news/culture/12107464",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T20:51:02"
+      },
+      {
+        "title": "우주서 찍은 지구, 남극이 위였다…당신이 속아온 ‘동서남북’ 진실 [Book]",
+        "link": "https://www.mk.co.kr/news/culture/12107463",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T20:50:42"
+      },
+      {
+        "title": "인간도 공룡도 조연에 불과하다…‘이들’에게 생명을 빚지고 있기에 [Book]",
+        "link": "https://www.mk.co.kr/news/culture/12107462",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T20:50:31"
+      },
+      {
+        "title": "“햇빛 많이 봐야 한다고”…가수 던 고백한 ‘만성부신증후군’ 뭐길래",
+        "link": "https://www.mk.co.kr/news/culture/12107357",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T10:11:21"
+      },
+      {
+        "title": "“첫 통화에 엉엉 울어”…황정민, ‘해병대 입대’ 아들 근황 공개",
+        "link": "https://www.mk.co.kr/news/culture/12107351",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T09:36:16"
+      }
+    ],
     "글로벌/해외이슈": [
       {
         "title": "Palestinians Stream Back to Northern Gaza on Foot",
         "link": "https://www.wsj.com/articles/palestinians-flock-back-to-northern-gaza-on-foot-after-hostage-release-breakthrough-3f60e2db",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -328,7 +528,7 @@
       {
         "title": "Leading China Property Developer Reports Huge loss, in Sign of Widening Real-Estate Woes",
         "link": "https://www.wsj.com/articles/even-chinas-property-stalwart-isnt-immune-from-the-crisis-19799863",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -339,7 +539,7 @@
       {
         "title": "Freed Israeli Hostages Still Had Shrapnel in Their Bodies From Oct. 7 Attack",
         "link": "https://www.wsj.com/articles/freed-israeli-hostages-still-had-shrapnel-in-their-bodies-from-oct-7-attack-3de8cd1e",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -350,7 +550,7 @@
       {
         "title": "Suspected Sabotage of Deep-Sea Cable Triggers First NATO-Led Response",
         "link": "https://www.wsj.com/articles/suspected-sabotage-of-deep-sea-cable-triggers-first-nato-led-response-337119ba",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -359,9 +559,31 @@
         "date": "2025-01-27T16:22:00"
       },
       {
+        "title": "Rwanda-Backed Rebels Enter Congo's Safe-Haven City",
+        "link": "https://www.wsj.com/articles/rwanda-backed-rebels-enter-congo-safe-haven-city-aid-hub-09fdccb8",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2025-01-27T15:07:00"
+      },
+      {
+        "title": "Cocaine-Funded Gangs Shake Colombia Years After Peace Pact",
+        "link": "https://www.wsj.com/articles/cocaine-funded-gangs-shake-colombia-years-after-peace-pact-a45a28da",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2025-01-27T12:00:00"
+      },
+      {
         "title": "Iran Journey Reveals Society’s Wartime Defiance and Hope",
         "link": "https://www.nytimes.com/2026/07/25/world/middleeast/what-a-journey-through-wartime-iran-revealed.html",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -372,7 +594,7 @@
       {
         "title": "Hundreds of Thousands Flee as Fires Rage in Spain and France",
         "link": "https://www.nytimes.com/live/2026/07/25/world/france-spain-wildfires-evacuations",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -383,7 +605,7 @@
       {
         "title": "India’s Education Minister Steps Down in Victory for Cockroach Party Protesters",
         "link": "https://www.nytimes.com/2026/07/25/world/asia/india-education-minister-resigns-cockroach-protests.html",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -394,20 +616,108 @@
       {
         "title": "Colombia’s Trump-Endorsed President-Elect Was Once Investigated by U.S. Authorities",
         "link": "https://www.nytimes.com/2026/07/25/world/americas/colombia-president-de-la-espriella-trump-us-investigation.html",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
         "date": "2026-07-25T17:20:59"
+      },
+      {
+        "title": "Bus Collision in Syria Kills 35, Health Ministry Says",
+        "link": "https://www.nytimes.com/2026/07/25/world/middleeast/bus-collision-syria.html",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T14:25:19"
+      },
+      {
+        "title": "What to Know About the Wildfires Raging in Western Europe",
+        "link": "https://www.nytimes.com/2026/07/25/world/europe/europe-fires-france-spain-what-to-know.html",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T19:42:44"
+      },
+      {
+        "title": "More than 250,000 flee wildfires in France and Spain",
+        "link": "https://www.bbc.co.uk/news/articles/cd7le0d53y2o?at_medium=RSS&at_campaign=rss",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T17:13:40"
+      },
+      {
+        "title": "Several injured at Berlin Pride after reports vehicle drove into crowd, police say",
+        "link": "https://www.bbc.co.uk/news/articles/clyqzylz3zno?at_medium=RSS&at_campaign=rss",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T21:33:00"
+      },
+      {
+        "title": "Trump takes swipes at press during White House Correspondents' Dinner",
+        "link": "https://www.bbc.co.uk/news/articles/cd7le4ylev2o?at_medium=RSS&at_campaign=rss",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T13:51:07"
+      },
+      {
+        "title": "India's 'cockroach' protest called off after education minister quits",
+        "link": "https://www.bbc.co.uk/news/articles/cdx828gj5xko?at_medium=RSS&at_campaign=rss",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T17:44:46"
+      },
+      {
+        "title": "Iran-backed Houthis claim missile attack on Saudi Arabia",
+        "link": "https://www.bbc.co.uk/news/articles/cj9d27v70j1o?at_medium=RSS&at_campaign=rss",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T06:34:40"
+      },
+      {
+        "title": "Ten killed in Russian attack on drone exhibition near Kyiv",
+        "link": "https://www.bbc.co.uk/news/articles/cj637zd1k1ko?at_medium=RSS&at_campaign=rss",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T00:06:53"
       }
     ],
     "해외 테크/AI": [
       {
         "title": "Warner Bros. lawsuit accuses Amazon of illegally poaching executives",
         "link": "https://techcrunch.com/2026/07/25/warner-bros-lawsuit-accuses-amazon-of-illegally-poaching-executives/",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -418,7 +728,7 @@
       {
         "title": "The hacker who humiliated spyware makers and was never caught",
         "link": "https://techcrunch.com/2026/07/25/the-hacker-who-humiliated-spyware-makers-and-was-never-caught/",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -429,7 +739,7 @@
       {
         "title": "Elon Musk’s Boring Company reportedly raising funding at a $20 billion valuation",
         "link": "https://techcrunch.com/2026/07/25/elon-musks-boring-company-reportedly-raising-funding-at-a-20-billion-valuation/",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -440,7 +750,7 @@
       {
         "title": "Kalshi demands Netflix take down trailer for ‘Prediction Games’ documentary",
         "link": "https://techcrunch.com/2026/07/25/kalshi-demands-netflix-take-down-trailer-for-prediction-games-documentary/",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -449,9 +759,31 @@
         "date": "2026-07-25T16:46:46"
       },
       {
+        "title": "Librarians are hosting viral ‘Avoiding AI’ workshops for people who are fed up with Big Tech",
+        "link": "https://techcrunch.com/2026/07/25/librarians-are-hosting-viral-avoiding-ai-workshops-for-people-who-are-fed-up-with-big-tech/",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T16:00:00"
+      },
+      {
+        "title": "One fallen power line exposed a growing AI data center problem. Here’s how to fix it.",
+        "link": "https://techcrunch.com/2026/07/25/one-fallen-power-line-exposed-a-growing-ai-data-center-problem-heres-how-to-fix-it/",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T13:05:00"
+      },
+      {
         "title": "Google basically confirms the Pixel 11 is getting a price hike",
         "link": "https://www.theverge.com/tech/971041/google-confirms-pixel-11-price-hike",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -462,7 +794,7 @@
       {
         "title": "Synth historian Oli Freke will spend big on a good bicycle",
         "link": "https://www.theverge.com/entertainment/971013/oli-freke-bjooks-beat-gems-drum-machine-book-interview",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -473,20 +805,42 @@
       {
         "title": "Teenage Engineering’s unique music machines are 30 percent off",
         "link": "https://www.theverge.com/gadgets/970685/teenage-engineering-30-percent-deal-sale",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
         "date": "2026-07-25T15:00:00"
+      },
+      {
+        "title": "Is this e-reader case a gun?",
+        "link": "https://www.theverge.com/tech/970343/e-reader-case-3d-printed-gun",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T13:00:00"
+      },
+      {
+        "title": "What Surrounds Us will make you think a lot about circles",
+        "link": "https://www.theverge.com/games/961183/what-surrounds-us-review-pc-steam",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T12:00:00"
       }
     ],
     "경제/정책": [
       {
         "title": "“60만전자·420만닉스 시대 온다”… 전문가들이 꼽은 역대급 매수 기회 ‘이것’",
         "link": "https://www.mk.co.kr/news/economy/12107415",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -497,7 +851,7 @@
       {
         "title": "정의선 “AI팩토리·도시 통합...엔비디아와 로봇 플랫폼 구축”",
         "link": "https://www.mk.co.kr/news/economy/12107347",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -508,7 +862,7 @@
       {
         "title": "“보험금 청구 간편해졌네”…지급 속도 빨라지고 서류 절차도 축소",
         "link": "https://www.mk.co.kr/news/economy/12107329",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -519,20 +873,42 @@
       {
         "title": "李 대통령 “요즘 주가 조정” 말하자…젠슨 황 “곧 다시 오를 겁니다”",
         "link": "https://www.mk.co.kr/news/economy/12107275",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
         "date": "2026-07-25T06:28:50"
+      },
+      {
+        "title": "“여름 휴가, 카드만 잘 써도 돈 아낀다”…워터파크 입장료 반값에 즐기는 법은?",
+        "link": "https://www.mk.co.kr/news/economy/12107252",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T04:47:28"
+      },
+      {
+        "title": "“국장 못 믿겠다” 해외로 쏠린 개미…이달 순매수 4배 폭증",
+        "link": "https://www.mk.co.kr/news/economy/12107229",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T01:55:50"
       }
     ],
     "금융/증권": [
       {
         "title": "한국선 191만원, 미국에서는 290만원…똑같은 하이닉스인데 가격 차이 왜?",
         "link": "https://www.mk.co.kr/news/stock/12107470",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -543,7 +919,7 @@
       {
         "title": "“60만전자·420만닉스 시대 온다”… 전문가들이 꼽은 역대급 매수 기회 ‘이것’",
         "link": "https://www.mk.co.kr/news/economy/12107415",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -554,7 +930,7 @@
       {
         "title": "0% vs 76%…ESG 공시 사각지대는 ‘오래된 제조기업’ [여의도란도란]",
         "link": "https://www.mk.co.kr/news/stock/12107355",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -565,7 +941,7 @@
       {
         "title": "李 대통령 “요즘 주가 조정” 말하자…젠슨 황 “곧 다시 오를 겁니다”",
         "link": "https://www.mk.co.kr/news/economy/12107275",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -574,9 +950,31 @@
         "date": "2026-07-25T06:28:50"
       },
       {
+        "title": "젠슨 황 “AI데이터센터 인허가 빨리 해달라”…이 대통령 “신속한 처리 중요”",
+        "link": "https://www.mk.co.kr/news/business/12107271",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T06:04:46"
+      },
+      {
+        "title": "“국장 못 믿겠다” 해외로 쏠린 개미…이달 순매수 4배 폭증",
+        "link": "https://www.mk.co.kr/news/economy/12107229",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T01:55:50"
+      },
+      {
         "title": "Wall Street Banks Prepare to Sell Billions of Dollars of X Loans",
         "link": "https://www.wsj.com/articles/wall-street-banks-prepare-to-sell-billions-of-dollars-of-x-loans-c609beb1?mod=pls_whats_news_us_business_f",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -587,7 +985,7 @@
       {
         "title": "Canada to Provide $720 Million to Canada Post to Avoid Insolvency at Mail Service",
         "link": "https://www.wsj.com/articles/canada-to-provide-720-million-to-canada-post-to-avoid-insolvency-at-mail-service-fc09a6b9?mod=pls_whats_news_us_business_f",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -598,7 +996,7 @@
       {
         "title": "Amazon Willing to Discuss Quebec Shutdown With Canadian Officials",
         "link": "https://www.wsj.com/articles/amazon-willing-to-discuss-quebec-shutdown-with-canadian-officials-610e5f59?mod=pls_whats_news_us_business_f",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -609,20 +1007,31 @@
       {
         "title": "Target Drops DEI Goals and Ends Program to Boost Black Suppliers",
         "link": "https://www.wsj.com/articles/target-drops-dei-goals-and-ends-program-to-boost-black-suppliers-77cb4c75?mod=pls_whats_news_us_business_f",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
         "date": "2025-01-24T18:51:00"
+      },
+      {
+        "title": "Energy & Utilities Roundup: Market Talk",
+        "link": "https://www.wsj.com/articles/energy-utilities-roundup-market-talk-08708375?mod=pls_whats_news_us_business_f",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2025-01-24T17:29:00"
       }
     ],
     "산업/기업": [
       {
         "title": "“60만전자·420만닉스 시대 온다”… 전문가들이 꼽은 역대급 매수 기회 ‘이것’",
         "link": "https://www.mk.co.kr/news/economy/12107415",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -633,7 +1042,7 @@
       {
         "title": "젠슨 황 “AI데이터센터 인허가 빨리 해달라”…이 대통령 “신속한 처리 중요”",
         "link": "https://www.mk.co.kr/news/business/12107271",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -644,7 +1053,7 @@
       {
         "title": "삼전닉스, 美빅테크들과 9500억弗 반도체 협력",
         "link": "https://www.mk.co.kr/news/politics/12107264",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -655,20 +1064,42 @@
       {
         "title": "李대통령 ‘샌프란 AI 선언’…“韓, 대체불가 글로벌 AI 공급망 핵심 국가로”",
         "link": "https://www.mk.co.kr/news/politics/12107240",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
         "date": "2026-07-25T02:33:50"
+      },
+      {
+        "title": "이재용·정의선·이해진 엔비디아 본사서 젠슨 황과 만났다",
+        "link": "https://www.mk.co.kr/news/business/12107228",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T01:53:19"
+      },
+      {
+        "title": "화장실 휴지봉 고장 났는데 어디서 사나요…근데 그거 뭐지? [그거사전2]",
+        "link": "https://www.mk.co.kr/news/it/12107212",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T01:04:33"
       }
     ],
     "부동산": [
       {
         "title": "수도원을 닮은 이곳 … 목돈 없다면 더 매력적인 노후공동체",
         "link": "https://www.mk.co.kr/news/realestate/12105851",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -679,7 +1110,7 @@
       {
         "title": "“공제 줄이고 특례 없애야”…부동산 토론회 전날 나온 국회 ‘보유세 보고서’",
         "link": "https://www.mk.co.kr/news/realestate/12107424",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -690,7 +1121,7 @@
       {
         "title": "“강남서 광교까지 번진다”…국힘, 李 대통령 ‘17억 매도인 근저당’ 집중 포화",
         "link": "https://www.mk.co.kr/news/realestate/12107346",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -701,20 +1132,42 @@
       {
         "title": "“개발부터 엑싯까지 원스톱”…신영에셋, 상업용 부동산 확장 본격화",
         "link": "https://www.mk.co.kr/news/realestate/12107330",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
         "date": "2026-07-25T08:19:08"
+      },
+      {
+        "title": "“집주인 바뀌었는데, 보증금 어떡하죠?”…전세금 지키려면 ‘이것’부터",
+        "link": "https://www.mk.co.kr/news/realestate/12107273",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T06:14:09"
+      },
+      {
+        "title": "21살 걸그룹 멤버는 어떻게 강남 ‘18억 로또’를 뚫었나",
+        "link": "https://www.mk.co.kr/news/realestate/12107199",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T00:05:49"
       }
     ],
     "IT/과학/Bio": [
       {
         "title": "[G-브리핑] SLG ‘프로스트 킹덤’ 정식 출시",
         "link": "https://www.mk.co.kr/news/it/12106530",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -725,7 +1178,7 @@
       {
         "title": "[콘텐츠 핫&뉴] ‘몬스터헌터 아웃랜더스’ 韓 정식 출시",
         "link": "https://www.mk.co.kr/news/it/12106597",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -736,7 +1189,7 @@
       {
         "title": "카카오게임즈 ‘패스오브엑자일’, 25일 ‘올플레임의 저주’ 업데이트",
         "link": "https://www.mk.co.kr/news/it/12106800",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
@@ -747,13 +1200,237 @@
       {
         "title": "넥슨, ‘NYPC’ 온라인 예선 마무리…8월 29일 본선 예고",
         "link": "https://www.mk.co.kr/news/it/12106781",
-        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
         "date": "2026-07-24T07:40:14"
+      },
+      {
+        "title": "넥슨, ‘테일즈위버’ 여름 시즌 빠른 성장 지원",
+        "link": "https://www.mk.co.kr/news/it/12106616",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-24T05:28:44"
+      },
+      {
+        "title": "‘LCK 레전드 매치’ 8월4일 개최…추억의 플레이어 ‘한자리에’",
+        "link": "https://www.mk.co.kr/news/it/12106569",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-24T04:56:07"
+      }
+    ],
+    "스포츠": [
+      {
+        "title": "'이강인 아틀레티코 데뷔전은 서울' 맨체스터 시티와 라이벌전에서 나온다",
+        "link": "https://www.chosun.com/sports/world-football/2026/07/26/GA3WMOJTG44DEOJVGEYTIOJXGU/",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T21:19:00"
+      },
+      {
+        "title": "[속보] 이래도 트레이드할래? 이정후, 시즌 6호 스리런 쾅!…SF 팬들 환호",
+        "link": "https://www.chosun.com/sports/world-baseball/2026/07/26/G5STINDCHEYDAMZVMM2WMYRQGE/",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T21:14:00"
+      },
+      {
+        "title": "‘미스터리’ 고우석 진짜 글러브에 이물질 발랐나, 초유의 퇴장 사태→글러브 압수까지 ‘출장 정지’ 징계 내려질까",
+        "link": "https://www.chosun.com/sports/world-baseball/2026/07/26/MEZTENRXHA2GKMRQHFRDENRYHA/",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T21:00:00"
+      },
+      {
+        "title": "\"이기는 경기에 투입\" 곽도규 부상이탈→155km 이의리 선발전환 백지화, 필승조로 중하게 쓴다",
+        "link": "https://www.chosun.com/sports/baseball/2026/07/26/GM4DIOLDMY2GMMJWGY3WKODFGM/",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T20:40:00"
+      },
+      {
+        "title": "'슈퍼 루키' 장찬희, 1군 복귀 카운트다운…박진만 감독, \"몸 상태는 정상 수준...한 경기 던지고 1군 올린다\" [오!쎈 잠실]",
+        "link": "https://www.chosun.com/sports/baseball/2026/07/26/GNSTQYZXGNSWMNDFHFSTINJSHA/",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T20:00:00"
+      },
+      {
+        "title": "\"홈런 욕심 없는데 넘어갈 줄 몰랐다\" 첫 타석부터 쾅! 2G 연속 멀티히트…박성한이 살아났다 [오!쎈 인천]",
+        "link": "https://www.chosun.com/sports/baseball/2026/07/26/MQ2TQNLBME4DOY3CGQ2DSZJRGA/",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T19:40:00"
+      }
+    ],
+    "헬스/건강": [
+      {
+        "title": "“손가락 흐릿한 점이 ‘이 병’ 신호?”…39세男 간, 폐에 무슨 일이?",
+        "link": "https://kormedi.com/2837016/",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T21:01:00"
+      },
+      {
+        "title": "“복숭아 씻을 때 ‘이것’ 뿌리세요”…과일 털, 효과적인 세척 방법은?",
+        "link": "https://kormedi.com/2837010/",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T14:03:00"
+      },
+      {
+        "title": "수건, 빨아도 쉰내 난다면⋯“중성세제 대신 ‘이것’ 쓰면 더 효과적?”",
+        "link": "https://kormedi.com/2837927/",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T13:03:00"
+      },
+      {
+        "title": "바다, 매일 아침 거울보며 ‘이것’ 한다…동안 비결인가?",
+        "link": "https://kormedi.com/2837553/",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T12:01:00"
+      },
+      {
+        "title": "“머리 터질 듯 아팠는데” 병원서 계속 돌려보내…34세男 ‘이 병’ 진단, 무슨 일?",
+        "link": "https://kormedi.com/2837315/",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T11:04:00"
+      },
+      {
+        "title": "맹승지, 어려보이는 얼굴 비결은 ‘이 수술’? 확 달라진 전후 모습 보니",
+        "link": "https://kormedi.com/2837505/",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T09:05:00"
+      },
+      {
+        "title": "치과 의사들은 어떤 ‘칫솔’ 쓰고 있을까?",
+        "link": "https://health.chosun.com/site/data/html_dir/2026/07/24/2026072402579.html",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T21:34:35"
+      },
+      {
+        "title": "“살 빼려 먹었는데 오히려 찌더라”… 풍자 7kg 찌운 ‘의외의 음식’",
+        "link": "https://health.chosun.com/site/data/html_dir/2026/07/24/2026072402542.html",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T21:34:35"
+      },
+      {
+        "title": "중년 넘으면 몸속에 염증 많아져… 꼭 먹어야 할 음식 있다는데?",
+        "link": "https://health.chosun.com/site/data/html_dir/2026/07/24/2026072402040.html",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T21:34:35"
+      },
+      {
+        "title": "“단백질 풍부하고 열량 낮아”… 지금 먹어야 할 해산물, 뭘까?",
+        "link": "https://health.chosun.com/site/data/html_dir/2026/07/24/2026072402769.html",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T21:34:35"
+      },
+      {
+        "title": "“혈관 건강에 유익”… 생소한 ‘별 모양’ 씨앗, 뭐야?",
+        "link": "https://health.chosun.com/site/data/html_dir/2026/07/24/2026072402804.html",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T21:34:35"
+      },
+      {
+        "title": "“주사 없이 159kg 뺐다”… 7년간 요요 없다는 30대 남성, 비결은?",
+        "link": "https://health.chosun.com/site/data/html_dir/2026/07/24/2026072402797.html",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T21:34:35"
       }
     ]
   }
