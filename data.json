@@ -1,5 +1,27 @@
 {
   "daily_learning": {
+    "stock_term": {
+      "term": "PBR (Price to Book-value Ratio, 주가순자산비율)",
+      "pronunciation": "피-비-알",
+      "concept": "회사가 가진 알짜 재산에 비해 주가가 싸냐, 비싸냐?",
+      "analogy": "가게 장비를 다 팔면 1,000만 원인데, 가게 주식 전체가 500만 원에 거래되는 상태!",
+      "signal": "🟢 1배 미만: 회사 재산 가치보다 주가가 싸다! | 🔴 3배 이상: 주가가 높은 편!",
+      "mts_path": "종목 검색 ➔ [기업정보] ➔ [재무지표] 탭"
+    },
+    "economy_knowledge": {
+      "title": "환율 (Exchange Rate)",
+      "concept": "우리나라 돈과 다른 나라 돈(예: 달러)을 바꾸는 비율",
+      "impact": "📈 환율이 오르면(원화 가치 하락) 수출 기업에 유리하지만, 수입 물가가 올라요."
+    },
+    "quiz": {
+      "question": "PBR이 1배 미만이라는 것은 무엇을 뜻할까요?",
+      "options": [
+        "회사의 청산 재산 가치보다 주가가 싸다",
+        "주가가 매우 비싸다"
+      ],
+      "answer": 0,
+      "explanation": "PBR이 1배 미만이면 회사를 다 정리했을 때 나오는 현금보다 주가가 낮다는 뜻입니다."
+    },
     "words": [
       {
         "word": "Perspective",
@@ -26,73 +48,73 @@
   "articles": {
     "1면/종합": [
       {
-        "title": "“에어포스원 위험할 수도”…트럼프, 귀국길 전용기 갈아탄 이유",
-        "link": "https://www.mk.co.kr/news/world/12107261",
-        "summary": "“에어포스원 위험할 수도”…트럼프, 귀국길 전용기 갈아",
+        "title": "“나 건들면 죽여버린다”…머리로 소주병 ‘쾅’ 유리 조각 들고 난동",
+        "link": "https://www.mk.co.kr/news/society/12107287",
+        "summary": "“나 건들면 죽여버린다”…머리로 소주병 ‘쾅’ 유리 조",
         "detail": [
           "요약 정보를 불러오지 못했습니다.",
           "-",
           "-"
         ],
-        "date": "2026-07-25T05:18:16"
+        "date": "2026-07-25T07:09:28"
       },
       {
-        "title": "李대통령, 美샌프란서 빅테크 CEO들과 만찬…“우리는 식구다”",
-        "link": "https://www.mk.co.kr/news/politics/12107260",
-        "summary": "李대통령, 美샌프란서 빅테크 CEO들과 만찬…“우리는 ",
+        "title": "“여전히 대세는 임영웅” 트로트 가수 1위에 선정, 2위는?",
+        "link": "https://www.mk.co.kr/news/culture/12107282",
+        "summary": "“여전히 대세는 임영웅” 트로트 가수 1위에 선정, 2",
         "detail": [
           "요약 정보를 불러오지 못했습니다.",
           "-",
           "-"
         ],
-        "date": "2026-07-25T05:17:28"
+        "date": "2026-07-25T06:59:11"
       },
       {
-        "title": "‘알몸’ 정재환 왜 옷 벗었나?…엽기적 행적에 심리학자들분석 엇갈려",
-        "link": "https://www.mk.co.kr/news/society/12107259",
-        "summary": "‘알몸’ 정재환 왜 옷 벗었나?…엽기적 행적에 심리학자",
+        "title": "“마운자로로 11kg 감량”…‘1세대 여신 BJ’ 김이브, 방송 복귀 근황",
+        "link": "https://www.mk.co.kr/news/culture/12107279",
+        "summary": "“마운자로로 11kg 감량”…‘1세대 여신 BJ’ 김이",
         "detail": [
           "요약 정보를 불러오지 못했습니다.",
           "-",
           "-"
         ],
-        "date": "2026-07-25T05:17:18"
+        "date": "2026-07-25T06:41:29"
       },
       {
-        "title": "한국의 갯벌, 유네스코 세계유산 확대 등재…여수·고흥·무안·서산 포함",
-        "link": "https://www.mk.co.kr/news/culture/12107255",
-        "summary": "한국의 갯벌, 유네스코 세계유산 확대 등재…여수·고흥·",
+        "title": "“보너스 자랑하다 인생 꼬였네”…SNS에 7억 성과급 공개한 팀장의 결말",
+        "link": "https://www.mk.co.kr/news/society/12107277",
+        "summary": "“보너스 자랑하다 인생 꼬였네”…SNS에 7억 성과급 ",
         "detail": [
           "요약 정보를 불러오지 못했습니다.",
           "-",
           "-"
         ],
-        "date": "2026-07-25T04:56:52"
+        "date": "2026-07-25T06:31:23"
       },
       {
-        "title": "‘K굿즈’ 1억 팔려…닷새간 5만명 넘게 찾은 ‘대한민국관’",
-        "link": "https://www.mk.co.kr/news/culture/12107254",
-        "summary": "‘K굿즈’ 1억 팔려…닷새간 5만명 넘게 찾은 ‘대한민",
+        "title": "네이버, 엔비디아·브룩필드서 14조원 조달해 AI팩토리 짓는다",
+        "link": "https://www.mk.co.kr/news/it/12107276",
+        "summary": "네이버, 엔비디아·브룩필드서 14조원 조달해 AI팩토리",
         "detail": [
           "요약 정보를 불러오지 못했습니다.",
           "-",
           "-"
         ],
-        "date": "2026-07-25T04:53:59"
+        "date": "2026-07-25T06:29:31"
       }
     ],
     "신문 사설": [],
     "글로벌/해외이슈": [
       {
-        "title": "Saudi Arabia and Houthis exchange fire as US attacks tanker in Hormuz Strait",
+        "title": "Iran-backed Houthis claim missile attack on Saudi Arabia",
         "link": "https://www.bbc.co.uk/news/articles/cj9d27v70j1o?at_medium=RSS&at_campaign=rss",
-        "summary": "Saudi Arabia and Houthis excha",
+        "summary": "Iran-backed Houthis claim miss",
         "detail": [
           "요약 정보를 불러오지 못했습니다.",
           "-",
           "-"
         ],
-        "date": "2026-07-25T04:48:40"
+        "date": "2026-07-25T06:34:40"
       },
       {
         "title": "More than 220,000 evacuated in France and Spain due to wildfires",
@@ -141,6 +163,17 @@
     ],
     "해외 테크/AI": [
       {
+        "title": "Forget expensive sleepbuds. Buy this pillow instead",
+        "link": "https://www.theverge.com/tech/970473/forget-expensive-sleepbuds-buy-this-pillow-instead",
+        "summary": "Forget expensive sleepbuds. Bu",
+        "detail": [
+          "요약 정보를 불러오지 못했습니다.",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T07:00:00"
+      },
+      {
         "title": "I tried out OpenAI’s new AI keypad — which will be fun for some coders and slightly mystifying to everyone else",
         "link": "https://techcrunch.com/2026/07/24/i-tried-out-openais-new-ai-keypad-which-will-be-fun-for-coders-and-slightly-mystifying-to-everyone-else/",
         "summary": "I tried out OpenAI’s new AI ke",
@@ -183,17 +216,6 @@
           "-"
         ],
         "date": "2026-07-24T22:10:00"
-      },
-      {
-        "title": "Vietnam is looking to restrict social media for kids; here are the growing number of other countries doing the same",
-        "link": "https://techcrunch.com/2026/07/24/social-media-ban-children-countries-list/",
-        "summary": "Vietnam is looking to restrict",
-        "detail": [
-          "요약 정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-24T21:15:00"
       }
     ],
     "정치/외교": [
@@ -255,6 +277,17 @@
     ],
     "경제/정책": [
       {
+        "title": "李 대통령 “요즘 주가 조정” 말하자…젠슨 황 “곧 다시 오를 겁니다”",
+        "link": "https://www.mk.co.kr/news/economy/12107275",
+        "summary": "李 대통령 “요즘 주가 조정” 말하자…젠슨 황 “곧 다",
+        "detail": [
+          "요약 정보를 불러오지 못했습니다.",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T06:28:50"
+      },
+      {
         "title": "“여름 휴가, 카드만 잘 써도 돈 아낀다”…워터파크 입장료 반값에 즐기는 법은?",
         "link": "https://www.mk.co.kr/news/economy/12107252",
         "summary": "“여름 휴가, 카드만 잘 써도 돈 아낀다”…워터파크 입",
@@ -297,20 +330,31 @@
           "-"
         ],
         "date": "2026-07-24T14:00:01"
-      },
+      }
+    ],
+    "금융/증권": [
       {
-        "title": "국내생산 稅지원서 전기차 빠질듯",
-        "link": "https://www.mk.co.kr/news/economy/12106997",
-        "summary": "국내생산 稅지원서 전기차 빠질듯",
+        "title": "李 대통령 “요즘 주가 조정” 말하자…젠슨 황 “곧 다시 오를 겁니다”",
+        "link": "https://www.mk.co.kr/news/economy/12107275",
+        "summary": "李 대통령 “요즘 주가 조정” 말하자…젠슨 황 “곧 다",
         "detail": [
           "요약 정보를 불러오지 못했습니다.",
           "-",
           "-"
         ],
-        "date": "2026-07-24T11:02:54"
-      }
-    ],
-    "금융/증권": [
+        "date": "2026-07-25T06:28:50"
+      },
+      {
+        "title": "젠슨 황 “AI데이터센터 인허가 빨리 해달라”…이 대통령 “신속한 처리 중요”",
+        "link": "https://www.mk.co.kr/news/business/12107271",
+        "summary": "젠슨 황 “AI데이터센터 인허가 빨리 해달라”…이 대통",
+        "detail": [
+          "요약 정보를 불러오지 못했습니다.",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T06:04:46"
+      },
       {
         "title": "“국장 못 믿겠다” 해외로 쏠린 개미…이달 순매수 4배 폭증",
         "link": "https://www.mk.co.kr/news/economy/12107229",
@@ -343,31 +387,31 @@
           "-"
         ],
         "date": "2026-07-25T00:14:52"
-      },
-      {
-        "title": "국민 64% “삼닉과 레버리지는 잘못된 만남”…31일부터 불개미 막는다",
-        "link": "https://www.mk.co.kr/news/stock/12107172",
-        "summary": "국민 64% “삼닉과 레버리지는 잘못된 만남”…31일부",
-        "detail": [
-          "요약 정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-24T21:12:24"
-      },
-      {
-        "title": "‘AI 고속도로’ 병목 해결사…미국 광통신株 성장성 눈부시네",
-        "link": "https://www.mk.co.kr/news/stock/12106951",
-        "summary": "‘AI 고속도로’ 병목 해결사…미국 광통신株 성장성 눈",
-        "detail": [
-          "요약 정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-24T20:00:00"
       }
     ],
     "산업/기업": [
+      {
+        "title": "젠슨 황 “AI데이터센터 인허가 빨리 해달라”…이 대통령 “신속한 처리 중요”",
+        "link": "https://www.mk.co.kr/news/business/12107271",
+        "summary": "젠슨 황 “AI데이터센터 인허가 빨리 해달라”…이 대통",
+        "detail": [
+          "요약 정보를 불러오지 못했습니다.",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T06:04:46"
+      },
+      {
+        "title": "삼전닉스, 美빅테크들과 9500억弗 반도체 협력",
+        "link": "https://www.mk.co.kr/news/politics/12107264",
+        "summary": "삼전닉스, 美빅테크들과 9500억弗 반도체 협력",
+        "detail": [
+          "요약 정보를 불러오지 못했습니다.",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T05:48:30"
+      },
       {
         "title": "李대통령 ‘샌프란 AI 선언’…“韓, 대체불가 글로벌 AI 공급망 핵심 국가로”",
         "link": "https://www.mk.co.kr/news/politics/12107240",
@@ -400,31 +444,20 @@
           "-"
         ],
         "date": "2026-07-25T01:04:33"
-      },
-      {
-        "title": "젠슨 황 “지금은 韓 AI 황금시대”…올트먼 “메가프로젝트, 세계 모범”",
-        "link": "https://www.mk.co.kr/news/politics/12107200",
-        "summary": "젠슨 황 “지금은 韓 AI 황금시대”…올트먼 “메가프로",
-        "detail": [
-          "요약 정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T00:06:09"
-      },
-      {
-        "title": "젠슨 황, 李대통령 만나 “엔비디아·SK, 5천억弗 파트너십 발표”",
-        "link": "https://www.mk.co.kr/news/politics/12107197",
-        "summary": "젠슨 황, 李대통령 만나 “엔비디아·SK, 5천억弗 파",
-        "detail": [
-          "요약 정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-24T23:58:32"
       }
     ],
     "부동산": [
+      {
+        "title": "“집주인 바뀌었는데, 보증금 어떡하죠?”…전세금 지키려면 ‘이것’부터",
+        "link": "https://www.mk.co.kr/news/realestate/12107273",
+        "summary": "“집주인 바뀌었는데, 보증금 어떡하죠?”…전세금 지키려",
+        "detail": [
+          "요약 정보를 불러오지 못했습니다.",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T06:14:09"
+      },
       {
         "title": "21살 걸그룹 멤버는 어떻게 강남 ‘18억 로또’를 뚫었나",
         "link": "https://www.mk.co.kr/news/realestate/12107199",
@@ -468,17 +501,6 @@
           "-"
         ],
         "date": "2026-07-24T08:58:56"
-      },
-      {
-        "title": "김윤덕·오세훈, 서울 주택공급 확대논의",
-        "link": "https://www.mk.co.kr/news/realestate/12106936",
-        "summary": "김윤덕·오세훈, 서울 주택공급 확대논의",
-        "detail": [
-          "요약 정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-24T08:57:05"
       }
     ],
     "IT/과학/Bio": [
@@ -540,59 +562,59 @@
     ],
     "연예/스타": [
       {
-        "title": "키스오브라이프, 3년 연속 ‘워터밤’ 달군 서머퀸 존재감",
-        "link": "https://sports.donga.com/ent/article/all/20260725/134363187/1",
-        "summary": "키스오브라이프, 3년 연속 ‘워터밤’ 달군 서머퀸 존재",
+        "title": "“여전히 대세는 임영웅” 트로트 가수 1위에 선정, 2위는?",
+        "link": "https://www.mk.co.kr/news/culture/12107282",
+        "summary": "“여전히 대세는 임영웅” 트로트 가수 1위에 선정, 2",
         "detail": [
           "요약 정보를 불러오지 못했습니다.",
           "-",
           "-"
         ],
-        "date": "2026-07-25T05:25:45"
+        "date": "2026-07-25T06:59:11"
       },
       {
-        "title": "웨이프 보이즈, 데뷔보다 먼저 ‘워터밤’…데뷔곡 최초 공개",
-        "link": "https://sports.donga.com/ent/article/all/20260725/134363179/1",
-        "summary": "웨이프 보이즈, 데뷔보다 먼저 ‘워터밤’…데뷔곡 최초 ",
+        "title": "“마운자로로 11kg 감량”…‘1세대 여신 BJ’ 김이브, 방송 복귀 근황",
+        "link": "https://www.mk.co.kr/news/culture/12107279",
+        "summary": "“마운자로로 11kg 감량”…‘1세대 여신 BJ’ 김이",
         "detail": [
           "요약 정보를 불러오지 못했습니다.",
           "-",
           "-"
         ],
-        "date": "2026-07-25T05:16:28"
+        "date": "2026-07-25T06:41:29"
       },
       {
-        "title": "소유, 부친상 비보…모든 일정 중단하고 빈소 지켜",
-        "link": "https://sports.donga.com/ent/article/all/20260725/134363173/1",
-        "summary": "소유, 부친상 비보…모든 일정 중단하고 빈소 지켜",
+        "title": "정형돈 “‘개콘’ 갔더니 ‘배신자’…‘인사도 받지 말라더라’”",
+        "link": "https://sports.donga.com/ent/article/all/20260725/134363270/1",
+        "summary": "정형돈 “‘개콘’ 갔더니 ‘배신자’…‘인사도 받지 말라",
         "detail": [
           "요약 정보를 불러오지 못했습니다.",
           "-",
           "-"
         ],
-        "date": "2026-07-25T05:15:54"
+        "date": "2026-07-25T06:33:05"
       },
       {
-        "title": "‘김부장’ 소지섭 “과분한 사랑 잊지 않을 것”…최대훈·윤경호도 마지막 인사",
-        "link": "https://sports.donga.com/ent/article/all/20260725/134363143/1",
-        "summary": "‘김부장’ 소지섭 “과분한 사랑 잊지 않을 것”…최대훈",
+        "title": "강민아, 잠적한 김명수 찾아 헤매다 결국 눈물 (공감세포)",
+        "link": "https://sports.donga.com/ent/article/all/20260725/134363259/1",
+        "summary": "강민아, 잠적한 김명수 찾아 헤매다 결국 눈물 (공감세",
         "detail": [
           "요약 정보를 불러오지 못했습니다.",
           "-",
           "-"
         ],
-        "date": "2026-07-25T05:04:10"
+        "date": "2026-07-25T06:27:00"
       },
       {
-        "title": "한국의 갯벌, 유네스코 세계유산 확대 등재…여수·고흥·무안·서산 포함",
-        "link": "https://www.mk.co.kr/news/culture/12107255",
-        "summary": "한국의 갯벌, 유네스코 세계유산 확대 등재…여수·고흥·",
+        "title": "뉴비트, ‘KM차트어워즈 2026’ 출격…퍼포먼스 맛집 예고",
+        "link": "https://sports.donga.com/ent/article/all/20260725/134363251/1",
+        "summary": "뉴비트, ‘KM차트어워즈 2026’ 출격…퍼포먼스 맛집",
         "detail": [
           "요약 정보를 불러오지 못했습니다.",
           "-",
           "-"
         ],
-        "date": "2026-07-25T04:56:52"
+        "date": "2026-07-25T06:12:46"
       }
     ],
     "문화/예술": [
