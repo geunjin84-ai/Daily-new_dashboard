@@ -11,11 +11,16 @@ import re
 genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
 model = genai.GenerativeModel('gemini-1.5-flash')
 
-# 2. 국내 매경 섹션 + 추가 카테고리 + 해외 언론사 공식 RSS
+# 2. RSS 피드 정의 (사설 섹션 추가)
 RSS_FEEDS = {
     "1면/종합": [
         "https://www.mk.co.kr/rss/30000001/",
         "https://php.yonhapnews.co.kr/yonhapnewsv1/static/rss/headline.xml"
+    ],
+    "신문 사설": [
+        "https://www.khan.co.kr/rss/rssdata/opinion.xml",  # 경향 사설/칼럼
+        "https://rss.donga.com/editorial.xml",           # 동아 사설
+        "https://rss.hankyung.com/feed/opinion.xml"      # 한경 오피니언
     ],
     "글로벌/해외이슈": [
         "https://feeds.a.dj.com/rss/RSSWorldNews.xml",
@@ -61,10 +66,6 @@ RSS_FEEDS = {
     "교육/입시": [
         "https://rss.hankyung.com/feed/society.xml",
         "https://php.yonhapnews.co.kr/yonhapnewsv1/static/rss/society.xml"
-    ],
-    "사회/오피니언": [
-        "https://www.mk.co.kr/rss/30500001/",
-        "https://www.mk.co.kr/rss/30500011/"
     ]
 }
 
@@ -85,6 +86,48 @@ def is_duplicate(new_title, existing_titles, threshold=0.65):
             return True
     return False
 
+def generate_daily_learning():
+    """매일 실용 영단어 3개와 명언 1개 자동 생성"""
+    try:
+        prompt = """
+        매일 읽기 좋은 실용 비즈니스/시사 영단어 3개와 동기부여 명언 1개를 생성해줘.
+        
+        [출력 JSON 양식 (반드시 JSON 형식으로만 응답할 것)]:
+        {
+          "words": [
+            {"word": "Resilience", "meaning": "회복력, 탄력성", "example": "Resilience is key to overcoming hardship."},
+            {"word": "Innovative", "meaning": "혁신적인", "example": "We need innovative ideas for this project."},
+            {"word": "Benchmark", "meaning": "기준, 벤치마크", "example": "They set a new benchmark for quality."}
+          ],
+          "quote": {
+            "english": "The only way to do great work is to love what you do.",
+            "korean": "위대한 일을 하는 유일한 방법은 당신이 하는 일을 사랑하는 것이다.",
+            "author": "Steve Jobs"
+          }
+        }
+        """
+        response = model.generate_content(prompt)
+        text = response.text.strip()
+        # JSON 부분만 추출
+        json_match = re.search(r'\{.*\}', text, re.DOTALL)
+        if json_match:
+            return json.loads(json_match.group())
+    except Exception as e:
+        print(f"Daily Learning Gen Error: {e}")
+        
+    return {
+        "words": [
+            {"word": "Perspective", "meaning": "관점, 시각", "example": "Try to see it from a different perspective."},
+            {"word": "Strategy", "meaning": "전략", "example": "We need a clear strategy for growth."},
+            {"word": "Insight", "meaning": "통찰력", "example": "The report provides valuable market insights."}
+        ],
+        "quote": {
+          "english": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+          "korean": "성공이 끝이 아니며, 실패가 치명적인 것도 아니다. 중요한 것은 계속해 나가는 용기다.",
+          "author": "Winston Churchill"
+        }
+    }
+
 def get_ai_summaries(title, snippet):
     try:
         prompt = f"""
@@ -92,8 +135,8 @@ def get_ai_summaries(title, snippet):
         기사 내용: {snippet}
         
         [지침]
-        1. 만약 입력된 기사 내용이 영문(외신)이라면, 반드시 자연스러운 한국어로 번역하여 작성해줘.
-        2. 원문의 뜻을 왜곡하지 말고 가독성 높은 매끄러운 한국어로 요약해줘.
+        1. 영문 기사는 자연스러운 한국어로 번역하여 요약해줘.
+        2. 사설이나 칼럼인 경우 주장의 핵심 요지를 명확히 짚어줘.
         
         [출력 양식]
         제목번역: [한국어로 번역된 기사 제목]
@@ -107,7 +150,6 @@ def get_ai_summaries(title, snippet):
         text = response.text.strip()
         
         lines = text.split('\n')
-        
         translated_title = title
         one_line = ""
         three_lines = []
@@ -129,13 +171,16 @@ def get_ai_summaries(title, snippet):
         return translated_title, one_line, three_lines[:3]
     except Exception as e:
         print(f"AI Summary Error: {e}")
-        return title, title[:30], ["요약 및 번역 정보를 불러오지 못했습니다.", "-", "-"]
+        return title, title[:30], ["요약 정보를 불러오지 못했습니다.", "-", "-"]
 
 def fetch_and_process():
-    processed_articles = {}
+    processed_data = {
+        "daily_learning": generate_daily_learning(),
+        "articles": {}
+    }
     
     for category, urls in RSS_FEEDS.items():
-        processed_articles[category] = []
+        processed_data["articles"][category] = []
         collected_titles = []
         
         for url in urls:
@@ -155,7 +200,7 @@ def fetch_and_process():
                     
                     kor_title, summary_1, summary_3 = get_ai_summaries(raw_title, getattr(entry, 'summary', ''))
                     
-                    processed_articles[category].append({
+                    processed_data["articles"][category].append({
                         "title": kor_title,
                         "link": link,
                         "summary": summary_1,
@@ -165,12 +210,12 @@ def fetch_and_process():
             except Exception as e:
                 print(f"Error fetching {url}: {e}")
                 
-    for cat in processed_articles:
-        processed_articles[cat].sort(key=lambda x: x['date'], reverse=True)
-        processed_articles[cat] = processed_articles[cat][:5]
+    for cat in processed_data["articles"]:
+        processed_data["articles"][cat].sort(key=lambda x: x['date'], reverse=True)
+        processed_data["articles"][cat] = processed_data["articles"][cat][:5]
 
     with open("data.json", "w", encoding="utf-8") as f:
-        json.dump(processed_articles, f, ensure_ascii=False, indent=2)
+        json.dump(processed_data, f, ensure_ascii=False, indent=2)
 
 if __name__ == "__main__":
     fetch_and_process()
