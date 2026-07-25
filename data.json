@@ -7,7 +7,7 @@
           "concept": "버는 돈 대비 주가 수준",
           "analogy": "1년 이익 대비 가게 매매가 비율",
           "signal": "🟢 10배 이하 저평가",
-          "mts": "종목검색 ➔ 기업정보"
+          "mts": "종목검색 -> 기업정보"
         },
         "economy": {
           "title": "기준금리",
@@ -15,10 +15,10 @@
           "impact": "대출 및 예금 이자 영향"
         },
         "quiz": {
-          "q": "PER이 낮으면?",
+          "q": "PER이 낮으면 어떤 상태일까요?",
           "opts": [
-            "저평가",
-            "고평가"
+            "저평가 상태",
+            "고평가 상태"
           ],
           "ans": 0,
           "exp": "이익 대비 주가가 싼 상태입니다."
@@ -30,7 +30,7 @@
           "concept": "가진 재산 대비 주가 수준",
           "analogy": "가게 장비 다 판 값과 주가의 비교",
           "signal": "🟢 1배 미만 저평가",
-          "mts": "종목검색 ➔ 재무지표"
+          "mts": "종목검색 -> 재무지표"
         },
         "economy": {
           "title": "환율",
@@ -38,13 +38,13 @@
           "impact": "수출입 물가 영향"
         },
         "quiz": {
-          "q": "PBR 1배 미만은?",
+          "q": "PBR이 1배 미만이라는 의미는?",
           "opts": [
-            "저평가",
-            "고평가"
+            "재산보다 주가가 저렴함",
+            "비쌈"
           ],
           "ans": 0,
-          "exp": "재산 가치보다 주가가 낮습니다."
+          "exp": "재산 가치보다 주가가 낮은 상태입니다."
         }
       },
       {
@@ -53,7 +53,7 @@
           "concept": "투자한 돈으로 얼마나 버는가",
           "analogy": "자본금 대비 연간 순이익 비율",
           "signal": "🟢 10% 이상 우수",
-          "mts": "기업분석 ➔ 투자지표"
+          "mts": "기업분석 -> 투자지표"
         },
         "economy": {
           "title": "인플레이션",
@@ -61,22 +61,22 @@
           "impact": "화폐 가치가 떨어져요."
         },
         "quiz": {
-          "q": "ROE가 높으면?",
+          "q": "ROE가 높을수록 어떤 기업일까요?",
           "opts": [
-            "경영 효율이 좋음",
-            "나쁨"
+            "경영 효율이 좋은 기업",
+            "돈을 못 버는 기업"
           ],
           "ans": 0,
-          "exp": "투입한 자본 대비 돈을 잘 번다는 뜻입니다."
+          "exp": "자본 대비 돈을 효율적으로 잘 번다는 뜻입니다."
         }
       },
       {
         "stock": {
-          "term": "원자재 가격",
-          "concept": "석유, 구리 등 기초 자재 값",
-          "analogy": "제품을 만들기 위한 원가 재료비",
-          "signal": "🔴 상승 시 기업 비용 증가",
-          "mts": "해외시장 ➔ 원자재"
+          "term": "CPI",
+          "concept": "소비자 물가 변동 지수",
+          "analogy": "장바구니 물가 성적표",
+          "signal": "🔴 3% 이상 상승 시 인플레 우려",
+          "mts": "해외 경제 지표 -> 미국 CPI"
         },
         "economy": {
           "title": "무역수지",
@@ -84,22 +84,22 @@
           "impact": "적자가 지속되면 환율이 올라요."
         },
         "quiz": {
-          "q": "무역수지 흑자란?",
+          "q": "무역수지 흑자는 어떤 상황일까요?",
           "opts": [
             "수출이 수입보다 많음",
             "수입이 많음"
           ],
           "ans": 0,
-          "exp": "벌어들인 외화가 더 많다는 뜻입니다."
+          "exp": "벌어들인 외화가 더 많은 상태입니다."
         }
       },
       {
         "stock": {
           "term": "시가총액",
-          "concept": "기업의 총 덩치(가격)",
+          "concept": "기업의 총 가치 크기",
           "analogy": "주식 수 x 현재 주가",
           "signal": "🟢 덩치가 클수록 안정적",
-          "mts": "종목 검색 ➔ 기본정보"
+          "mts": "종목 검색 -> 기본정보"
         },
         "economy": {
           "title": "스태그플레이션",
@@ -107,13 +107,13 @@
           "impact": "서민 경제에 가장 부담이 큽니다."
         },
         "quiz": {
-          "q": "시가총액 계산법은?",
+          "q": "시가총액은 어떻게 계산하나요?",
           "opts": [
-            "주가 × 발행주식수",
-            "매출액 × 자산"
+            "주가와 발행주식수를 곱함",
+            "매출액과 자산을 곱함"
           ],
           "ans": 0,
-          "exp": "기업의 전체 가치를 나타내는 척도입니다."
+          "exp": "현재 주가에 발행된 총 주식 수를 곱합니다."
         }
       }
     ],
@@ -169,11 +169,11 @@
         "quote": {
           "en": "Change your thoughts and you change your world.",
           "ko": "생각을 바꾸면 세상이 바뀐다.",
-          "author": "Norman Vincent Peale"
+          "author": "Norman Peale"
         },
         "question": {
           "q": "What do you want to eat today?",
-          "hint": "I want to eat pizza! 처럼 단어나 문장으로 말해보세요."
+          "hint": "I want to eat pizza! 라고 문장으로 말해보세요."
         }
       },
       {
@@ -221,7 +221,7 @@
           {
             "word": "Everything (모든 것)",
             "example": "Thank you for everything.",
-            "meaning": " 모든 것에 감사드립니다."
+            "meaning": "모든 것에 감사드립니다."
           }
         ],
         "quote": {
@@ -231,7 +231,7 @@
         },
         "question": {
           "q": "Who are you thankful for?",
-          "hint": "My family. 또는 My friend. 처럼 툭 뱉어보세요."
+          "hint": "My family. 또는 My friend. 라고 툭 뱉어보세요."
         }
       },
       {
@@ -244,8 +244,8 @@
           },
           {
             "word": "Cold (추운)",
-            "example": "날씨가 너무 추워요.",
-            "meaning": "It is too cold."
+            "example": "It is too cold.",
+            "meaning": "날씨가 너무 추워요."
           },
           {
             "word": "Expensive (비싼)",
@@ -268,92 +268,48 @@
   "articles": {
     "1면/종합": [
       {
-        "title": "“살 땐 좋았지? 중고차로 팔 땐 300만원 손해” … ‘돈 낭비’ 車, 이유는",
-        "link": "https://www.mk.co.kr/news/business/12105907",
-        "summary": "“살 땐 좋았지? 중고차로 팔 땐 300만원 손해” …",
+        "title": "“원자재 투자, 아무나 하면 큰일나요”...가격 보다 중요한 한 가지 [Book]",
+        "link": "https://www.mk.co.kr/news/culture/12107465",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
-        "date": "2026-07-25T20:00:00"
+        "date": "2026-07-25T20:51:12"
       },
       {
-        "title": "수도원을 닮은 이곳 … 목돈 없다면 더 매력적인 노후공동체",
-        "link": "https://www.mk.co.kr/news/realestate/12105851",
-        "summary": "수도원을 닮은 이곳 … 목돈 없다면 더 매력적인 노후공",
+        "title": "“사람 좋다고? 술 마셔봤어?”...인간 본성·내면 들추는 ‘양날의 검’ [Book]",
+        "link": "https://www.mk.co.kr/news/culture/12107464",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
-        "date": "2026-07-25T19:05:00"
+        "date": "2026-07-25T20:51:02"
       },
       {
-        "title": "“손 하나 안 대고 터치”…입안에 끼우는 ‘구강 마우스’ 화제",
-        "link": "https://www.mk.co.kr/news/world/12107430",
-        "summary": "“손 하나 안 대고 터치”…입안에 끼우는 ‘구강 마우스",
+        "title": "우주서 찍은 지구, 남극이 위였다…당신이 속아온 ‘동서남북’ 진실 [Book]",
+        "link": "https://www.mk.co.kr/news/culture/12107463",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
-        "date": "2026-07-25T14:08:24"
+        "date": "2026-07-25T20:50:42"
       },
       {
-        "title": "“신혼집, 손님 모시기가 무섭다”…집들이 한 번에 평균 26만원 ‘훌쩍’",
-        "link": "https://www.mk.co.kr/news/society/12107427",
-        "summary": "“신혼집, 손님 모시기가 무섭다”…집들이 한 번에 평균",
+        "title": "인간도 공룡도 조연에 불과하다…‘이들’에게 생명을 빚지고 있기에 [Book]",
+        "link": "https://www.mk.co.kr/news/culture/12107462",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
-        "date": "2026-07-25T13:35:27"
-      },
-      {
-        "title": "“공제 줄이고 특례 없애야”…부동산 토론회 전날 나온 국회 ‘보유세 보고서’",
-        "link": "https://www.mk.co.kr/news/realestate/12107424",
-        "summary": "“공제 줄이고 특례 없애야”…부동산 토론회 전날 나온 ",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T13:22:28"
-      },
-      {
-        "title": "“투자금 회수 전략 내세운 PEF”…식음료 기업 ‘몸값 높이기’ 속도전",
-        "link": "https://www.mk.co.kr/news/economy/12107422",
-        "summary": "“투자금 회수 전략 내세운 PEF”…식음료 기업 ‘몸값",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T13:20:48"
-      },
-      {
-        "title": "사람 죽인 공무원에 벌금 600만원 선고…“피해자 과실도 봤다”[어쩌다 세상이]",
-        "link": "https://www.mk.co.kr/news/society/12107423",
-        "summary": "사람 죽인 공무원에 벌금 600만원 선고…“피해자 과실",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T13:20:48"
-      },
-      {
-        "title": "외교관 정보 ‘탈탈’ 털렸는데…국회선 ‘사이버안보법’ 1년째 계류, 왜?",
-        "link": "https://www.mk.co.kr/news/politics/12107421",
-        "summary": "외교관 정보 ‘탈탈’ 털렸는데…국회선 ‘사이버안보법’ ",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T13:19:25"
+        "date": "2026-07-25T20:50:31"
       }
     ],
     "신문 사설": [],
@@ -361,9 +317,9 @@
       {
         "title": "Palestinians Stream Back to Northern Gaza on Foot",
         "link": "https://www.wsj.com/articles/palestinians-flock-back-to-northern-gaza-on-foot-after-hostage-release-breakthrough-3f60e2db",
-        "summary": "Palestinians Stream Back to No",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
@@ -372,9 +328,9 @@
       {
         "title": "Leading China Property Developer Reports Huge loss, in Sign of Widening Real-Estate Woes",
         "link": "https://www.wsj.com/articles/even-chinas-property-stalwart-isnt-immune-from-the-crisis-19799863",
-        "summary": "Leading China Property Develop",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
@@ -383,9 +339,9 @@
       {
         "title": "Freed Israeli Hostages Still Had Shrapnel in Their Bodies From Oct. 7 Attack",
         "link": "https://www.wsj.com/articles/freed-israeli-hostages-still-had-shrapnel-in-their-bodies-from-oct-7-attack-3de8cd1e",
-        "summary": "Freed Israeli Hostages Still H",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
@@ -394,86 +350,42 @@
       {
         "title": "Suspected Sabotage of Deep-Sea Cable Triggers First NATO-Led Response",
         "link": "https://www.wsj.com/articles/suspected-sabotage-of-deep-sea-cable-triggers-first-nato-led-response-337119ba",
-        "summary": "Suspected Sabotage of Deep-Sea",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
         "date": "2025-01-27T16:22:00"
       },
       {
-        "title": "Rwanda-Backed Rebels Enter Congo's Safe-Haven City",
-        "link": "https://www.wsj.com/articles/rwanda-backed-rebels-enter-congo-safe-haven-city-aid-hub-09fdccb8",
-        "summary": "Rwanda-Backed Rebels Enter Con",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2025-01-27T15:07:00"
-      },
-      {
-        "title": "Cocaine-Funded Gangs Shake Colombia Years After Peace Pact",
-        "link": "https://www.wsj.com/articles/cocaine-funded-gangs-shake-colombia-years-after-peace-pact-a45a28da",
-        "summary": "Cocaine-Funded Gangs Shake Col",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2025-01-27T12:00:00"
-      },
-      {
-        "title": "Italy Supports Saudi Arabia Joining Fighter-Jet Program, PM Meloni Says",
-        "link": "https://www.wsj.com/articles/italy-supports-saudi-arabia-joining-gcap-fighter-jet-program-pm-meloni-says-bbd9cec1",
-        "summary": "Italy Supports Saudi Arabia Jo",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2025-01-27T10:34:00"
-      },
-      {
-        "title": "Shippers Wary of Red Sea Routes Despite Houthi Pledge to End Targeting",
-        "link": "https://www.wsj.com/articles/shippers-wary-of-red-sea-routes-despite-houthi-pledge-to-end-targeting-4dde35c2",
-        "summary": "Shippers Wary of Red Sea Route",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2025-01-27T06:05:00"
-      },
-      {
         "title": "Iran Journey Reveals Society’s Wartime Defiance and Hope",
         "link": "https://www.nytimes.com/2026/07/25/world/middleeast/what-a-journey-through-wartime-iran-revealed.html",
-        "summary": "Iran Journey Reveals Society’s",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
         "date": "2026-07-25T12:11:26"
       },
       {
-        "title": "Live Updates: Hundreds of Thousands Flee as Fires Rage in Spain and France",
+        "title": "Hundreds of Thousands Flee as Fires Rage in Spain and France",
         "link": "https://www.nytimes.com/live/2026/07/25/world/france-spain-wildfires-evacuations",
-        "summary": "Live Updates: Hundreds of Thou",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
-        "date": "2026-07-25T20:44:10"
+        "date": "2026-07-25T21:04:59"
       },
       {
         "title": "India’s Education Minister Steps Down in Victory for Cockroach Party Protesters",
         "link": "https://www.nytimes.com/2026/07/25/world/asia/india-education-minister-resigns-cockroach-protests.html",
-        "summary": "India’s Education Minister Ste",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
@@ -482,66 +394,33 @@
       {
         "title": "Colombia’s Trump-Endorsed President-Elect Was Once Investigated by U.S. Authorities",
         "link": "https://www.nytimes.com/2026/07/25/world/americas/colombia-president-de-la-espriella-trump-us-investigation.html",
-        "summary": "Colombia’s Trump-Endorsed Pres",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
         "date": "2026-07-25T17:20:59"
-      },
-      {
-        "title": "Bus Collision in Syria Kills 35, Health Ministry Says",
-        "link": "https://www.nytimes.com/2026/07/25/world/middleeast/bus-collision-syria.html",
-        "summary": "Bus Collision in Syria Kills 3",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T14:25:19"
-      },
-      {
-        "title": "What to Know About the Wildfires Raging in Western Europe",
-        "link": "https://www.nytimes.com/2026/07/25/world/europe/europe-fires-france-spain-what-to-know.html",
-        "summary": "What to Know About the Wildfir",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T19:42:44"
-      },
-      {
-        "title": "What’s Left of the U.S.-Iran Cease-Fire Agreement",
-        "link": "https://www.nytimes.com/2026/07/25/world/middleeast/us-iran-cease-fire-deal-violations.html",
-        "summary": "What’s Left of the U.S.-Iran C",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T14:46:10"
-      },
-      {
-        "title": "Who Are the People Protesting in India?",
-        "link": "https://www.nytimes.com/2026/07/25/world/asia/india-protests-profiles.html",
-        "summary": "Who Are the People Protesting ",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T13:53:43"
       }
     ],
     "해외 테크/AI": [
       {
+        "title": "Warner Bros. lawsuit accuses Amazon of illegally poaching executives",
+        "link": "https://techcrunch.com/2026/07/25/warner-bros-lawsuit-accuses-amazon-of-illegally-poaching-executives/",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T20:55:11"
+      },
+      {
         "title": "The hacker who humiliated spyware makers and was never caught",
         "link": "https://techcrunch.com/2026/07/25/the-hacker-who-humiliated-spyware-makers-and-was-never-caught/",
-        "summary": "The hacker who humiliated spyw",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
@@ -550,9 +429,9 @@
       {
         "title": "Elon Musk’s Boring Company reportedly raising funding at a $20 billion valuation",
         "link": "https://techcrunch.com/2026/07/25/elon-musks-boring-company-reportedly-raising-funding-at-a-20-billion-valuation/",
-        "summary": "Elon Musk’s Boring Company rep",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
@@ -561,75 +440,20 @@
       {
         "title": "Kalshi demands Netflix take down trailer for ‘Prediction Games’ documentary",
         "link": "https://techcrunch.com/2026/07/25/kalshi-demands-netflix-take-down-trailer-for-prediction-games-documentary/",
-        "summary": "Kalshi demands Netflix take do",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
         "date": "2026-07-25T16:46:46"
       },
       {
-        "title": "Librarians are hosting viral ‘Avoiding AI’ workshops for people who are fed up with Big Tech",
-        "link": "https://techcrunch.com/2026/07/25/librarians-are-hosting-viral-avoiding-ai-workshops-for-people-who-are-fed-up-with-big-tech/",
-        "summary": "Librarians are hosting viral ‘",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T16:00:00"
-      },
-      {
-        "title": "One fallen power line exposed a growing AI data center problem. Here’s how to fix it.",
-        "link": "https://techcrunch.com/2026/07/25/one-fallen-power-line-exposed-a-growing-ai-data-center-problem-heres-how-to-fix-it/",
-        "summary": "One fallen power line exposed ",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T13:05:00"
-      },
-      {
-        "title": "I tried out OpenAI’s new AI keypad — which will be fun for some coders and slightly mystifying to everyone else",
-        "link": "https://techcrunch.com/2026/07/24/i-tried-out-openais-new-ai-keypad-which-will-be-fun-for-coders-and-slightly-mystifying-to-everyone-else/",
-        "summary": "I tried out OpenAI’s new AI ke",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T00:23:11"
-      },
-      {
-        "title": "SpaceX launches new V3 Starlink satellites but suffers another booster failure",
-        "link": "https://techcrunch.com/2026/07/24/spacex-launches-new-v3-starlink-satellites-but-suffers-another-booster-failure/",
-        "summary": "SpaceX launches new V3 Starlin",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-24T23:25:47"
-      },
-      {
-        "title": "Prentis, new AI lab co-founded by Reid Hoffman, Mark Pincus in talks to raise $100M",
-        "link": "https://techcrunch.com/2026/07/24/prentis-new-ai-lab-co-founded-by-reid-hoffman-mark-pincus-in-talks-to-raise-100m/",
-        "summary": "Prentis, new AI lab co-founded",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-24T22:25:58"
-      },
-      {
         "title": "Google basically confirms the Pixel 11 is getting a price hike",
         "link": "https://www.theverge.com/tech/971041/google-confirms-pixel-11-price-hike",
-        "summary": "Google basically confirms the ",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
@@ -638,9 +462,9 @@
       {
         "title": "Synth historian Oli Freke will spend big on a good bicycle",
         "link": "https://www.theverge.com/entertainment/971013/oli-freke-bjooks-beat-gems-drum-machine-book-interview",
-        "summary": "Synth historian Oli Freke will",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
@@ -649,77 +473,22 @@
       {
         "title": "Teenage Engineering’s unique music machines are 30 percent off",
         "link": "https://www.theverge.com/gadgets/970685/teenage-engineering-30-percent-deal-sale",
-        "summary": "Teenage Engineering’s unique m",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
         "date": "2026-07-25T15:00:00"
-      },
-      {
-        "title": "Warner Bros. is suing Amazon for poaching employees",
-        "link": "https://www.theverge.com/business/971011/warner-bros-suing-amazon-poaching-employees",
-        "summary": "Warner Bros. is suing Amazon f",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T14:05:12"
-      },
-      {
-        "title": "Is this e-reader case a gun?",
-        "link": "https://www.theverge.com/tech/970343/e-reader-case-3d-printed-gun",
-        "summary": "Is this e-reader case a gun?",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T13:00:00"
-      },
-      {
-        "title": "What Surrounds Us will make you think a lot about circles",
-        "link": "https://www.theverge.com/games/961183/what-surrounds-us-review-pc-steam",
-        "summary": "What Surrounds Us will make yo",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T12:00:00"
-      },
-      {
-        "title": "Folding and flipping phones are getting seriously good",
-        "link": "https://www.theverge.com/tech/971004/z-fold8-xteink-x4-light-flip-installer",
-        "summary": "Folding and flipping phones ar",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T12:00:00"
-      },
-      {
-        "title": "Forget expensive sleepbuds. Buy this pillow instead",
-        "link": "https://www.theverge.com/tech/970473/forget-expensive-sleepbuds-buy-this-pillow-instead",
-        "summary": "Forget expensive sleepbuds. Bu",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T07:00:00"
       }
     ],
     "경제/정책": [
       {
         "title": "“60만전자·420만닉스 시대 온다”… 전문가들이 꼽은 역대급 매수 기회 ‘이것’",
         "link": "https://www.mk.co.kr/news/economy/12107415",
-        "summary": "“60만전자·420만닉스 시대 온다”… 전문가들이 꼽은",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
@@ -728,9 +497,9 @@
       {
         "title": "정의선 “AI팩토리·도시 통합...엔비디아와 로봇 플랫폼 구축”",
         "link": "https://www.mk.co.kr/news/economy/12107347",
-        "summary": "정의선 “AI팩토리·도시 통합...엔비디아와 로봇 플랫",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
@@ -739,9 +508,9 @@
       {
         "title": "“보험금 청구 간편해졌네”…지급 속도 빨라지고 서류 절차도 축소",
         "link": "https://www.mk.co.kr/news/economy/12107329",
-        "summary": "“보험금 청구 간편해졌네”…지급 속도 빨라지고 서류 절",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
@@ -750,66 +519,22 @@
       {
         "title": "李 대통령 “요즘 주가 조정” 말하자…젠슨 황 “곧 다시 오를 겁니다”",
         "link": "https://www.mk.co.kr/news/economy/12107275",
-        "summary": "李 대통령 “요즘 주가 조정” 말하자…젠슨 황 “곧 다",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
         "date": "2026-07-25T06:28:50"
-      },
-      {
-        "title": "“여름 휴가, 카드만 잘 써도 돈 아낀다”…워터파크 입장료 반값에 즐기는 법은?",
-        "link": "https://www.mk.co.kr/news/economy/12107252",
-        "summary": "“여름 휴가, 카드만 잘 써도 돈 아낀다”…워터파크 입",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T04:47:28"
-      },
-      {
-        "title": "“국장 못 믿겠다” 해외로 쏠린 개미…이달 순매수 4배 폭증",
-        "link": "https://www.mk.co.kr/news/economy/12107229",
-        "summary": "“국장 못 믿겠다” 해외로 쏠린 개미…이달 순매수 4배",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T01:55:50"
-      },
-      {
-        "title": "“증시 오르든지 내리든지 우린 버니까”…5대금융 13조 벌었다",
-        "link": "https://www.mk.co.kr/news/economy/12107171",
-        "summary": "“증시 오르든지 내리든지 우린 버니까”…5대금융 13조",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-24T21:12:13"
-      },
-      {
-        "title": "EU, 러시아산 LNG 韓수입 제재 면제",
-        "link": "https://www.mk.co.kr/news/economy/12107089",
-        "summary": "EU, 러시아산 LNG 韓수입 제재 면제",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-24T14:00:01"
       }
     ],
     "금융/증권": [
       {
         "title": "“60만전자·420만닉스 시대 온다”… 전문가들이 꼽은 역대급 매수 기회 ‘이것’",
         "link": "https://www.mk.co.kr/news/economy/12107415",
-        "summary": "“60만전자·420만닉스 시대 온다”… 전문가들이 꼽은",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
@@ -818,9 +543,9 @@
       {
         "title": "0% vs 76%…ESG 공시 사각지대는 ‘오래된 제조기업’ [여의도란도란]",
         "link": "https://www.mk.co.kr/news/stock/12107355",
-        "summary": "0% vs 76%…ESG 공시 사각지대는 ‘오래된 제조",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
@@ -829,9 +554,9 @@
       {
         "title": "李 대통령 “요즘 주가 조정” 말하자…젠슨 황 “곧 다시 오를 겁니다”",
         "link": "https://www.mk.co.kr/news/economy/12107275",
-        "summary": "李 대통령 “요즘 주가 조정” 말하자…젠슨 황 “곧 다",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
@@ -840,64 +565,20 @@
       {
         "title": "젠슨 황 “AI데이터센터 인허가 빨리 해달라”…이 대통령 “신속한 처리 중요”",
         "link": "https://www.mk.co.kr/news/business/12107271",
-        "summary": "젠슨 황 “AI데이터센터 인허가 빨리 해달라”…이 대통",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
         "date": "2026-07-25T06:04:46"
       },
       {
-        "title": "“국장 못 믿겠다” 해외로 쏠린 개미…이달 순매수 4배 폭증",
-        "link": "https://www.mk.co.kr/news/economy/12107229",
-        "summary": "“국장 못 믿겠다” 해외로 쏠린 개미…이달 순매수 4배",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T01:55:50"
-      },
-      {
-        "title": "주가 30% 빠진 SK하이닉스…역대급 실적보다 ‘이것’에 쏠렸다",
-        "link": "https://www.mk.co.kr/news/stock/12107221",
-        "summary": "주가 30% 빠진 SK하이닉스…역대급 실적보다 ‘이것’",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T01:39:59"
-      },
-      {
-        "title": "“전쟁 끝나는 줄 알았는데, 눈앞이 깜깜”…유가 100달러에 원유 곱버스 -83% [원자재로 살아남기]",
-        "link": "https://www.mk.co.kr/news/stock/12107201",
-        "summary": "“전쟁 끝나는 줄 알았는데, 눈앞이 깜깜”…유가 100",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T00:14:52"
-      },
-      {
-        "title": "국민 64% “삼닉과 레버리지는 잘못된 만남”…31일부터 불개미 막는다",
-        "link": "https://www.mk.co.kr/news/stock/12107172",
-        "summary": "국민 64% “삼닉과 레버리지는 잘못된 만남”…31일부",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-24T21:12:24"
-      },
-      {
         "title": "Wall Street Banks Prepare to Sell Billions of Dollars of X Loans",
         "link": "https://www.wsj.com/articles/wall-street-banks-prepare-to-sell-billions-of-dollars-of-x-loans-c609beb1?mod=pls_whats_news_us_business_f",
-        "summary": "Wall Street Banks Prepare to S",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
@@ -906,9 +587,9 @@
       {
         "title": "Canada to Provide $720 Million to Canada Post to Avoid Insolvency at Mail Service",
         "link": "https://www.wsj.com/articles/canada-to-provide-720-million-to-canada-post-to-avoid-insolvency-at-mail-service-fc09a6b9?mod=pls_whats_news_us_business_f",
-        "summary": "Canada to Provide $720 Million",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
@@ -917,9 +598,9 @@
       {
         "title": "Amazon Willing to Discuss Quebec Shutdown With Canadian Officials",
         "link": "https://www.wsj.com/articles/amazon-willing-to-discuss-quebec-shutdown-with-canadian-officials-610e5f59?mod=pls_whats_news_us_business_f",
-        "summary": "Amazon Willing to Discuss Queb",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
@@ -928,33 +609,22 @@
       {
         "title": "Target Drops DEI Goals and Ends Program to Boost Black Suppliers",
         "link": "https://www.wsj.com/articles/target-drops-dei-goals-and-ends-program-to-boost-black-suppliers-77cb4c75?mod=pls_whats_news_us_business_f",
-        "summary": "Target Drops DEI Goals and End",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
         "date": "2025-01-24T18:51:00"
-      },
-      {
-        "title": "Energy & Utilities Roundup: Market Talk",
-        "link": "https://www.wsj.com/articles/energy-utilities-roundup-market-talk-08708375?mod=pls_whats_news_us_business_f",
-        "summary": "Energy & Utilities Roundup: Ma",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2025-01-24T17:29:00"
       }
     ],
     "산업/기업": [
       {
         "title": "“60만전자·420만닉스 시대 온다”… 전문가들이 꼽은 역대급 매수 기회 ‘이것’",
         "link": "https://www.mk.co.kr/news/economy/12107415",
-        "summary": "“60만전자·420만닉스 시대 온다”… 전문가들이 꼽은",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
@@ -963,9 +633,9 @@
       {
         "title": "젠슨 황 “AI데이터센터 인허가 빨리 해달라”…이 대통령 “신속한 처리 중요”",
         "link": "https://www.mk.co.kr/news/business/12107271",
-        "summary": "젠슨 황 “AI데이터센터 인허가 빨리 해달라”…이 대통",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
@@ -974,9 +644,9 @@
       {
         "title": "삼전닉스, 美빅테크들과 9500억弗 반도체 협력",
         "link": "https://www.mk.co.kr/news/politics/12107264",
-        "summary": "삼전닉스, 美빅테크들과 9500억弗 반도체 협력",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
@@ -985,66 +655,22 @@
       {
         "title": "李대통령 ‘샌프란 AI 선언’…“韓, 대체불가 글로벌 AI 공급망 핵심 국가로”",
         "link": "https://www.mk.co.kr/news/politics/12107240",
-        "summary": "李대통령 ‘샌프란 AI 선언’…“韓, 대체불가 글로벌 ",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
         "date": "2026-07-25T02:33:50"
-      },
-      {
-        "title": "이재용·정의선·이해진 엔비디아 본사서 젠슨 황과 만났다",
-        "link": "https://www.mk.co.kr/news/business/12107228",
-        "summary": "이재용·정의선·이해진 엔비디아 본사서 젠슨 황과 만났다",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T01:53:19"
-      },
-      {
-        "title": "화장실 휴지봉 고장 났는데 어디서 사나요…근데 그거 뭐지? [그거사전2]",
-        "link": "https://www.mk.co.kr/news/it/12107212",
-        "summary": "화장실 휴지봉 고장 났는데 어디서 사나요…근데 그거 뭐",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T01:04:33"
-      },
-      {
-        "title": "젠슨 황 “지금은 韓 AI 황금시대”…올트먼 “메가프로젝트, 세계 모범”",
-        "link": "https://www.mk.co.kr/news/politics/12107200",
-        "summary": "젠슨 황 “지금은 韓 AI 황금시대”…올트먼 “메가프로",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T00:06:09"
-      },
-      {
-        "title": "젠슨 황, 李대통령 만나 “엔비디아·SK, 5천억弗 파트너십 발표”",
-        "link": "https://www.mk.co.kr/news/politics/12107197",
-        "summary": "젠슨 황, 李대통령 만나 “엔비디아·SK, 5천억弗 파",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-24T23:58:32"
       }
     ],
     "부동산": [
       {
         "title": "수도원을 닮은 이곳 … 목돈 없다면 더 매력적인 노후공동체",
         "link": "https://www.mk.co.kr/news/realestate/12105851",
-        "summary": "수도원을 닮은 이곳 … 목돈 없다면 더 매력적인 노후공",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
@@ -1053,9 +679,9 @@
       {
         "title": "“공제 줄이고 특례 없애야”…부동산 토론회 전날 나온 국회 ‘보유세 보고서’",
         "link": "https://www.mk.co.kr/news/realestate/12107424",
-        "summary": "“공제 줄이고 특례 없애야”…부동산 토론회 전날 나온 ",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
@@ -1064,9 +690,9 @@
       {
         "title": "“강남서 광교까지 번진다”…국힘, 李 대통령 ‘17억 매도인 근저당’ 집중 포화",
         "link": "https://www.mk.co.kr/news/realestate/12107346",
-        "summary": "“강남서 광교까지 번진다”…국힘, 李 대통령 ‘17억 ",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
@@ -1075,66 +701,22 @@
       {
         "title": "“개발부터 엑싯까지 원스톱”…신영에셋, 상업용 부동산 확장 본격화",
         "link": "https://www.mk.co.kr/news/realestate/12107330",
-        "summary": "“개발부터 엑싯까지 원스톱”…신영에셋, 상업용 부동산 ",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
         "date": "2026-07-25T08:19:08"
-      },
-      {
-        "title": "“집주인 바뀌었는데, 보증금 어떡하죠?”…전세금 지키려면 ‘이것’부터",
-        "link": "https://www.mk.co.kr/news/realestate/12107273",
-        "summary": "“집주인 바뀌었는데, 보증금 어떡하죠?”…전세금 지키려",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T06:14:09"
-      },
-      {
-        "title": "21살 걸그룹 멤버는 어떻게 강남 ‘18억 로또’를 뚫었나",
-        "link": "https://www.mk.co.kr/news/realestate/12107199",
-        "summary": "21살 걸그룹 멤버는 어떻게 강남 ‘18억 로또’를 뚫",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T00:05:49"
-      },
-      {
-        "title": "홍준표 “박원순 시장 정책이 지금 부동산 시장 왜곡 가져와”",
-        "link": "https://www.mk.co.kr/news/realestate/12107061",
-        "summary": "홍준표 “박원순 시장 정책이 지금 부동산 시장 왜곡 가",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-24T13:15:31"
-      },
-      {
-        "title": "“팰다르크, 잔금 열사”…이재명 대통령에 직접 호소하자 집단대출 ‘OK’",
-        "link": "https://www.mk.co.kr/news/realestate/12107054",
-        "summary": "“팰다르크, 잔금 열사”…이재명 대통령에 직접 호소하자",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-24T12:54:24"
       }
     ],
     "IT/과학/Bio": [
       {
         "title": "[G-브리핑] SLG ‘프로스트 킹덤’ 정식 출시",
         "link": "https://www.mk.co.kr/news/it/12106530",
-        "summary": "[G-브리핑] SLG ‘프로스트 킹덤’ 정식 출시",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
@@ -1143,9 +725,9 @@
       {
         "title": "[콘텐츠 핫&뉴] ‘몬스터헌터 아웃랜더스’ 韓 정식 출시",
         "link": "https://www.mk.co.kr/news/it/12106597",
-        "summary": "[콘텐츠 핫&뉴] ‘몬스터헌터 아웃랜더스’ 韓 정식 출",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
@@ -1154,9 +736,9 @@
       {
         "title": "카카오게임즈 ‘패스오브엑자일’, 25일 ‘올플레임의 저주’ 업데이트",
         "link": "https://www.mk.co.kr/news/it/12106800",
-        "summary": "카카오게임즈 ‘패스오브엑자일’, 25일 ‘올플레임의 저",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
@@ -1165,327 +747,14 @@
       {
         "title": "넥슨, ‘NYPC’ 온라인 예선 마무리…8월 29일 본선 예고",
         "link": "https://www.mk.co.kr/news/it/12106781",
-        "summary": "넥슨, ‘NYPC’ 온라인 예선 마무리…8월 29일 본",
+        "summary": "클릭 시 언론사 원문 기사 페이지로 바로 이동합니다.",
         "detail": [
-          "정보를 불러오지 못했습니다.",
+          "-",
           "-",
           "-"
         ],
         "date": "2026-07-24T07:40:14"
-      },
-      {
-        "title": "넥슨, ‘테일즈위버’ 여름 시즌 빠른 성장 지원",
-        "link": "https://www.mk.co.kr/news/it/12106616",
-        "summary": "넥슨, ‘테일즈위버’ 여름 시즌 빠른 성장 지원",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-24T05:28:44"
-      },
-      {
-        "title": "‘LCK 레전드 매치’ 8월4일 개최…추억의 플레이어 ‘한자리에’",
-        "link": "https://www.mk.co.kr/news/it/12106569",
-        "summary": "‘LCK 레전드 매치’ 8월4일 개최…추억의 플레이어 ",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-24T04:56:07"
-      },
-      {
-        "title": "‘제우스:오만의 신’ 정식 출시일 온라인 쇼케이스서 공개",
-        "link": "https://www.mk.co.kr/news/it/12106555",
-        "summary": "‘제우스:오만의 신’ 정식 출시일 온라인 쇼케이스서 공",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-24T04:45:16"
-      },
-      {
-        "title": "‘오싹한’ 공포게임 ‘골목길’, 글로벌 여름 더위 식힌다",
-        "link": "https://www.mk.co.kr/news/it/12106543",
-        "summary": "‘오싹한’ 공포게임 ‘골목길’, 글로벌 여름 더위 식힌",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-24T04:34:32"
       }
-    ],
-    "연예/스타": [
-      {
-        "title": "프리지아, 에르메스 핑크백 공개…“명품도 소모품이라 생각”",
-        "link": "https://sports.donga.com/ent/article/all/20260726/134363606/1",
-        "summary": "프리지아, 에르메스 핑크백 공개…“명품도 소모품이라 생",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T18:30:00"
-      },
-      {
-        "title": "은가은♥박현호 “도대체 왜 그러냐”…쇼윈도설에 울분 (살림남2)",
-        "link": "https://sports.donga.com/ent/article/all/20260726/134363597/1",
-        "summary": "은가은♥박현호 “도대체 왜 그러냐”…쇼윈도설에 울분 (",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T15:06:34"
-      },
-      {
-        "title": "황신혜 “차라리 주식 망하는 게 낫다”…7년 기록 잃을 뻔 ‘울음’ [SD리뷰]",
-        "link": "https://sports.donga.com/ent/article/all/20260725/134363587/1",
-        "summary": "황신혜 “차라리 주식 망하는 게 낫다”…7년 기록 잃을",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T14:47:36"
-      },
-      {
-        "title": "강훈 “철저히 이용당해” …‘♥바타’ 지예은과 러브라인 소환 (런닝맨)",
-        "link": "https://sports.donga.com/ent/article/all/20260725/134363347/1",
-        "summary": "강훈 “철저히 이용당해” …‘♥바타’ 지예은과 러브라인",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T11:41:00"
-      },
-      {
-        "title": "주진모, ♥민혜연 11살 연하에도 7년째 존댓말…“사랑하면 존중부터”",
-        "link": "https://sports.donga.com/ent/article/all/20260725/134363481/1",
-        "summary": "주진모, ♥민혜연 11살 연하에도 7년째 존댓말…“사랑",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T10:33:58"
-      },
-      {
-        "title": "루네이트, 무대부터 연기·스포츠 예능까지…한계 없는 성장세 [루키인터뷰:얘 어때?②]",
-        "link": "https://sports.donga.com/ent/article/all/20260725/134362284/2",
-        "summary": "루네이트, 무대부터 연기·스포츠 예능까지…한계 없는 성",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T09:00:00"
-      },
-      {
-        "title": "루네이트 “팬콘 무료 결정? 더 많은 분들이 저희를 알았으면” [루키인터뷰:얘 어때?①]",
-        "link": "https://sports.donga.com/ent/article/all/20260725/134362280/2",
-        "summary": "루네이트 “팬콘 무료 결정? 더 많은 분들이 저희를 알",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T09:00:00"
-      },
-      {
-        "title": "김아영, 생애 첫 연극 무대 도전기…대선배들도 인정한 ‘연습벌레’ (전참시)",
-        "link": "https://sports.donga.com/ent/article/all/20260725/134363266/1",
-        "summary": "김아영, 생애 첫 연극 무대 도전기…대선배들도 인정한 ",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T08:25:00"
-      },
-      {
-        "title": "“햇빛 많이 봐야 한다고”…가수 던 고백한 ‘만성부신증후군’ 뭐길래",
-        "link": "https://www.mk.co.kr/news/culture/12107357",
-        "summary": "“햇빛 많이 봐야 한다고”…가수 던 고백한 ‘만성부신증",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T10:11:21"
-      },
-      {
-        "title": "“첫 통화에 엉엉 울어”…황정민, ‘해병대 입대’ 아들 근황 공개",
-        "link": "https://www.mk.co.kr/news/culture/12107351",
-        "summary": "“첫 통화에 엉엉 울어”…황정민, ‘해병대 입대’ 아들",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T09:36:16"
-      },
-      {
-        "title": "20년 유럽통이 16일간 프랑스에서 오스트리아 여행하고 깨달은 점 [장주영 기자의 여책저책]",
-        "link": "https://www.mk.co.kr/news/culture/12107332",
-        "summary": "20년 유럽통이 16일간 프랑스에서 오스트리아 여행하고",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T08:20:42"
-      },
-      {
-        "title": "의사 생활 잠시 접고 와인공부하러 프랑스로 떠난 50대 아저씨 [장주영 기자의 여책저책]",
-        "link": "https://www.mk.co.kr/news/culture/12107331",
-        "summary": "의사 생활 잠시 접고 와인공부하러 프랑스로 떠난 50대",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T08:20:31"
-      },
-      {
-        "title": "“여전히 대세는 임영웅” 트로트 가수 1위에 선정, 2위는?",
-        "link": "https://www.mk.co.kr/news/culture/12107282",
-        "summary": "“여전히 대세는 임영웅” 트로트 가수 1위에 선정, 2",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T06:59:11"
-      },
-      {
-        "title": "“마운자로로 11kg 감량”…‘1세대 여신 BJ’ 김이브, 방송 복귀 근황",
-        "link": "https://www.mk.co.kr/news/culture/12107279",
-        "summary": "“마운자로로 11kg 감량”…‘1세대 여신 BJ’ 김이",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T06:41:29"
-      },
-      {
-        "title": "한국의 갯벌, 유네스코 세계유산 확대 등재…여수·고흥·무안·서산 포함",
-        "link": "https://www.mk.co.kr/news/culture/12107255",
-        "summary": "한국의 갯벌, 유네스코 세계유산 확대 등재…여수·고흥·",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T04:56:52"
-      },
-      {
-        "title": "‘K굿즈’ 1억 팔려…닷새간 5만명 넘게 찾은 ‘대한민국관’",
-        "link": "https://www.mk.co.kr/news/culture/12107254",
-        "summary": "‘K굿즈’ 1억 팔려…닷새간 5만명 넘게 찾은 ‘대한민",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T04:53:59"
-      }
-    ],
-    "문화/예술": [
-      {
-        "title": "이강인, 3년만에 스페인 복귀…국내 최대 사이니지 ‘룩스’로 구단 환영 메시지 송출",
-        "link": "https://www.donga.com/news/Culture/article/all/20260725/134363450/1",
-        "summary": "이강인, 3년만에 스페인 복귀…국내 최대 사이니지 ‘룩",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T10:26:00"
-      },
-      {
-        "title": "한강 물의 높이를 재던 그 눈금은 어디 갔을까[청계천 옆 사진관]",
-        "link": "https://www.donga.com/news/Culture/article/all/20260725/134362759/1",
-        "summary": "한강 물의 높이를 재던 그 눈금은 어디 갔을까[청계천 ",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T04:00:00"
-      },
-      {
-        "title": "“계곡 걷고 별 보며 쉬자”…국립공원에서 즐기는 피서",
-        "link": "https://www.donga.com/news/Culture/article/all/20260724/134345316/2",
-        "summary": "“계곡 걷고 별 보며 쉬자”…국립공원에서 즐기는 피서",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T04:00:00"
-      },
-      {
-        "title": "자연이 조각한 위대한 풍경, 노르웨이 피오르드",
-        "link": "https://www.donga.com/news/Culture/article/all/20260725/134362905/1",
-        "summary": "자연이 조각한 위대한 풍경, 노르웨이 피오르드",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T01:50:00"
-      },
-      {
-        "title": "“기다릴 엄두가 안 나네“…한 달째 백화점 마비시킨 ‘이 빵’[이설의 한입 스토리]",
-        "link": "https://www.donga.com/news/Culture/article/all/20260724/134350692/1",
-        "summary": "“기다릴 엄두가 안 나네“…한 달째 백화점 마비시킨 ‘",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T01:00:00"
-      },
-      {
-        "title": "다시 영화관으로?…Z세대가 이끄는 극장의 부활[딥다이브]",
-        "link": "https://www.donga.com/news/Economy/article/all/20260724/134356420/1",
-        "summary": "다시 영화관으로?…Z세대가 이끄는 극장의 부활[딥다이브",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T01:00:00"
-      },
-      {
-        "title": "TXT 연준, 美 LA서 첫 단독 솔로 공연…빌보드 ‘원 나이트 온리’ 출격",
-        "link": "https://www.donga.com/news/Entertainment/article/all/20260725/134362810/1",
-        "summary": "TXT 연준, 美 LA서 첫 단독 솔로 공연…빌보드 ‘",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T00:53:19"
-      },
-      {
-        "title": "“‘사랑과 우정 사이’ 부르고 지금까지 나는 솔로… 늘 우정 택했으니까”[유재영의 전국깐부자랑]",
-        "link": "https://www.donga.com/news/Culture/article/all/20260724/134342897/1",
-        "summary": "“‘사랑과 우정 사이’ 부르고 지금까지 나는 솔로… 늘",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T00:00:00"
-      }
-    ],
-    "교육/입시": []
+    ]
   }
 }
