@@ -35,6 +35,15 @@
     h1 { margin: 0; font-size: 1.4rem; color: var(--text-main); }
     .theme-toggle { background: none; border: 1px solid var(--border-color); padding: 6px 12px; border-radius: 20px; cursor: pointer; font-size: 0.85rem; color: var(--text-main); }
 
+    /* 오늘의 지식 (영단어 & 명언) 카드 */
+    .learning-card { background: linear-gradient(135deg, #007bff, #0056b3); color: white; padding: 16px; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    .learning-title { font-size: 0.95rem; font-weight: bold; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 6px; }
+    .quote-box { font-style: italic; font-size: 0.88rem; margin-bottom: 12px; line-height: 1.4; }
+    .quote-author { font-style: normal; font-size: 0.75rem; opacity: 0.85; text-align: right; }
+    .words-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; background: rgba(255,255,255,0.1); padding: 10px; border-radius: 8px; }
+    .word-item { font-size: 0.82rem; }
+    .word-name { font-weight: bold; color: #ffe066; }
+
     .search-box { background: var(--card-bg); padding: 12px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 15px; }
     .input-group { display: flex; gap: 8px; margin-bottom: 8px; }
     .input-group input { flex: 1; padding: 8px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.9rem; background: var(--card-bg); color: var(--text-main); }
@@ -83,6 +92,12 @@
       <button class="theme-toggle" onclick="toggleTheme()">🌗 다크모드</button>
     </div>
     
+    <div class="learning-card" id="learning-card" style="display:none;">
+      <div class="learning-title">✨ 오늘의 명언 & 핵심 영단어</div>
+      <div class="quote-box" id="quote-box"></div>
+      <div class="words-grid" id="words-grid"></div>
+    </div>
+
     <div class="category-filter">
       <div class="filter-title">
         <span>📌 섹션 선택 (터치하여 켜기/끄기)</span>
@@ -155,7 +170,13 @@
     async function fetchNewsData() {
       try {
         const response = await fetch('./data.json?t=' + new Date().getTime());
-        rawNewsData = await response.json();
+        const data = await response.json();
+        
+        if (data.daily_learning) {
+          renderDailyLearning(data.daily_learning);
+        }
+        
+        rawNewsData = data.articles || data;
         
         if (!enabledCategories) {
           enabledCategories = Object.keys(rawNewsData);
@@ -166,6 +187,31 @@
       } catch (err) {
         document.getElementById('news-grid').innerHTML = '<div class="no-results">수집된 뉴스를 불러오는 중입니다. 잠시 후 새로고침 해주세요.</div>';
       }
+    }
+
+    function renderDailyLearning(learning) {
+      const card = document.getElementById('learning-card');
+      const quoteBox = document.getElementById('quote-box');
+      const wordsGrid = document.getElementById('words-grid');
+      
+      if (learning.quote) {
+        quoteBox.innerHTML = `
+          "${learning.quote.english}"<br>
+          <span style="opacity:0.9; font-style:normal;">(${learning.quote.korean})</span>
+          <div class="quote-author">- ${learning.quote.author}</div>
+        `;
+      }
+      
+      if (learning.words) {
+        wordsGrid.innerHTML = learning.words.map(w => `
+          <div class="word-item">
+            <span class="word-name">${w.word}</span> : ${w.meaning}<br>
+            <span style="opacity:0.8; font-size:0.75rem;">예) ${w.example}</span>
+          </div>
+        `).join('');
+      }
+      
+      card.style.display = 'block';
     }
 
     function renderCategoryChips() {
