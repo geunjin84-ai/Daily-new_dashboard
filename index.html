@@ -35,14 +35,22 @@
     h1 { margin: 0; font-size: 1.4rem; color: var(--text-main); }
     .theme-toggle { background: none; border: 1px solid var(--border-color); padding: 6px 12px; border-radius: 20px; cursor: pointer; font-size: 0.85rem; color: var(--text-main); }
 
-    /* 오늘의 지식 (영단어 & 명언) 카드 */
-    .learning-card { background: linear-gradient(135deg, #007bff, #0056b3); color: white; padding: 16px; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-    .learning-title { font-size: 0.95rem; font-weight: bold; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 6px; }
-    .quote-box { font-style: italic; font-size: 0.88rem; margin-bottom: 12px; line-height: 1.4; }
-    .quote-author { font-style: normal; font-size: 0.75rem; opacity: 0.85; text-align: right; }
-    .words-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; background: rgba(255,255,255,0.1); padding: 10px; border-radius: 8px; }
-    .word-item { font-size: 0.82rem; }
-    .word-name { font-weight: bold; color: #ffe066; }
+    /* 금융 & 지식 접이식 카드 */
+    .finance-card { background: var(--card-bg); border-radius: 12px; padding: 16px; margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 2px solid var(--accent-color); }
+    .card-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: bold; font-size: 1rem; color: var(--accent-color); border-bottom: 1px solid var(--border-color); padding-bottom: 8px; }
+    .card-body { margin-top: 12px; display: block; }
+    
+    .section-title { font-size: 0.88rem; font-weight: bold; color: var(--text-main); margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+    .box-content { background: rgba(0,123,255,0.05); padding: 10px 12px; border-radius: 8px; font-size: 0.83rem; line-height: 1.5; color: var(--text-sub); margin-bottom: 12px; }
+    .box-content strong { color: var(--text-main); }
+    
+    .quiz-box { background: rgba(40,167,69,0.08); padding: 10px 12px; border-radius: 8px; font-size: 0.83rem; margin-bottom: 12px; }
+    .quiz-btn { background: var(--card-bg); border: 1px solid #28a745; color: #28a745; padding: 6px 10px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; margin-top: 6px; font-weight: bold; width: 100%; text-align: left; }
+    .quiz-btn:hover { background: #28a745; color: white; }
+
+    /* 영단어 명언 카키 */
+    .learning-card { background: linear-gradient(135deg, #2b5876, #4e4376); color: white; padding: 14px; border-radius: 12px; margin-bottom: 15px; font-size: 0.83rem; }
+    .words-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; margin-top: 8px; }
 
     .search-box { background: var(--card-bg); padding: 12px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 15px; }
     .input-group { display: flex; gap: 8px; margin-bottom: 8px; }
@@ -92,9 +100,26 @@
       <button class="theme-toggle" onclick="toggleTheme()">🌗 다크모드</button>
     </div>
     
+    <div class="finance-card">
+      <div class="card-header" onclick="toggleFinanceCard()">
+        <span>✏️ 3분 실전 경제 교실</span>
+        <span id="card-toggle-icon">▲ 접기</span>
+      </div>
+      <div class="card-body" id="finance-card-body">
+        <div class="section-title">📈 오늘의 실전 주식 용어</div>
+        <div class="box-content" id="stock-term-box">수집 중...</div>
+        
+        <div class="section-title">💡 오늘의 생활 경제 상식</div>
+        <div class="box-content" id="economy-box">수집 중...</div>
+
+        <div class="section-title">🎯 3초 실전 퀴즈</div>
+        <div class="quiz-box" id="quiz-box">수집 중...</div>
+      </div>
+    </div>
+
     <div class="learning-card" id="learning-card" style="display:none;">
-      <div class="learning-title">✨ 오늘의 명언 & 핵심 영단어</div>
-      <div class="quote-box" id="quote-box"></div>
+      <div style="font-weight:bold; margin-bottom:6px;">✨ 오늘의 명언 & 핵심 영단어</div>
+      <div id="quote-box" style="font-style:italic; margin-bottom:8px;"></div>
       <div class="words-grid" id="words-grid"></div>
     </div>
 
@@ -154,6 +179,18 @@
       document.body.setAttribute('data-theme', 'dark');
     }
 
+    function toggleFinanceCard() {
+      const body = document.getElementById('finance-card-body');
+      const icon = document.getElementById('card-toggle-icon');
+      if (body.style.display === 'none') {
+        body.style.display = 'block';
+        icon.innerText = '▲ 접기';
+      } else {
+        body.style.display = 'none';
+        icon.innerText = '▼ 펴기';
+      }
+    }
+
     function timeAgo(dateString) {
       if (!dateString) return '';
       const now = new Date();
@@ -173,7 +210,7 @@
         const data = await response.json();
         
         if (data.daily_learning) {
-          renderDailyLearning(data.daily_learning);
+          renderFinanceAndLearning(data.daily_learning);
         }
         
         rawNewsData = data.articles || data;
@@ -189,29 +226,63 @@
       }
     }
 
-    function renderDailyLearning(learning) {
-      const card = document.getElementById('learning-card');
-      const quoteBox = document.getElementById('quote-box');
-      const wordsGrid = document.getElementById('words-grid');
-      
-      if (learning.quote) {
-        quoteBox.innerHTML = `
-          "${learning.quote.english}"<br>
-          <span style="opacity:0.9; font-style:normal;">(${learning.quote.korean})</span>
-          <div class="quote-author">- ${learning.quote.author}</div>
+    function renderFinanceAndLearning(learning) {
+      // 1. 주식 실전 용어
+      if (learning.stock_term) {
+        const t = learning.stock_term;
+        document.getElementById('stock-term-box').innerHTML = `
+          <strong>• 용어:</strong> ${t.term} (${t.pronunciation})<br>
+          <strong>• 3초 개념:</strong> ${t.concept}<br>
+          <strong>• 쉽게 말해:</strong> ${t.analogy}<br>
+          <strong>• 판단 기준:</strong> ${t.signal}<br>
+          <strong>📍 증권사 앱(MTS) 위치:</strong> <span style="color:var(--accent-color); font-weight:bold;">${t.mts_path}</span>
         `;
       }
-      
+
+      // 2. 생활 경제 상식
+      if (learning.economy_knowledge) {
+        const e = learning.economy_knowledge;
+        document.getElementById('economy-box').innerHTML = `
+          <strong>• 주제:</strong> ${e.title}<br>
+          <strong>• 핵심:</strong> ${e.concept}<br>
+          <strong>• 내 삶에 미치는 영향:</strong> ${e.impact}
+        `;
+      }
+
+      // 3. 퀴즈
+      if (learning.quiz) {
+        const q = learning.quiz;
+        let buttons = q.options.map((opt, idx) => `
+          <button class="quiz-btn" onclick="checkAnswer(${idx}, ${q.answer}, '${q.explanation}')">${idx + 1}. ${opt}</button>
+        `).join('');
+        
+        document.getElementById('quiz-box').innerHTML = `
+          <div style="font-weight:bold; margin-bottom:4px;">Q. ${q.question}</div>
+          ${buttons}
+          <div id="quiz-result" style="margin-top:6px; font-weight:bold; display:none;"></div>
+        `;
+      }
+
+      // 4. 영단어 & 명언
+      if (learning.quote) {
+        document.getElementById('quote-box').innerHTML = `"${learning.quote.english}" (${learning.quote.korean}) - ${learning.quote.author}`;
+      }
       if (learning.words) {
-        wordsGrid.innerHTML = learning.words.map(w => `
-          <div class="word-item">
-            <span class="word-name">${w.word}</span> : ${w.meaning}<br>
-            <span style="opacity:0.8; font-size:0.75rem;">예) ${w.example}</span>
-          </div>
+        document.getElementById('words-grid').innerHTML = learning.words.map(w => `
+          <div><strong style="color:#ffe066;">${w.word}</strong>: ${w.meaning}</div>
         `).join('');
       }
-      
-      card.style.display = 'block';
+      document.getElementById('learning-card').style.display = 'block';
+    }
+
+    function checkAnswer(userIdx, correctIdx, exp) {
+      const res = document.getElementById('quiz-result');
+      res.style.display = 'block';
+      if (userIdx === correctIdx) {
+        res.innerHTML = `<span style="color:#28a745;">🎉 정답입니다!</span><br><span style="font-weight:normal; font-size:0.78rem;">${exp}</span>`;
+      } else {
+        res.innerHTML = `<span style="color:#dc3545;">❌ 아쉬워요. 다시 시도해보세요!</span>`;
+      }
     }
 
     function renderCategoryChips() {
