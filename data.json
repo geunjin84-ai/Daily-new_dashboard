@@ -3,7 +3,7 @@
     "finance_sets": [
       {
         "stock": {
-          "term": "PER (주가수익비율)",
+          "term": "PER",
           "concept": "버는 돈 대비 주가 수준",
           "analogy": "1년 이익 대비 가게 매매가 비율",
           "signal": "🟢 10배 이하 저평가",
@@ -23,26 +23,59 @@
           "ans": 0,
           "exp": "이익 대비 주가가 싼 상태입니다."
         }
+      },
+      {
+        "stock": {
+          "term": "PBR",
+          "concept": "가진 재산 대비 주가 수준",
+          "analogy": "가게 장비 다 판 값과 주가의 비교",
+          "signal": "🟢 1배 미만 저평가",
+          "mts": "종목검색 ➔ 재무지표"
+        },
+        "economy": {
+          "title": "환율",
+          "concept": "외국 돈과의 교환 비율",
+          "impact": "수출입 물가 및 해외주식 영향"
+        },
+        "quiz": {
+          "q": "PBR 1배 미만은?",
+          "opts": [
+            "재산 가치보다 주가가 쌈",
+            "비쌈"
+          ],
+          "ans": 0,
+          "exp": "청산 가치보다 주가가 낮습니다."
+        }
       }
     ],
     "daily_sets": [
       {
+        "pattern": "Can I get ~ ? (~ 좀 주시겠어요?)",
         "words": [
           {
-            "word": "Resilience",
-            "meaning": "회복력",
-            "example": "Resilience is key."
+            "word": "Water (물)",
+            "example": "Can I get water?",
+            "meaning": "물 좀 주시겠어요?"
           },
           {
-            "word": "Insight",
-            "meaning": "통찰력",
-            "example": "Valuable insight."
+            "word": "Coffee (커피)",
+            "example": "Can I get coffee?",
+            "meaning": "커피 좀 주시겠어요?"
+          },
+          {
+            "word": "The bill (계산서)",
+            "example": "Can I get the bill?",
+            "meaning": "계산서 좀 주시겠어요?"
           }
         ],
         "quote": {
           "en": "Stay hungry, stay foolish.",
           "ko": "늘 갈망하고 우직하게 나아가라.",
           "author": "Steve Jobs"
+        },
+        "question": {
+          "q": "How are you today?",
+          "hint": "I am good! 이라고 답변해보세요."
         }
       }
     ]
@@ -319,6 +352,17 @@
     ],
     "해외 테크/AI": [
       {
+        "title": "The hacker who humiliated spyware makers and was never caught",
+        "link": "https://techcrunch.com/2026/07/25/the-hacker-who-humiliated-spyware-makers-and-was-never-caught/",
+        "summary": "The hacker who humiliated spyw",
+        "detail": [
+          "정보를 불러오지 못했습니다.",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T20:24:14"
+      },
+      {
         "title": "Elon Musk’s Boring Company reportedly raising funding at a $20 billion valuation",
         "link": "https://techcrunch.com/2026/07/25/elon-musks-boring-company-reportedly-raising-funding-at-a-20-billion-valuation/",
         "summary": "Elon Musk’s Boring Company rep",
@@ -394,17 +438,6 @@
           "-"
         ],
         "date": "2026-07-24T22:25:58"
-      },
-      {
-        "title": "TechCrunch Disrupt 2026’s new Smart Money Stage explores fintech, payments, AI, and everything between",
-        "link": "https://techcrunch.com/2026/07/24/techcrunch-disrupt-2026s-new-smart-money-stage-explores-fintech-payments-ai-and-everything-between/",
-        "summary": "TechCrunch Disrupt 2026’s new ",
-        "detail": [
-          "정보를 불러오지 못했습니다.",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-24T22:10:00"
       },
       {
         "title": "Google basically confirms the Pixel 11 is getting a price hike",
