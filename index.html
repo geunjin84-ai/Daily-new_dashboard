@@ -34,10 +34,15 @@
     .words-grid { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 8px; }
     .word-item { background: rgba(255,255,255,0.1); padding: 8px 12px; border-radius: 8px; font-size: 0.82rem; line-height: 1.4; }
     
+    /* 필터 헤더 & 깔끔한 전체선택/해제 텍스트 버튼 스타일 */
+    .filter-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-size: 0.85rem; font-weight: bold; color: var(--sub); }
+    .ctrl-link-group { display: flex; gap: 10px; font-size: 0.8rem; font-weight: bold; }
+    .ctrl-link { color: var(--accent); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+    .ctrl-link:hover { opacity: 0.8; }
+    
     .chip-container { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 15px; }
     .chip { padding: 6px 12px; border-radius: 20px; font-size: 0.78rem; border: 1px solid #ddd; background: var(--card); cursor: pointer; color: var(--sub); font-weight: 600; }
     .chip.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-    .chip.btn-ctrl { background: #6c757d; color: #fff; border-color: #6c757d; }
     
     .news-group { margin-bottom: 20px; }
     .news-group-title { color: var(--accent); font-size: 0.95rem; font-weight: bold; margin: 15px 0 8px 0; border-left: 3px solid var(--accent); padding-left: 8px; }
@@ -94,6 +99,14 @@
       </div>
     </div>
 
+    <div class="filter-header">
+      <span>📌 표시할 카테고리 선택</span>
+      <div class="ctrl-link-group">
+        <span class="ctrl-link" onclick="selectAllCats()">전체 선택</span>
+        <span style="opacity:0.3;">|</span>
+        <span class="ctrl-link" onclick="deselectAllCats()" style="color:var(--sub);">전체 해제</span>
+      </div>
+    </div>
     <div class="chip-container" id="filter-chips"></div>
 
     <div class="card" style="border: 2px solid #28a745;">
@@ -278,38 +291,28 @@
       });
     }
 
-    // 전체선택 / 전체해제 기능이 포함된 카테고리 칩 렌더링
+    // 전체 선택 기능
+    function selectAllCats() {
+      if (!db.articles) return;
+      enabledCats = Object.keys(db.articles);
+      document.querySelectorAll('.chip.cat-chip').forEach(c => c.classList.add('active'));
+      renderNews();
+    }
+
+    // 전체 해제 기능
+    function deselectAllCats() {
+      enabledCats = [];
+      document.querySelectorAll('.chip.cat-chip').forEach(c => c.classList.remove('active'));
+      renderNews();
+    }
+
+    // 카테고리 칩 렌더링 (순수 칩만 깔끔하게 배치)
     function renderChips() {
       const container = document.getElementById('filter-chips');
       container.innerHTML = '';
       if (!db.articles) return;
 
-      const allCats = Object.keys(db.articles);
-
-      // 1. 전체선택 버튼
-      const selectAllBtn = document.createElement('div');
-      selectAllBtn.className = 'chip btn-ctrl';
-      selectAllBtn.innerText = '✅ 전체선택';
-      selectAllBtn.onclick = () => {
-        enabledCats = [...allCats];
-        document.querySelectorAll('.chip.cat-chip').forEach(c => c.classList.add('active'));
-        renderNews();
-      };
-      container.appendChild(selectAllBtn);
-
-      // 2. 전체해제 버튼
-      const deselectAllBtn = document.createElement('div');
-      deselectAllBtn.className = 'chip btn-ctrl';
-      deselectAllBtn.innerText = '❌ 전체해제';
-      deselectAllBtn.onclick = () => {
-        enabledCats = [];
-        document.querySelectorAll('.chip.cat-chip').forEach(c => c.classList.remove('active'));
-        renderNews();
-      };
-      container.appendChild(deselectAllBtn);
-
-      // 3. 개별 카테고리 칩 생성
-      allCats.forEach(cat => {
+      Object.keys(db.articles).forEach(cat => {
         const chip = document.createElement('div');
         chip.className = 'chip cat-chip active';
         chip.innerText = cat;
