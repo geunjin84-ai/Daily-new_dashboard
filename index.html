@@ -3,55 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>지식 대시보드 2.0 (매경 모드)</title>
+  <title>지식 대시보드 2.0</title>
   
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#ffffff">
 
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f4f6f8; margin: 0; padding: 15px; color: #333; }
+    :root {
+      --bg-color: #f4f6f8;
+      --card-bg: #ffffff;
+      --text-main: #333333;
+      --text-sub: #555555;
+      --border-color: #f1f1f1;
+      --accent-color: #007bff;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --card-bg: #1e1e1e;
+      --text-main: #e0e0e0;
+      --text-sub: #aaaaaa;
+      --border-color: #2c2c2c;
+      --accent-color: #3793ff;
+    }
+
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg-color); margin: 0; padding: 15px; color: var(--text-main); transition: background 0.3s, color 0.3s; }
     .container { max-width: 1000px; margin: 0 auto; }
-    h1 { text-align: center; margin-bottom: 15px; font-size: 1.4rem; color: #111; }
     
-    /* 검색창 */
-    .search-box { background: white; padding: 12px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 15px; }
+    .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+    h1 { margin: 0; font-size: 1.4rem; color: var(--text-main); }
+    .theme-toggle { background: none; border: 1px solid var(--border-color); padding: 6px 12px; border-radius: 20px; cursor: pointer; font-size: 0.85rem; color: var(--text-main); }
+
+    .search-box { background: var(--card-bg); padding: 12px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 15px; }
     .input-group { display: flex; gap: 8px; margin-bottom: 8px; }
-    .input-group input { flex: 1; padding: 8px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.9rem; }
-    .input-group button { padding: 8px 14px; background: #007bff; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+    .input-group input { flex: 1; padding: 8px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.9rem; background: var(--card-bg); color: var(--text-main); }
+    .input-group button { padding: 8px 14px; background: var(--accent-color); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
     .tags-container { display: flex; flex-wrap: wrap; gap: 6px; }
     .tag { background: #e9ecef; color: #495057; padding: 4px 10px; border-radius: 15px; font-size: 0.8rem; display: flex; align-items: center; gap: 4px; }
     .tag .remove-btn { cursor: pointer; color: #ff4d4f; font-weight: bold; }
 
-    /* 카테고리 토글 칩 필터 */
-    .category-filter { background: white; padding: 12px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 15px; }
-    .filter-title { font-size: 0.85rem; font-weight: bold; color: #666; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
+    .category-filter { background: var(--card-bg); padding: 12px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 15px; }
+    .filter-title { font-size: 0.85rem; font-weight: bold; color: var(--text-sub); margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
+    .filter-btn-group { display: flex; gap: 8px; }
     .filter-chips { display: flex; flex-wrap: wrap; gap: 6px; }
-    .chip { padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; border: 1px solid #ddd; background: #f8f9fa; color: #666; cursor: pointer; transition: all 0.2s; user-select: none; }
-    .chip.active { background: #007bff; color: white; border-color: #007bff; }
-    .btn-reset { font-size: 0.75rem; color: #007bff; background: none; border: none; cursor: pointer; text-decoration: underline; }
+    .chip { padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; border: 1px solid #ddd; background: var(--card-bg); color: var(--text-sub); cursor: pointer; transition: all 0.2s; user-select: none; }
+    .chip.active { background: var(--accent-color); color: white; border-color: var(--accent-color); }
+    .btn-reset { font-size: 0.75rem; color: var(--accent-color); background: none; border: none; cursor: pointer; text-decoration: underline; padding: 0; }
+    .btn-clear { font-size: 0.75rem; color: #dc3545; background: none; border: none; cursor: pointer; text-decoration: underline; padding: 0; }
 
-    /* 뉴스 그리드 */
     .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
-    .category-card { background: white; border-radius: 12px; padding: 16px; box-shadow: 0 3px 5px rgba(0,0,0,0.04); }
-    .category-title { font-size: 1.05rem; font-weight: bold; border-bottom: 2px solid #007bff; padding-bottom: 6px; margin-bottom: 12px; color: #007bff; }
+    .category-card { background: var(--card-bg); border-radius: 12px; padding: 16px; box-shadow: 0 3px 5px rgba(0,0,0,0.04); }
+    .category-title { font-size: 1.05rem; font-weight: bold; border-bottom: 2px solid var(--accent-color); padding-bottom: 6px; margin-bottom: 12px; color: var(--accent-color); }
     
-    .news-item { margin-bottom: 12px; border-bottom: 1px solid #f1f1f1; padding-bottom: 10px; cursor: pointer; }
+    .news-item { margin-bottom: 12px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; cursor: pointer; }
     .news-item:last-child { border-bottom: none; }
     .news-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 4px; }
-    .news-title { font-weight: 600; color: #222; line-height: 1.35; font-size: 0.92rem; }
-    .time-badge { font-size: 0.7rem; color: #888; white-space: nowrap; background: #f1f3f5; padding: 2px 5px; border-radius: 4px; }
-    .news-summary { font-size: 0.82rem; color: #555; background: #f8f9fa; padding: 6px 8px; border-radius: 6px; margin-top: 4px; }
+    .news-title { font-weight: 600; color: var(--text-main); line-height: 1.35; font-size: 0.92rem; }
+    .time-badge { font-size: 0.7rem; color: #888; white-space: nowrap; background: rgba(0,0,0,0.05); padding: 2px 5px; border-radius: 4px; }
+    .news-summary { font-size: 0.82rem; color: var(--text-sub); background: rgba(0,0,0,0.02); padding: 6px 8px; border-radius: 6px; margin-top: 4px; }
 
-    /* 팝업 모달 */
     .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box; }
-    .modal-content { background: white; border-radius: 16px; max-width: 500px; width: 100%; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
-    .modal-title { font-size: 1.05rem; font-weight: bold; margin-bottom: 12px; color: #111; line-height: 1.4; }
-    .modal-detail-list { background: #f8f9fa; padding: 12px 12px 12px 28px; border-radius: 8px; margin-bottom: 15px; }
-    .modal-detail-list li { margin-bottom: 6px; font-size: 0.88rem; color: #444; line-height: 1.45; }
-    .modal-detail-list li:last-child { margin-bottom: 0; }
+    .modal-content { background: var(--card-bg); border-radius: 16px; max-width: 500px; width: 100%; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+    .modal-title { font-size: 1.05rem; font-weight: bold; margin-bottom: 12px; color: var(--text-main); line-height: 1.4; }
+    .modal-detail-list { background: rgba(0,0,0,0.03); padding: 12px 12px 12px 28px; border-radius: 8px; margin-bottom: 15px; }
+    .modal-detail-list li { margin-bottom: 6px; font-size: 0.88rem; color: var(--text-sub); line-height: 1.45; }
     .modal-actions { display: flex; gap: 8px; }
-    .btn-link { flex: 1; text-align: center; background: #007bff; color: white; padding: 10px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.85rem; }
+    .btn-link { flex: 1; text-align: center; background: var(--accent-color); color: white; padding: 10px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.85rem; }
+    .btn-copy { background: #6c757d; color: white; border: none; padding: 10px 12px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 0.85rem; }
     .btn-close { background: #e9ecef; color: #495057; border: none; padding: 10px 14px; border-radius: 8px; font-weight: bold; cursor: pointer; }
     
     .no-results { text-align: center; color: #888; grid-column: 1 / -1; padding: 30px; font-size: 0.9rem; }
@@ -59,19 +78,26 @@
 </head>
 <body>
   <div class="container">
-    <h1>📰 지식 대시보드 2.0 (매경 섹션)</h1>
+    <div class="header-bar">
+      <h1>📰 지식 대시보드 2.0</h1>
+      <button class="theme-toggle" onclick="toggleTheme()">🌗 다크모드</button>
+    </div>
     
     <div class="category-filter">
       <div class="filter-title">
-        <span>📌 표시할 섹션 선택 (터치하여 켜기/끄기)</span>
-        <button class="btn-reset" onclick="resetCategories()">전체 선택</button>
+        <span>📌 섹션 선택 (터치하여 켜기/끄기)</span>
+        <div class="filter-btn-group">
+          <button class="btn-reset" onclick="resetCategories()">전체 선택</button>
+          <span>|</span>
+          <button class="btn-clear" onclick="clearCategories()">전체 해제</button>
+        </div>
       </div>
       <div class="filter-chips" id="filter-chips"></div>
     </div>
 
     <div class="search-box">
       <div class="input-group">
-        <input type="text" id="keyword-input" placeholder="검색어 입력 후 [추가] (예: 삼성, 주가)" onkeypress="if(event.key==='Enter') addKeyword()">
+        <input type="text" id="keyword-input" placeholder="검색어 입력 후 [추가]" onkeypress="if(event.key==='Enter') addKeyword()">
         <button onclick="addKeyword()">추가</button>
       </div>
       <div class="tags-container" id="tags-container"></div>
@@ -83,10 +109,11 @@
   <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
     <div class="modal-content" onclick="event.stopPropagation()">
       <div class="modal-title" id="modal-title">기사 제목</div>
-      <div style="font-size:0.78rem; color:#007bff; font-weight:bold; margin-bottom:6px;">💡 AI 3줄 상세 요약</div>
+      <div style="font-size:0.78rem; color:var(--accent-color); font-weight:bold; margin-bottom:6px;">💡 AI 3줄 상세 요약</div>
       <ul class="modal-detail-list" id="modal-details"></ul>
       <div class="modal-actions">
         <a id="modal-link" class="btn-link" href="#" target="_blank">원문 보기</a>
+        <button class="btn-copy" onclick="copySummary()">복사</button>
         <button class="btn-close" onclick="closeModalDirect()">닫기</button>
       </div>
     </div>
@@ -96,6 +123,21 @@
     let rawNewsData = {};
     let activeKeywords = [];
     let enabledCategories = JSON.parse(localStorage.getItem('enabledCategories')) || null;
+
+    function toggleTheme() {
+      const current = document.body.getAttribute('data-theme');
+      if (current === 'dark') {
+        document.body.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.body.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.setAttribute('data-theme', 'dark');
+    }
 
     function timeAgo(dateString) {
       if (!dateString) return '';
@@ -149,6 +191,13 @@
 
     function resetCategories() {
       enabledCategories = Object.keys(rawNewsData);
+      localStorage.setItem('enabledCategories', JSON.stringify(enabledCategories));
+      renderCategoryChips();
+      renderNews();
+    }
+
+    function clearCategories() {
+      enabledCategories = [];
       localStorage.setItem('enabledCategories', JSON.stringify(enabledCategories));
       renderCategoryChips();
       renderNews();
@@ -223,7 +272,13 @@
     function openModal(category, index) {
       const item = rawNewsData[category][index];
       document.getElementById('modal-title').innerText = item.title;
-      document.getElementById('modal-link').href = item.link;
+      
+      let finalLink = item.link;
+      if (category.includes('해외') || category.includes('글로벌')) {
+        finalLink = `https://translate.google.com/translate?sl=auto&tl=ko&u=${encodeURIComponent(item.link)}`;
+      }
+      
+      document.getElementById('modal-link').href = finalLink;
       
       const detailsList = document.getElementById('modal-details');
       if (item.detail && item.detail.length > 0) {
@@ -233,6 +288,16 @@
       }
       
       document.getElementById('modal-overlay').style.display = 'flex';
+    }
+
+    function copySummary() {
+      const title = document.getElementById('modal-title').innerText;
+      const details = Array.from(document.querySelectorAll('#modal-details li')).map(li => li.innerText).join('\n');
+      const textToCopy = `[기사] ${title}\n\n[요약]\n${details}`;
+      
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        alert('요약 내용이 클립보드에 복사되었습니다!');
+      });
     }
 
     function closeModal(event) {
