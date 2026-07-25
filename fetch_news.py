@@ -11,20 +11,20 @@ import re
 genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
 model = genai.GenerativeModel('gemini-1.5-flash')
 
-# 2. 국내 매경 섹션 + 글로벌 해외 언론사 공식 RSS
+# 2. 국내 매경 섹션 + 추가 카테고리 + 해외 언론사 공식 RSS
 RSS_FEEDS = {
     "1면/종합": [
         "https://www.mk.co.kr/rss/30000001/",
         "https://php.yonhapnews.co.kr/yonhapnewsv1/static/rss/headline.xml"
     ],
     "글로벌/해외이슈": [
-        "https://feeds.a.dj.com/rss/RSSWorldNews.xml",  # 월스트리트저널(WSJ) World
-        "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",  # 뉴욕타임스(NYT) World
-        "https://feeds.bbci.co.uk/news/world/rss.xml"  # BBC World
+        "https://feeds.a.dj.com/rss/RSSWorldNews.xml",
+        "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+        "https://feeds.bbci.co.uk/news/world/rss.xml"
     ],
     "해외 테크/AI": [
-        "https://techcrunch.com/feed/",  # 테크크런치
-        "https://www.theverge.com/rss/index.xml"  # 더버지
+        "https://techcrunch.com/feed/",
+        "https://www.theverge.com/rss/index.xml"
     ],
     "정치/외교": [
         "https://www.mk.co.kr/rss/30200030/",
@@ -36,7 +36,7 @@ RSS_FEEDS = {
     ],
     "금융/증권": [
         "https://www.mk.co.kr/rss/50200011/",
-        "https://feeds.a.dj.com/rss/WSJcomUSBusiness.xml"  # WSJ 금융/비즈니스
+        "https://feeds.a.dj.com/rss/WSJcomUSBusiness.xml"
     ],
     "산업/기업": [
         "https://www.mk.co.kr/rss/50100032/",
@@ -49,6 +49,18 @@ RSS_FEEDS = {
     "IT/과학/Bio": [
         "https://www.mk.co.kr/rss/50700001/",
         "https://php.yonhapnews.co.kr/yonhapnewsv1/static/rss/it.xml"
+    ],
+    "연예/스타": [
+        "https://rss.donga.com/entertainment.xml",
+        "https://www.mk.co.kr/rss/30000023/"
+    ],
+    "문화/예술": [
+        "https://www.mk.co.kr/rss/70000001/",
+        "https://rss.donga.com/culture.xml"
+    ],
+    "교육/입시": [
+        "https://rss.hankyung.com/feed/society.xml",
+        "https://php.yonhapnews.co.kr/yonhapnewsv1/static/rss/society.xml"
     ],
     "사회/오피니언": [
         "https://www.mk.co.kr/rss/30500001/",
@@ -74,7 +86,6 @@ def is_duplicate(new_title, existing_titles, threshold=0.65):
     return False
 
 def get_ai_summaries(title, snippet):
-    """영문/한글 기사를 매끄러운 한국어로 자동 번역 및 요약"""
     try:
         prompt = f"""
         기사 제목: {title}
@@ -142,11 +153,10 @@ def fetch_and_process():
                     pub_date = entry.get('published_parsed', time.localtime())
                     iso_date = time.strftime('%Y-%m-%dT%H:%M:%S', pub_date)
                     
-                    # AI 번역 및 요약 실행
                     kor_title, summary_1, summary_3 = get_ai_summaries(raw_title, getattr(entry, 'summary', ''))
                     
                     processed_articles[category].append({
-                        "title": kor_title,  # 번역된 제목 저장
+                        "title": kor_title,
                         "link": link,
                         "summary": summary_1,
                         "detail": summary_3,
