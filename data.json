@@ -25,20 +25,27 @@
         }
       }
     ],
-    "daily": {
-      "words": [
-        {
-          "word": "Insight",
-          "meaning": "통찰력",
-          "example": "Valuable insight."
+    "daily_sets": [
+      {
+        "words": [
+          {
+            "word": "Resilience",
+            "meaning": "회복력",
+            "example": "Resilience is key."
+          },
+          {
+            "word": "Insight",
+            "meaning": "통찰력",
+            "example": "Valuable insight."
+          }
+        ],
+        "quote": {
+          "en": "Stay hungry, stay foolish.",
+          "ko": "늘 갈망하고 우직하게 나아가라.",
+          "author": "Steve Jobs"
         }
-      ],
-      "quote": {
-        "en": "Stay hungry, stay foolish.",
-        "ko": "늘 갈망하고 우직하게 나아가라.",
-        "author": "Steve Jobs"
       }
-    }
+    ]
   },
   "articles": {
     "1면/종합": [
