@@ -31,9 +31,9 @@
     
     .learning-card { background: linear-gradient(135deg, #2b5876, #4e4376) !important; color: #ffffff !important; }
     .learning-card .card-header { border-bottom: 1px solid rgba(255,255,255,0.2); }
-    .words-grid { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 10px; }
-    @media(min-width: 480px) { .words-grid { grid-template-columns: 1fr 1fr; } }
-    .word-item { background: rgba(255,255,255,0.1); padding: 8px 12px; border-radius: 8px; font-size: 0.82rem; }
+    .words-grid { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 8px; }
+    @media(min-width: 480px) { .words-grid { grid-template-columns: 1fr; } }
+    .word-item { background: rgba(255,255,255,0.1); padding: 8px 12px; border-radius: 8px; font-size: 0.82rem; line-height: 1.4; }
     
     .chip-container { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 15px; }
     .chip { padding: 6px 12px; border-radius: 20px; font-size: 0.78rem; border: 1px solid #ddd; background: var(--card); cursor: pointer; color: var(--sub); font-weight: 600; }
@@ -47,6 +47,8 @@
     .news-item:hover .news-title-text { color: var(--accent); }
     .news-summary-text { font-size: 0.8rem; color: var(--sub); line-height: 1.4; }
     
+    .speaker-btn { background: rgba(255,255,255,0.2); border: none; color: white; padding: 3px 8px; border-radius: 10px; font-size: 0.75rem; cursor: pointer; margin-left: 6px; font-weight: bold; }
+    .speaker-btn:hover { background: rgba(255,255,255,0.3); }
     .search-popup { display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #222222; color: #ffffff; padding: 10px 20px; border-radius: 30px; z-index: 2000; box-shadow: 0 4px 15px rgba(0,0,0,0.3); font-size: 0.82rem; align-items: center; gap: 10px; }
     .search-popup button { border: none; background: var(--accent); color: #fff; border-radius: 15px; padding: 4px 12px; font-weight: bold; cursor: pointer; }
   </style>
@@ -59,20 +61,32 @@
     </div>
 
     <div class="card learning-card">
-      <div class="card-header">
-        <span onclick="toggleSection('learning-body')"><i class="fa-solid fa-brain"></i> ✨ 오늘의 명언 & 핵심 영단어 <span id="learning-body-btn">▲</span></span>
+      <div class="card-header" onclick="toggleSection('learning-body')">
+        <span><i class="fa-solid fa-brain"></i> ✨ 오늘의 명언 & 3초 입트기 영어 <span id="learning-body-btn">▲</span></span>
         <button class="btn-refresh" onclick="refreshDaily(event)" style="border-color:#fff; color:#fff;"><i class="fa-solid fa-arrows-rotate"></i> 다른 내용 보기</button>
       </div>
       <div id="learning-body" style="padding-top:10px;">
-        <div id="quote-display" style="font-style:italic; font-size:0.88rem; margin-bottom:12px; line-height:1.4; color:#fff;"></div>
-        <div style="font-size:0.8rem; font-weight:bold; color:#ffe066; margin-top:8px;">📚 실용 비즈니스 영단어</div>
+        <div style="font-size:0.8rem; font-weight:bold; color:#ffe066; margin-bottom:6px;">🎧 1단계: 3초 섀도잉 (원어민 발음 귀 열기)</div>
+        <div style="font-style:italic; font-size:0.88rem; margin-bottom:12px; line-height:1.4; color:#fff;">
+          <span id="quote-text"></span>
+          <button class="speaker-btn" onclick="playTTS(event)"><i class="fa-solid fa-volume-high"></i> 발음 듣기</button>
+          <br><span id="quote-ko" style="font-style:normal; font-size:0.8rem; opacity:0.85;"></span>
+        </div>
+        
+        <div style="font-size:0.8rem; font-weight:bold; color:#ffe066; margin-top:12px;">🗣️ 2단계: 오늘의 만능 회화 패턴 [<span id="pattern-title"></span>]</div>
         <div class="words-grid" id="words-display"></div>
+        
+        <div style="font-size:0.8rem; font-weight:bold; color:#ffe066; margin-top:14px;">💬 3단계: 오늘의 3초 혼잣말 질문</div>
+        <div style="background:rgba(255,255,255,0.1); padding:10px; border-radius:8px; font-size:0.82rem; margin-top:4px;">
+          <b style="color:#ffe066;">Q: </b><span id="quiz-q-text"></span><br>
+          <span id="quiz-hint-text" style="font-size:0.75rem; opacity:0.85;"></span>
+        </div>
       </div>
     </div>
 
     <div class="card" style="border: 2px solid var(--accent);">
-      <div class="card-header">
-        <span onclick="toggleSection('finance-body')"><i class="fa-solid fa-graduation-cap"></i> ✏️ 3분 실전 경제 교실 <span id="finance-body-btn">▲</span></span>
+      <div class="card-header" onclick="toggleSection('finance-body')">
+        <span><i class="fa-solid fa-graduation-cap"></i> ✏️ 3분 실전 경제 교실 <span id="finance-body-btn">▲</span></span>
         <button class="btn-refresh" onclick="refreshFinance(event)"><i class="fa-solid fa-arrows-rotate"></i> 다른 내용 보기</button>
       </div>
       <div id="finance-body" style="padding-top:10px;">
@@ -85,8 +99,8 @@
     <div class="chip-container" id="filter-chips"></div>
 
     <div class="card" style="border: 2px solid #28a745;">
-      <div class="card-header">
-        <span onclick="toggleSection('news-body')"><i class="fa-solid fa-newspaper"></i> 📰 신문 기사 보기 <span id="news-body-btn">▲</span></span>
+      <div class="card-header" onclick="toggleSection('news-body')">
+        <span><i class="fa-solid fa-newspaper"></i> 📰 신문 기사 보기 <span id="news-body-btn">▲</span></span>
         <button class="btn-refresh" onclick="refreshNews(event)" style="border-color:#28a745; color:#28a745;"><i class="fa-solid fa-arrows-rotate"></i> 기사 새로고침</button>
       </div>
       <div id="news-body" style="padding-top:10px;">
@@ -106,6 +120,7 @@
     let curFinanceIdx = 0;
     let curDailyIdx = 0;
     let selTxt = "";
+    let currentQuoteEN = "";
 
     async function init() {
       try {
@@ -124,149 +139,4 @@
     }
 
     function toggleSection(id) {
-      const el = document.getElementById(id);
-      const btn = document.getElementById(id + '-btn');
-      if (el.style.display === 'none') {
-        el.style.display = 'block';
-        btn.innerText = '▲';
-      } else {
-        el.style.display = 'none';
-        btn.innerText = '▼';
-      }
-    }
-
-    // 명언 & 영단어 새로고침 기능
-    function refreshDaily(e) {
-      if (e) e.stopPropagation();
-      if (!db.learning) return;
-      
-      const sets = db.learning.daily_sets || (db.learning.daily ? [db.learning.daily] : []);
-      if (sets.length === 0) return;
-      
-      const d = sets[curDailyIdx];
-      document.getElementById('quote-display').innerHTML = `"${d.quote.en}"<br><span style="font-style:normal; font-size:0.8rem; opacity:0.85;">(${d.quote.ko}) - ${d.quote.author}</span>`;
-      document.getElementById('words-display').innerHTML = d.words.map(w => `
-        <div class="word-item">
-          <strong style="color:#ffe066;">${w.word}</strong> : ${w.meaning}<br>
-          <span style="font-size:0.75rem; opacity:0.8;">예) ${w.example}</span>
-        </div>
-      `).join('');
-      
-      curDailyIdx = (curDailyIdx + 1) % sets.length;
-    }
-
-    function formatTerm(term) {
-      const enRegex = /([A-Z]{2,})/g;
-      const match = term.match(enRegex);
-      if (match) {
-        const token = match[0];
-        const fullNames = {
-          "PER": "Price Earnings Ratio",
-          "PBR": "Price Book-value Ratio",
-          "ROE": "Return On Equity",
-          "ROA": "Return On Assets",
-          "EPS": "Earnings Per Share",
-          "FOMC": "Federal Open Market Committee",
-          "CPI": "Consumer Price Index",
-          "GDP": "Gross Domestic Product"
-        };
-        if (fullNames[token]) {
-          return term.replace(token, `${token} <span style="font-size:0.75rem; font-weight:normal; opacity:0.75;">(${fullNames[token]})</span>`);
-        }
-      }
-      return term;
-    }
-
-    function refreshFinance(e) {
-      if (e) e.stopPropagation();
-      if (!db.learning || !db.learning.finance_sets || db.learning.finance_sets.length === 0) return;
-      
-      const sets = db.learning.finance_sets;
-      const f = sets[curFinanceIdx];
-      const formattedTerm = formatTerm(f.stock.term);
-      
-      document.getElementById('stock-box').innerHTML = `<b>📈 오늘의 실전 주식 용어</b><br><b>• 용어:</b> ${formattedTerm}<br><b>• 3초 개념:</b> ${f.stock.concept}<br><b>• 쉽게 말해:</b> ${f.stock.analogy}<br><b>• 신호등 판단:</b> ${f.stock.signal}<br><b>📍 MTS 위치:</b> <span style="color:var(--accent); font-weight:bold;">${f.stock.mts}</span>`;
-      document.getElementById('economy-box').innerHTML = `<b>💡 오늘의 생활 경제 상식</b><br><b>• 주제:</b> ${f.economy.title}<br><b>• 핵심:</b> ${f.economy.concept}<br><b>• 삶의 영향:</b> ${f.economy.impact}`;
-      document.getElementById('quiz-box').innerHTML = `<b>🎯 3초 실전 퀴즈</b><br><div style="margin:5px 0;">Q. ${f.quiz.q}</div>` + f.quiz.opts.map((o, i) => `
-        <button onclick="alert('${i === f.quiz.ans ? '🎉 정답입니다!\n\n💡 해설: ' + f.quiz.exp : '❌ 오답입니다. 다시 한번 읽어보세요!'}')" style="width:100%; text-align:left; margin-top:6px; padding:8px; border:1px solid #28a745; background:var(--card); color:var(--main); border-radius:6px; cursor:pointer; font-size:0.8rem;">${i + 1}. ${o}</button>
-      `).join('');
-      
-      curFinanceIdx = (curFinanceIdx + 1) % sets.length;
-    }
-
-    function refreshNews(e) {
-      if (e) e.stopPropagation();
-      renderNews();
-    }
-
-    function renderNews() {
-      const container = document.getElementById('news-container');
-      container.innerHTML = '';
-      if (!db.articles) return;
-      
-      enabledCats.forEach(cat => {
-        const articles = db.articles[cat];
-        if (!articles || articles.length === 0) return;
-        
-        const shuffled = [...articles].sort(() => Math.random() - 0.5).slice(0, 3);
-        const groupDiv = document.createElement('div');
-        groupDiv.className = 'news-group';
-        
-        let groupHtml = `<div class="news-group-title">${cat}</div>`;
-        shuffled.forEach(a => {
-          // 해외/국내 구분 없이 원문 링크로 직접 깔끔하게 연결
-          groupHtml += `
-            <a class="news-item" href="${a.link}" target="_blank" rel="noopener noreferrer">
-              <div class="news-title-text">${a.title}</div>
-              <div class="news-summary-text">${a.summary}</div>
-            </a>
-          `;
-        });
-        
-        groupDiv.innerHTML = groupHtml;
-        container.appendChild(groupDiv);
-      });
-    }
-
-    function renderChips() {
-      const container = document.getElementById('filter-chips');
-      container.innerHTML = '';
-      if (!db.articles) return;
-      
-      Object.keys(db.articles).forEach(cat => {
-        const chip = document.createElement('div');
-        chip.className = 'chip active';
-        chip.innerText = cat;
-        chip.onclick = () => {
-          chip.classList.toggle('active');
-          enabledCats = Array.from(document.querySelectorAll('.chip.active')).map(c => c.innerText);
-          renderNews();
-        };
-        container.appendChild(chip);
-      });
-    }
-
-    document.addEventListener('selectionchange', () => {
-      const selection = window.getSelection();
-      const text = selection.toString().trim();
-      const popup = document.getElementById('search-popup');
-      
-      if (text && text.length > 0 && text.length < 15) {
-        selTxt = text;
-        document.getElementById('sel-word').innerText = text;
-        popup.style.display = 'flex';
-      } else if (!text) {
-        popup.style.display = 'none';
-      }
-    });
-
-    function goDict() {
-      if (selTxt) {
-        window.open(`https://search.naver.com/search.naver?query=${encodeURIComponent(selTxt + ' 뜻')}`, '_blank');
-      }
-    }
-
-    init();
-  </script>
-</body>
-</html>
+      const el = document.getElementById
