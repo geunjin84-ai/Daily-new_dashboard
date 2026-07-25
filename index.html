@@ -29,7 +29,6 @@
     .btn-refresh { background: none; border: 1px solid var(--accent); color: var(--accent); padding: 4px 10px; border-radius: 15px; font-size: 0.75rem; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; }
     .box { background: rgba(0,123,255,0.04); padding: 10px; border-radius: 8px; font-size: 0.82rem; margin-bottom: 10px; line-height: 1.5; }
     
-    /* 영단어 명언 카드 전용 고급스러운 그라데이션 */
     .learning-card { background: linear-gradient(135deg, #2b5876, #4e4376) !important; color: #ffffff !important; }
     .learning-card .card-header { border-bottom: 1px solid rgba(255,255,255,0.2); }
     .words-grid { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 10px; }
@@ -60,9 +59,9 @@
     </div>
 
     <div class="card learning-card">
-      <div class="card-header" onclick="toggleSection('learning-body')">
-        <span><i class="fa-solid fa-brain"></i> ✨ 오늘의 명언 & 핵심 영단어</span>
-        <span id="learning-body-btn">▲ 접기</span>
+      <div class="card-header">
+        <span onclick="toggleSection('learning-body')"><i class="fa-solid fa-brain"></i> ✨ 오늘의 명언 & 핵심 영단어 <span id="learning-body-btn">▲</span></span>
+        <button class="btn-refresh" onclick="refreshDaily(event)" style="border-color:#fff; color:#fff;"><i class="fa-solid fa-arrows-rotate"></i> 다른 내용 보기</button>
       </div>
       <div id="learning-body" style="padding-top:10px;">
         <div id="quote-display" style="font-style:italic; font-size:0.88rem; margin-bottom:12px; line-height:1.4; color:#fff;"></div>
@@ -105,6 +104,7 @@
     let db = {};
     let enabledCats = [];
     let curFinanceIdx = 0;
+    let curDailyIdx = 0;
     let selTxt = "";
 
     async function init() {
@@ -113,7 +113,7 @@
         db = await res.json();
         if (db.articles) {
           enabledCats = Object.keys(db.articles);
-          renderLearning();
+          refreshDaily();
           refreshFinance();
           renderChips();
           renderNews();
@@ -128,39 +128,65 @@
       const btn = document.getElementById(id + '-btn');
       if (el.style.display === 'none') {
         el.style.display = 'block';
-        btn.innerText = '▲ 접기';
+        btn.innerText = '▲';
       } else {
         el.style.display = 'none';
-        btn.innerText = '▼ 펴기';
+        btn.innerText = '▼';
       }
     }
 
-    function renderLearning() {
-      if (!db.learning || !db.learning.daily) return;
-      const d = db.learning.daily;
+    // 명언 & 영단어 새로고침 기능
+    function refreshDaily(e) {
+      if (e) e.stopPropagation();
+      if (!db.learning) return;
       
-      // 명언 연동
+      const sets = db.learning.daily_sets || (db.learning.daily ? [db.learning.daily] : []);
+      if (sets.length === 0) return;
+      
+      const d = sets[curDailyIdx];
       document.getElementById('quote-display').innerHTML = `"${d.quote.en}"<br><span style="font-style:normal; font-size:0.8rem; opacity:0.85;">(${d.quote.ko}) - ${d.quote.author}</span>`;
-      
-      // 영단어 연동
       document.getElementById('words-display').innerHTML = d.words.map(w => `
         <div class="word-item">
           <strong style="color:#ffe066;">${w.word}</strong> : ${w.meaning}<br>
           <span style="font-size:0.75rem; opacity:0.8;">예) ${w.example}</span>
         </div>
       `).join('');
+      
+      curDailyIdx = (curDailyIdx + 1) % sets.length;
+    }
+
+    function formatTerm(term) {
+      const enRegex = /([A-Z]{2,})/g;
+      const match = term.match(enRegex);
+      if (match) {
+        const token = match[0];
+        const fullNames = {
+          "PER": "Price Earnings Ratio",
+          "PBR": "Price Book-value Ratio",
+          "ROE": "Return On Equity",
+          "ROA": "Return On Assets",
+          "EPS": "Earnings Per Share",
+          "FOMC": "Federal Open Market Committee",
+          "CPI": "Consumer Price Index",
+          "GDP": "Gross Domestic Product"
+        };
+        if (fullNames[token]) {
+          return term.replace(token, `${token} <span style="font-size:0.75rem; font-weight:normal; opacity:0.75;">(${fullNames[token]})</span>`);
+        }
+      }
+      return term;
     }
 
     function refreshFinance(e) {
       if (e) e.stopPropagation();
-      if (!db.learning || !db.learning.finance_sets) return;
+      if (!db.learning || !db.learning.finance_sets || db.learning.finance_sets.length === 0) return;
       
       const sets = db.learning.finance_sets;
       const f = sets[curFinanceIdx];
+      const formattedTerm = formatTerm(f.stock.term);
       
-      document.getElementById('stock-box').innerHTML = `<b>📈 오늘의 실전 주식 용어</b><br><b>• 용어:</b> ${f.stock.term}<br><b>• 3초 개념:</b> ${f.stock.concept}<br><b>• 쉽게 말해:</b> ${f.stock.analogy}<br><b>• 신호등 판단:</b> ${f.stock.signal}<br><b>📍 MTS 위치:</b> <span style="color:var(--accent); font-weight:bold;">${f.stock.mts}</span>`;
+      document.getElementById('stock-box').innerHTML = `<b>📈 오늘의 실전 주식 용어</b><br><b>• 용어:</b> ${formattedTerm}<br><b>• 3초 개념:</b> ${f.stock.concept}<br><b>• 쉽게 말해:</b> ${f.stock.analogy}<br><b>• 신호등 판단:</b> ${f.stock.signal}<br><b>📍 MTS 위치:</b> <span style="color:var(--accent); font-weight:bold;">${f.stock.mts}</span>`;
       document.getElementById('economy-box').innerHTML = `<b>💡 오늘의 생활 경제 상식</b><br><b>• 주제:</b> ${f.economy.title}<br><b>• 핵심:</b> ${f.economy.concept}<br><b>• 삶의 영향:</b> ${f.economy.impact}`;
-      
       document.getElementById('quiz-box').innerHTML = `<b>🎯 3초 실전 퀴즈</b><br><div style="margin:5px 0;">Q. ${f.quiz.q}</div>` + f.quiz.opts.map((o, i) => `
         <button onclick="alert('${i === f.quiz.ans ? '🎉 정답입니다!\n\n💡 해설: ' + f.quiz.exp : '❌ 오답입니다. 다시 한번 읽어보세요!'}')" style="width:100%; text-align:left; margin-top:6px; padding:8px; border:1px solid #28a745; background:var(--card); color:var(--main); border-radius:6px; cursor:pointer; font-size:0.8rem;">${i + 1}. ${o}</button>
       `).join('');
@@ -176,29 +202,21 @@
     function renderNews() {
       const container = document.getElementById('news-container');
       container.innerHTML = '';
-      
       if (!db.articles) return;
       
       enabledCats.forEach(cat => {
         const articles = db.articles[cat];
         if (!articles || articles.length === 0) return;
         
-        // 🔄 새로고침 시 무작위로 섞어서 상위 3개 추출 (중복 노출 방지)
         const shuffled = [...articles].sort(() => Math.random() - 0.5).slice(0, 3);
-        
         const groupDiv = document.createElement('div');
         groupDiv.className = 'news-group';
         
         let groupHtml = `<div class="news-group-title">${cat}</div>`;
-        
         shuffled.forEach(a => {
-          // 해외 소식인 경우 구글 번역 링크 래핑, 국내 소식은 원문 직접 링크
-          const finalLink = cat.includes('해외') || cat.includes('글로벌') 
-            ? `https://translate.google.com/translate?u=${encodeURIComponent(a.link)}` 
-            : a.link;
-            
+          // 해외/국내 구분 없이 원문 링크로 직접 깔끔하게 연결
           groupHtml += `
-            <a class="news-item" href="${finalLink}" target="_blank" rel="noopener noreferrer">
+            <a class="news-item" href="${a.link}" target="_blank" rel="noopener noreferrer">
               <div class="news-title-text">${a.title}</div>
               <div class="news-summary-text">${a.summary}</div>
             </a>
@@ -228,7 +246,6 @@
       });
     }
 
-    // 드래그 선택 단어 감지
     document.addEventListener('selectionchange', () => {
       const selection = window.getSelection();
       const text = selection.toString().trim();
