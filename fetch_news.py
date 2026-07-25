@@ -38,11 +38,10 @@ def is_duplicate(new_title, existing_titles, threshold=0.65):
     return False
 
 def generate_multi_learning():
-    """새로고침 기능을 위해 5세트의 학습 데이터 생성"""
+    """새로고침 기능을 위해 금융 5세트 + 명언/영단어 5세트 데이터 생성"""
     try:
         prompt = """
-        초보자를 위한 금융/주식 학습 세트 5개를 생성해줘. 각 세트는 주식용어(MTS위치 포함), 생활경제, 퀴즈를 포함해야 해.
-        영단어 3개와 명언 1개도 별도로 1세트 포함해줘.
+        초보자를 위한 금융/주식 학습 세트 5개와 일상 명언&영단어 세트 5개를 생성해줘.
         
         [출력 JSON 양식]:
         {
@@ -53,11 +52,17 @@ def generate_multi_learning():
               "quiz": {"q": "PER이 낮다는 것은 보통 무슨 의미일까요?", "opts": ["이익 대비 주가가 저평가되어 있다", "회사가 위험하다"], "ans": 0, "exp": "이익 대비 주가가 낮은 상태입니다."}
             }
           ],
-          "daily": {
-            "words": [{"word": "Resilience", "meaning": "회복력", "example": "Resilience is key."}],
-            "quote": {"en": "The only way to do great work is to love what you do.", "ko": "위대한 일을 하는 유일한 방법은 당신이 하는 일을 사랑하는 것이다.", "author": "Steve Jobs"}
-          }
+          "daily_sets": [
+            {
+              "words": [
+                {"word": "Resilience", "meaning": "회복력, 탄력", "example": "Resilience is key to success."},
+                {"word": "Insight", "meaning": "통찰력, 안목", "example": "Gain deep market insight."}
+              ],
+              "quote": {"en": "The only way to do great work is to love what you do.", "ko": "위대한 일을 하는 유일한 방법은 당신이 하는 일을 사랑하는 것이다.", "author": "Steve Jobs"}
+            }
+          ]
         }
+        finance_sets는 5개, daily_sets도 서로 다른 명언과 영단어 조합으로 5개를 만들어줘.
         """
         response = model.generate_content(prompt)
         json_match = re.search(r'\{.*\}', response.text, re.DOTALL)
@@ -74,10 +79,15 @@ def generate_multi_learning():
                 "quiz": {"q": "PER이 낮으면?", "opts": ["저평가", "고평가"], "ans": 0, "exp": "이익 대비 주가가 싼 상태입니다."}
             }
         ],
-        "daily": {
-            "words": [{"word": "Insight", "meaning": "통찰력", "example": "Valuable insight."}],
-            "quote": {"en": "Stay hungry, stay foolish.", "ko": "늘 갈망하고 우직하게 나아가라.", "author": "Steve Jobs"}
-        }
+        "daily_sets": [
+            {
+                "words": [
+                    {"word": "Resilience", "meaning": "회복력", "example": "Resilience is key."},
+                    {"word": "Insight", "meaning": "통찰력", "example": "Valuable insight."}
+                ],
+                "quote": {"en": "Stay hungry, stay foolish.", "ko": "늘 갈망하고 우직하게 나아가라.", "author": "Steve Jobs"}
+            }
+        ]
     }
 
 def get_ai_summaries(title, snippet):
