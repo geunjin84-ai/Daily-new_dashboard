@@ -53,7 +53,7 @@
     .speaker-btn { background: var(--purple); border: none; color: white; padding: 3px 8px; border-radius: 10px; font-size: 0.75rem; cursor: pointer; margin-left: 6px; font-weight: bold; }
     .speaker-btn:hover { opacity: 0.85; }
     
-    .native-ans-box { background: rgba(111,66,193,0.04); padding: 8px; border-radius: 6px; margin-top: 6px; font-size: 0.8rem; }
+    .native-ans-box { background: rgba(111,66,193,0.04); padding: 10px; border-radius: 8px; margin-top: 8px; font-size: 0.82rem; border-left: 3px solid var(--purple); }
   </style>
 </head>
 <body>
@@ -175,31 +175,31 @@
         
         document.getElementById('pattern-title').innerText = d.pattern || '';
         
-        // 2단계: 5개 예시 출력
+        // 2단계: 5개 예시 모두 출력
         if (d.words && Array.isArray(d.words)) {
-          document.getElementById('words-display').innerHTML = d.words.slice(0, 5).map(w => `
+          document.getElementById('words-display').innerHTML = d.words.map(w => `
             <div class="word-item">
               • <b>${w.word}</b> ➔ <b>${w.example}</b> (${w.meaning})
             </div>
           `).join('');
         }
         
-        // 3단계: 오늘의 문장 2개 + 현지인 답변 2개씩 출력
+        // 3단계: 오늘의 문장 2개 및 현지인 답변 2개씩 출력
         if (d.questions && Array.isArray(d.questions)) {
-          document.getElementById('questions-display').innerHTML = d.questions.slice(0, 2).map((qObj, idx) => `
+          document.getElementById('questions-display').innerHTML = d.questions.map((qObj, idx) => `
             <div class="native-ans-box">
               <b style="color:var(--purple);">Q${idx+1}: ${qObj.q}</b>
-              <div style="margin-top:4px; padding-left:8px; border-left:2px solid var(--purple);">
-                ${qObj.answers ? qObj.answers.map(ans => `<div style="font-size:0.78rem; margin-top:2px;">🗣️ ${ans}</div>`).join('') : ''}
+              <div style="margin-top:4px; padding-left:6px;">
+                ${qObj.answers ? qObj.answers.map(ans => `<div style="font-size:0.8rem; margin-top:3px; color:var(--main);">🗣️ ${ans}</div>`).join('') : ''}
               </div>
             </div>
           `).join('');
         } else if (d.question) {
-          // 단일 구버전 데이터 호환
+          // 구버전 단일 질문 호환 처리
           document.getElementById('questions-display').innerHTML = `
             <div class="native-ans-box">
               <b style="color:var(--purple);">Q: ${d.question.q}</b><br>
-              <span style="font-size:0.75rem;">💡 ${d.question.hint}</span>
+              <span style="font-size:0.8rem;">💡 ${d.question.hint}</span>
             </div>
           `;
         }
