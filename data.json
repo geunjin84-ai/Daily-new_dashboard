@@ -135,6 +135,16 @@
             "word": "The bill (계산서)",
             "example": "Can I get the bill?",
             "meaning": "계산서 좀 주시겠어요?"
+          },
+          {
+            "word": "A menu (메뉴판)",
+            "example": "Can I get a menu?",
+            "meaning": "메뉴판 좀 주시겠어요?"
+          },
+          {
+            "word": "Some ice (얼음)",
+            "example": "Can I get some ice?",
+            "meaning": "얼음 좀 주시겠어요?"
           }
         ],
         "quote": {
@@ -142,10 +152,22 @@
           "ko": "늘 갈망하고 우직하게 나아가라.",
           "author": "Steve Jobs"
         },
-        "question": {
-          "q": "How are you today?",
-          "hint": "I am good! 또는 I am tired. 라고 대답해보세요."
-        }
+        "questions": [
+          {
+            "q": "How are you doing today?",
+            "answers": [
+              "Not too bad, just chilling. (그럭저럭 괜찮아, 쉬는 중이야)",
+              "Pretty good! Can't complain. (완전 좋아! 더할 나위 없지)"
+            ]
+          },
+          {
+            "q": "What are you up to this weekend?",
+            "answers": [
+              "Nothing much, just taking it easy. (별거 없어, 편히 쉬려고)",
+              "I'm hanging out with my family! (가족들이랑 노는 중이야!)"
+            ]
+          }
+        ]
       },
       {
         "pattern": "I want to ~ (~하고 싶어요)",
@@ -164,6 +186,16 @@
             "word": "Buy this (이걸 사다)",
             "example": "I want to buy this.",
             "meaning": "이것을 사고 싶어요."
+          },
+          {
+            "word": "Take a rest (쉬다)",
+            "example": "I want to take a rest.",
+            "meaning": "좀 쉬고 싶어요."
+          },
+          {
+            "word": "Learn English (영어 공부하다)",
+            "example": "I want to learn English.",
+            "meaning": "영어 공부하고 싶어요."
           }
         ],
         "quote": {
@@ -171,15 +203,60 @@
           "ko": "생각을 바꾸면 세상이 바뀐다.",
           "author": "Norman Vincent Peale"
         },
-        "question": {
-          "q": "What do you want to eat today?",
-          "hint": "I want to eat pizza! 라고 문장으로 말해보세요."
-        }
+        "questions": [
+          {
+            "q": "What do you feel like eating today?",
+            "answers": [
+              "I'm in the mood for something spicy! (오늘 매콤한 게 땡기네!)",
+              "A burger sounds good to me. (버거나 하나 먹을까 해)"
+            ]
+          },
+          {
+            "q": "Where do you want to travel next?",
+            "answers": [
+              "I'd love to go somewhere sunny! (햇살 좋은 따뜻한 곳으로 가고 싶어!)",
+              "Anywhere with a nice beach! (멋진 해변이 있는 곳이라면 어디든!)"
+            ]
+          }
+        ]
       }
     ]
   },
   "articles": {
     "1면/종합": [
+      {
+        "title": "일주일 새 65% 급등한 또 하나의 ‘SK닉스’…KKR이 탐낸 ‘AI 전력 플랫폼’ [이주의 Bull기둥]",
+        "link": "https://www.mk.co.kr/news/stock/12107497",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-26T00:04:19"
+      },
+      {
+        "title": "[영상] “야 나와봐”…시비 걸던 벤츠, 레이서 187cm 남성 나오니 줄행랑",
+        "link": "https://www.mk.co.kr/news/society/12107494",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T23:48:22"
+      },
+      {
+        "title": "“그동안 데이트 비용 안 주면 고소”…헤어지잔 연인 스토킹 40대 남성, 결국",
+        "link": "https://www.mk.co.kr/news/society/12107487",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T23:13:59"
+      },
       {
         "title": "“민주당, 달라진 게 없다”…청년 국회의원이 바라본 ‘2030이 떠난 이유’ [요즘여의섬]",
         "link": "https://www.mk.co.kr/news/society/12107483",
@@ -214,39 +291,6 @@
         "date": "2026-07-25T22:38:25"
       },
       {
-        "title": "“건강이 부의 상징, 마라톤에 100만명 몰려”…룰루레몬·온이 중국서 웃는 이유",
-        "link": "https://www.mk.co.kr/news/world/12107474",
-        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
-        "detail": [
-          "-",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T22:12:52"
-      },
-      {
-        "title": "한국선 191만원, 미국에서는 290만원…똑같은 하이닉스인데 가격 차이 왜?",
-        "link": "https://www.mk.co.kr/news/stock/12107470",
-        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
-        "detail": [
-          "-",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T21:12:05"
-      },
-      {
-        "title": "“원자재 투자, 아무나 하면 큰일나요”...가격 보다 중요한 한 가지 [Book]",
-        "link": "https://www.mk.co.kr/news/culture/12107465",
-        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
-        "detail": [
-          "-",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T20:51:12"
-      },
-      {
         "title": "‘정이한 자작극’ 트레이너의 연인은 개혁신당 부산시당 여성위원장",
         "link": "https://www.chosun.com/politics/2026/07/26/XX6UYNQIA5DY5J3EHVUVQQECAQ/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
@@ -269,17 +313,6 @@
         "date": "2026-07-25T21:24:00"
       },
       {
-        "title": "오세훈 1심 유죄 후폭풍… ‘장·한 전쟁’ 재점화 조짐",
-        "link": "https://www.chosun.com/politics/2026/07/26/FKCMWQ7CENEN5OTDAGKZBRX5KI/",
-        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
-        "detail": [
-          "-",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T18:00:00"
-      },
-      {
         "title": "일본 사우나의 여성 ‘투명인간’",
         "link": "https://www.chosun.com/politics/diplomacy-defense/2026/07/26/X6WA3RV2UZA7JP5FD5UJMEWD7Y/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
@@ -289,6 +322,28 @@
           "-"
         ],
         "date": "2026-07-25T20:30:00"
+      },
+      {
+        "title": "李대통령 “한미, 안보동맹 넘어 ‘스타트업 동맹’으로 지평 넓혀야”",
+        "link": "https://www.chosun.com/politics/politics_general/2026/07/26/WWPWBUP5IRC6RCCA7WWSY32URU/",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T23:14:35"
+      },
+      {
+        "title": "오세훈 1심 유죄 후폭풍… ‘장·한 전쟁’ 재점화 조짐",
+        "link": "https://www.chosun.com/politics/2026/07/26/FKCMWQ7CENEN5OTDAGKZBRX5KI/",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T18:00:00"
       },
       {
         "title": "보완수사권 vs 부정선거론 사안 달라도 묘하게 닮았다",
@@ -302,81 +357,70 @@
         "date": "2026-07-25T20:30:00"
       },
       {
-        "title": "李 “주식 약간 조정 중” 젠슨 황 “다시 오를겁니다”",
-        "link": "https://www.chosun.com/politics/politics_general/2026/07/25/W7W377UKTNG6ZFNPCNPWSVA6QU/",
+        "title": "경찰, 경산 아파트 방화 ‘보복 범죄’ 가능성 수사",
+        "link": "https://www.khan.co.kr/article/202607260925001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-25T03:11:57"
+        "date": "2026-07-26T00:26:42"
       },
       {
-        "title": "모발 손상 줄이려면? 자연 건조보다 중요한 것은 말리는 방법",
-        "link": "https://www.khan.co.kr/article/202607260800021/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
+        "title": "세계유산센터장 “종묘는 소중한 보석…개발 사업 세계유산영향평가 받아야”",
+        "link": "https://www.khan.co.kr/article/202607260900031/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-25T23:02:03"
+        "date": "2026-07-26T00:26:42"
       },
       {
-        "title": "잊힌 산나물 ‘멸가치’, 건강 자원으로 다시 주목해야 하는 이유",
-        "link": "https://www.khan.co.kr/article/202607260800011/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
+        "title": "파리 아파트도, 프라하 게스트하우스도…유럽엔 왜 방충망이 없을까?",
+        "link": "https://www.khan.co.kr/article/202607260900021/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-25T23:02:03"
+        "date": "2026-07-26T00:26:42"
       },
       {
-        "title": "[영상]연료 다 쓰면 무조건 버려지던 위성…‘70년 낭비’ 바꿀 기술 떴다",
-        "link": "https://www.khan.co.kr/article/202607260800001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
+        "title": "테러에도, 홍수에도 여기 들어가면 산다…‘이동식 생존 캡슐’ 등장",
+        "link": "https://www.khan.co.kr/article/202607260900011/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-25T23:02:03"
+        "date": "2026-07-26T00:26:42"
       },
       {
-        "title": "“대부분 감기로 착각”···본인도 모르는 ‘은밀한 열사병’ 신호",
-        "link": "https://www.khan.co.kr/article/202607260700001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
+        "title": "[영상]장난감이 아닙니다, 카메라입니다…‘달리는 꼬마 로봇’ 정체 들여다봤더니",
+        "link": "https://www.khan.co.kr/article/202607260900001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-25T23:02:03"
+        "date": "2026-07-26T00:26:42"
       },
       {
-        "title": "서울 주택가에서 또래 여고생에게 흉기 휘두른 10대 남성 구속",
-        "link": "https://www.khan.co.kr/article/202607252139001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
+        "title": "강릉중앙고 영등포공고 꺾고 금배 유스컵 4강 진출[현장 화보]",
+        "link": "https://www.khan.co.kr/article/202607260806001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-25T23:02:03"
-      },
-      {
-        "title": "유럽연합 “한국은 러시아 LNG 수입해도 제재 면제”···이 대통령 “경제에 큰 도움”",
-        "link": "https://www.khan.co.kr/article/202607252109001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
-        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
-        "detail": [
-          "-",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T23:02:03"
+        "date": "2026-07-26T00:26:42"
       }
     ],
     "신문 사설": [
@@ -904,6 +948,28 @@
         "date": "2026-07-25T01:55:50"
       },
       {
+        "title": "롯데하이마트, 개통 돕는 자체 알뜰폰 요금제 출시",
+        "link": "https://www.sedaily.com/article/20071847",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T23:53:33"
+      },
+      {
+        "title": "글로벌 흥행에 해외 브랜드도 ‘K뷰티’ 자처…브랜드 훼손 괜찮나 [김연하의 킬링이슈]",
+        "link": "https://www.sedaily.com/article/20071557",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T23:40:05"
+      },
+      {
         "title": "삼성 “AI 글라스, 메타보다 가볍고 편할 것…특허 200개로 프리미엄 공략”",
         "link": "https://www.sedaily.com/article/20071837",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
@@ -946,31 +1012,20 @@
           "-"
         ],
         "date": "2026-07-25T22:00:05"
-      },
-      {
-        "title": "美 금리 동결할 듯...SK하이닉스 2분기 실적 관심 [한동훈의 위클리전망대]",
-        "link": "https://www.sedaily.com/article/20071832",
-        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
-        "detail": [
-          "-",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T22:00:05"
-      },
-      {
-        "title": "삼성, 브로드컴 2000억불 ‘턴키’ 잭팟…통합 솔루션 빛났다",
-        "link": "https://www.sedaily.com/article/20071801",
-        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
-        "detail": [
-          "-",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T05:54:30"
       }
     ],
     "금융/증권": [
+      {
+        "title": "일주일 새 65% 급등한 또 하나의 ‘SK닉스’…KKR이 탐낸 ‘AI 전력 플랫폼’ [이주의 Bull기둥]",
+        "link": "https://www.mk.co.kr/news/stock/12107497",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-26T00:04:19"
+      },
       {
         "title": "한국선 191만원, 미국에서는 290만원…똑같은 하이닉스인데 가격 차이 왜?",
         "link": "https://www.mk.co.kr/news/stock/12107470",
@@ -1025,17 +1080,6 @@
           "-"
         ],
         "date": "2026-07-25T06:04:46"
-      },
-      {
-        "title": "“국장 못 믿겠다” 해외로 쏠린 개미…이달 순매수 4배 폭증",
-        "link": "https://www.mk.co.kr/news/economy/12107229",
-        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
-        "detail": [
-          "-",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T01:55:50"
       },
       {
         "title": "Wall Street Banks Prepare to Sell Billions of Dollars of X Loans",
@@ -1365,73 +1409,84 @@
     ],
     "스포츠": [
       {
-        "title": "PSG서 주연 못 된 이강인, 아틀레티코서 '그리즈만 후계자' 됐다...\"주인공 되길 원한다\"",
-        "link": "https://www.chosun.com/sports/world-football/2026/07/26/HBQTSNJRGE3DCMJRMVRWEZRQMI/",
+        "title": "\"고마워 강인\" 이것이 윈-윈 이적! PSG 헌정→이강인 \"파리 마음속에 간직\" 뜨거운 작별 인사…새 시대 열렸다",
+        "link": "https://www.chosun.com/sports/world-football/2026/07/26/GUYDQNDDHBTGCMZUMZTGMNZTMY/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-25T22:42:00"
+        "date": "2026-07-26T00:18:45"
       },
       {
-        "title": "'이럴 수가' LG 킬러가 이렇게 무너지다니...1회 홈런 2방 맞고 2이닝 강판...류현진, 1년 만에 최소 이닝",
-        "link": "https://www.chosun.com/sports/baseball/2026/07/26/MI3GCZRYGQZGIN3DMUZGMMDDGM/",
+        "title": "‘볼볼볼볼볼볼볼볼’ 8연속 볼 강판...LG 사이드암 정우영, 제구 난조 끝이 안 보인다",
+        "link": "https://www.chosun.com/sports/baseball/2026/07/26/GBTDAZBYMVQTMMLFMRRDSMDEGA/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-25T22:41:00"
+        "date": "2026-07-26T00:10:00"
       },
       {
-        "title": "와~ 대박! 이정후, 스리런 폭발 이어 2루타까지...3할 타율 복귀+2연승 견인 [SF 리뷰]",
-        "link": "https://www.chosun.com/sports/world-baseball/2026/07/26/MVSWGNZUHBRDMYRYMFTDSMLFMQ/",
+        "title": "“모경빈 유니폼 가져오신 팬분 연락바랍니다!” 수원삼성의 촌극…모경빈, 팬유니폼 빌려 입고 뛰었다",
+        "link": "https://www.chosun.com/sports/football/2026/07/26/MU4WGNTBMZRWGNJVGQ4TCMDGHA/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-25T22:38:00"
+        "date": "2026-07-26T00:06:00"
       },
       {
-        "title": "'손흥민 최애' 할리우드 톱스타, \"술 한잔하자, 그리고 토트넘으로 와줘\" 괴물 홀란에게 러브콜 보냈다 퇴짜 '비하인드 공개'",
-        "link": "https://www.chosun.com/sports/world-football/2026/07/26/HE3GCMLEMVSTCNLEMFRDEZTEMU/",
+        "title": "'침묵, 침묵 만회 기회가 없네' 송성문 결장…샌디에이고, 7-2 승리 [SD 리뷰]",
+        "link": "https://www.chosun.com/sports/world-baseball/2026/07/26/GQ2DSMJSMFSGKOJSME3DMODBGY/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-25T22:35:00"
+        "date": "2026-07-26T00:02:00"
       },
       {
-        "title": "'태극마크는 과거-日 선택' 윤성준, \"한국에선 위화감, 일본이 손 내밀었다\" 분데스리가 직행하나",
-        "link": "https://www.chosun.com/sports/world-football/2026/07/26/MIYTONBSMY2GIYJVG5RDAMLBGM/",
+        "title": "\"팔로워 5만→2960만 대폭발!\".. '40세 FA' 보지냐, 스페인-아르헨 진땀 뺀 후 칠레 명문 콜로콜로 전격 입단",
+        "link": "https://www.chosun.com/sports/world-football/2026/07/26/GIYDSOLDG43GMOLDGBSDKZDEHE/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-25T22:09:00"
+        "date": "2026-07-25T23:59:00"
       },
       {
-        "title": "우월 3점 홈런-2루타 폭발! 이정후 방망이 제대로 미쳤네!",
-        "link": "https://www.chosun.com/sports/world-baseball/2026/07/26/GVSTSMLCGRRGMOLGMEYDIZLBGM/",
+        "title": "'홈런 배트는 왜 던졌나' 포효했던 구자욱, 이재현 4시즌 연속 10홈런에 누구보다 크게 웃었다...헬멧 두들기며 격한 축하",
+        "link": "https://www.chosun.com/sports/baseball/2026/07/26/GQ4GKOBSG4ZDCMRSMM2TONJTHA/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-25T21:44:00"
+        "date": "2026-07-25T23:56:10"
       }
     ],
     "헬스/건강": [
+      {
+        "title": "‘딱복 vs 물복’…맛만 다른 줄 알았더니, 효능에도 차이가?",
+        "link": "https://kormedi.com/2836264/",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-25T23:03:00"
+      },
       {
         "title": "“잡히는 뱃살보다 더 위험한 내장지방?”…복부지방 쏙 빼는 음식 3가지",
         "link": "https://kormedi.com/2837384/",
@@ -1488,15 +1543,15 @@
         "date": "2026-07-25T12:01:00"
       },
       {
-        "title": "“머리 터질 듯 아팠는데” 병원서 계속 돌려보내…34세男 ‘이 병’ 진단, 무슨 일?",
-        "link": "https://kormedi.com/2837315/",
+        "title": "안선영 “엄마, 치매 초기 신호 있었다”… 뭔지 봤더니?",
+        "link": "https://health.chosun.com/site/data/html_dir/2026/07/24/2026072402337.html",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-25T11:04:00"
+        "date": "2026-07-26T00:27:01"
       },
       {
         "title": "“암 씨앗 된다” 종양 전문의들이 외식 때 안 먹는 음식은?",
@@ -1507,7 +1562,7 @@
           "-",
           "-"
         ],
-        "date": "2026-07-25T23:02:25"
+        "date": "2026-07-26T00:27:01"
       },
       {
         "title": "‘37kg 감량’ 신동, 다이어트 후 시작한 운동… “체중 유지에 도움”",
@@ -1518,7 +1573,7 @@
           "-",
           "-"
         ],
-        "date": "2026-07-25T23:02:25"
+        "date": "2026-07-26T00:27:01"
       },
       {
         "title": "치과 의사들은 어떤 ‘칫솔’ 쓰고 있을까?",
@@ -1529,7 +1584,7 @@
           "-",
           "-"
         ],
-        "date": "2026-07-25T23:02:25"
+        "date": "2026-07-26T00:27:01"
       },
       {
         "title": "“살 빼려 먹었는데 오히려 찌더라”… 풍자 7kg 찌운 ‘의외의 음식’",
@@ -1540,7 +1595,7 @@
           "-",
           "-"
         ],
-        "date": "2026-07-25T23:02:25"
+        "date": "2026-07-26T00:27:01"
       },
       {
         "title": "중년 넘으면 몸속에 염증 많아져… 꼭 먹어야 할 음식 있다는데?",
@@ -1551,18 +1606,7 @@
           "-",
           "-"
         ],
-        "date": "2026-07-25T23:02:25"
-      },
-      {
-        "title": "“단백질 풍부하고 열량 낮아”… 지금 먹어야 할 해산물, 뭘까?",
-        "link": "https://health.chosun.com/site/data/html_dir/2026/07/24/2026072402769.html",
-        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
-        "detail": [
-          "-",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-25T23:02:25"
+        "date": "2026-07-26T00:27:01"
       }
     ]
   }
