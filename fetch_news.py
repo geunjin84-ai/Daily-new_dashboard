@@ -5,7 +5,6 @@ import time
 from difflib import SequenceMatcher
 import re
 
-# Gemini API 라이브러리 안전 임포트 및 설정 (학습 데이터셋 생성용 유지)
 try:
     import google.generativeai as genai
     api_key = os.environ.get("GEMINI_API_KEY")
@@ -18,7 +17,6 @@ except Exception as e:
     print(f"Gemini Init Error: {e}")
     model = None
 
-# 2. 대폭 확장된 RSS 피드 정의 (신규 매체 및 스포츠/건강 카테고리 신설)
 RSS_FEEDS = {
     "1면/종합": [
         "https://www.mk.co.kr/rss/30000001/", 
@@ -81,7 +79,6 @@ def clean_title(title):
     return title.strip()
 
 def is_duplicate(new_title, existing_titles, threshold=0.55):
-    """매체가 많아짐에 따라 유사도 커트라인을 55%로 강화하여 중복 완벽 제거"""
     clean_new = clean_title(new_title)
     for ext in existing_titles:
         if SequenceMatcher(None, clean_new, clean_title(ext)).ratio() > threshold:
@@ -95,6 +92,7 @@ def generate_multi_learning():
         prompt = """
         초보자를 위한 금융/주식 학습 세트 5개와 왕초보용 일상 영어 표현 세트 5개를 생성해라.
         반드시 설명이나 마크다운(```json 등) 없이, 순수 JSON 텍스트 하나만 출력해라.
+
         [JSON 구조]:
         {
           "finance_sets": [
@@ -110,14 +108,19 @@ def generate_multi_learning():
               "words": [
                 {"word": "Water (물)", "example": "Can I get water?", "meaning": "물 좀 주시겠어요?"},
                 {"word": "Coffee (커피)", "example": "Can I get coffee?", "meaning": "커피 좀 주시겠어요?"},
-                {"word": "The bill (계산서)", "example": "Can I get the bill?", "meaning": "계산서 좀 주시겠어요?"}
+                {"word": "The bill (계산서)", "example": "Can I get the bill?", "meaning": "계산서 좀 주시겠어요?"},
+                {"word": "A napkin (휴지)", "example": "Can I get a napkin?", "meaning": "휴지 좀 주시겠어요?"},
+                {"word": "Some ice (얼음)", "example": "Can I get some ice?", "meaning": "얼음 좀 주시겠어요?"}
               ],
               "quote": {"en": "The only way to do great work is to love what you do.", "ko": "위대한 일을 하는 유일한 방법은 당신이 하는 일을 사랑하는 것이다.", "author": "Steve Jobs"},
-              "question": {"q": "How are you today?", "hint": "I am good! 또는 I am tired. 라고 대답해보세요."}
+              "questions": [
+                {"q": "How are you doing today?", "answers": ["Not too bad, just chilling. (그럭저럭 괜찮아, 쉬는 중이야)", "Same old, same old. (늘 똑같지 뭐)"]},
+                {"q": "What are you up to this weekend?", "answers": ["Nothing much, just taking it easy. (별거 없어, 그냥 편히 쉬려고)", "I'm meeting up with a friend! (친구 만나기로 했어!)"]}
+              ]
             }
           ]
         }
-        finance_sets와 daily_sets 각각 5개씩 서로 다른 내용으로 채워라.
+        words는 5개, questions는 2개를 만드는데 질문별 현지인 스타일 답변 예시(answers)를 2개씩 적어라.
         """
         response = model.generate_content(prompt)
         text = response.text.strip()
@@ -143,20 +146,30 @@ def get_fallback_learning():
                 "words": [
                     {"word": "Water (물)", "example": "Can I get water?", "meaning": "물 좀 주시겠어요?"},
                     {"word": "Coffee (커피)", "example": "Can I get coffee?", "meaning": "커피 좀 주시겠어요?"},
-                    {"word": "The bill (계산서)", "example": "Can I get the bill?", "meaning": "계산서 좀 주시겠어요?"}
+                    {"word": "The bill (계산서)", "example": "Can I get the bill?", "meaning": "계산서 좀 주시겠어요?"},
+                    {"word": "A menu (메뉴판)", "example": "Can I get a menu?", "meaning": "메뉴판 좀 주시겠어요?"},
+                    {"word": "Some ice (얼음)", "example": "Can I get some ice?", "meaning": "얼음 좀 주시겠어요?"}
                 ],
                 "quote": {"en": "Stay hungry, stay foolish.", "ko": "늘 갈망하고 우직하게 나아가라.", "author": "Steve Jobs"},
-                "question": {"q": "How are you today?", "hint": "I am good! 또는 I am tired. 라고 대답해보세요."}
+                "questions": [
+                    {"q": "How are you doing today?", "answers": ["Not too bad, just chilling. (그럭저럭 괜찮아, 쉬는 중이야)", "Pretty good! Can't complain. (완전 좋아! 더할 나위 없지)"]},
+                    {"q": "What are you up to this weekend?", "answers": ["Nothing much, just taking it easy. (별거 없어, 편히 쉬려고)", "I'm hanging out with my family! (가족들이랑 노는 중이야!)"]}
+                ]
             },
             {
                 "pattern": "I want to ~ (~하고 싶어요)",
                 "words": [
                     {"word": "Go home (집에 가다)", "example": "I want to go home.", "meaning": "집에 가고 싶어요."},
                     {"word": "Drink water (물을 마시다)", "example": "I want to drink water.", "meaning": "물 마시고 싶어요."},
-                    {"word": "Buy this (이걸 사다)", "example": "I want to buy this.", "meaning": "이것을 사고 싶어요."}
+                    {"word": "Buy this (이걸 사다)", "example": "I want to buy this.", "meaning": "이것을 사고 싶어요."},
+                    {"word": "Take a rest (쉬다)", "example": "I want to take a rest.", "meaning": "좀 쉬고 싶어요."},
+                    {"word": "Learn English (영어 공부하다)", "example": "I want to learn English.", "meaning": "영어 공부하고 싶어요."}
                 ],
                 "quote": {"en": "Change your thoughts and you change your world.", "ko": "생각을 바꾸면 세상이 바뀐다.", "author": "Norman Vincent Peale"},
-                "question": {"q": "What do you want to eat today?", "hint": "I want to eat pizza! 라고 문장으로 말해보세요."}
+                "questions": [
+                    {"q": "What do you feel like eating today?", "answers": ["I'm in the mood for something spicy! (오늘 매콤한 게 땡기네!)", "A burger sounds good to me. (버거나 하나 먹을까 해)"]},
+                    {"q": "Where do you want to travel next?", "answers": ["I'd love to go somewhere sunny! (햇살 좋은 따뜻한 곳으로 가고 싶어!)", "Anywhere with a nice beach! (멋진 해변이 있는 곳이라면 어디든!)"]}
+                ]
             }
         ]
     }
@@ -172,7 +185,7 @@ def fetch_and_process():
         for url in urls:
             try:
                 feed = feedparser.parse(url)
-                for entry in feed.entries[:6]: # 각 피드당 상위 6개 스캔
+                for entry in feed.entries[:6]:
                     if is_duplicate(entry.title, titles): 
                         continue
                     titles.append(entry.title)
