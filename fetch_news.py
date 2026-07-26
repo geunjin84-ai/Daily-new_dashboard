@@ -109,18 +109,18 @@ def generate_multi_learning():
                 {"word": "Water (물)", "example": "Can I get water?", "meaning": "물 좀 주시겠어요?"},
                 {"word": "Coffee (커피)", "example": "Can I get coffee?", "meaning": "커피 좀 주시겠어요?"},
                 {"word": "The bill (계산서)", "example": "Can I get the bill?", "meaning": "계산서 좀 주시겠어요?"},
-                {"word": "A napkin (휴지)", "example": "Can I get a napkin?", "meaning": "휴지 좀 주시겠어요?"},
+                {"word": "A menu (메뉴판)", "example": "Can I get a menu?", "meaning": "메뉴판 좀 주시겠어요?"},
                 {"word": "Some ice (얼음)", "example": "Can I get some ice?", "meaning": "얼음 좀 주시겠어요?"}
               ],
               "quote": {"en": "The only way to do great work is to love what you do.", "ko": "위대한 일을 하는 유일한 방법은 당신이 하는 일을 사랑하는 것이다.", "author": "Steve Jobs"},
               "questions": [
-                {"q": "How are you doing today?", "answers": ["Not too bad, just chilling. (그럭저럭 괜찮아, 쉬는 중이야)", "Same old, same old. (늘 똑같지 뭐)"]},
-                {"q": "What are you up to this weekend?", "answers": ["Nothing much, just taking it easy. (별거 없어, 그냥 편히 쉬려고)", "I'm meeting up with a friend! (친구 만나기로 했어!)"]}
+                {"q": "How are you doing today?", "answers": ["Not too bad, just chilling. (그럭저럭 괜찮아, 쉬는 중이야)", "Pretty good! Can't complain. (완전 좋아! 더할 나위 없지)"]},
+                {"q": "What are you up to this weekend?", "answers": ["Nothing much, just taking it easy. (별거 없어, 편히 쉬려고)", "I'm hanging out with my family! (가족들이랑 노는 중이야!)"]}
               ]
             }
           ]
         }
-        words는 5개, questions는 2개를 만드는데 질문별 현지인 스타일 답변 예시(answers)를 2개씩 적어라.
+        words 배열에는 정확히 5개의 단어 예시를 넣고, questions 배열에는 2개의 일상 질문과 각각 현지인 스타일 자연스러운 답변 예시(answers) 2개씩을 작성해라.
         """
         response = model.generate_content(prompt)
         text = response.text.strip()
