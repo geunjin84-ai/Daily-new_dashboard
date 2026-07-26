@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>지식 대시보드 2.0</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css)">
   <style>
     :root {
       --bg: #f4f6f8;
@@ -12,6 +12,7 @@
       --main: #333333;
       --sub: #555555;
       --accent: #007bff;
+      --purple: #6f42c1;
       --border: #f1f1f1;
     }
     [data-theme="dark"] {
@@ -29,10 +30,8 @@
     .btn-refresh { background: none; border: 1px solid var(--accent); color: var(--accent); padding: 4px 10px; border-radius: 15px; font-size: 0.75rem; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; }
     .box { background: rgba(0,123,255,0.04); padding: 10px; border-radius: 8px; font-size: 0.82rem; margin-bottom: 10px; line-height: 1.5; }
     
-    .learning-card { background: linear-gradient(135deg, #2b5876, #4e4376) !important; color: #ffffff !important; }
-    .learning-card .card-header { border-bottom: 1px solid rgba(255,255,255,0.2); }
-    .words-grid { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 8px; }
-    .word-item { background: rgba(255,255,255,0.1); padding: 8px 12px; border-radius: 8px; font-size: 0.82rem; line-height: 1.4; }
+    .words-grid { display: grid; grid-template-columns: 1fr; gap: 6px; margin-top: 8px; }
+    .word-item { background: rgba(111,66,193,0.05); padding: 8px 12px; border-radius: 8px; font-size: 0.82rem; line-height: 1.4; border-left: 3px solid var(--purple); }
     
     .filter-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-size: 0.85rem; font-weight: bold; color: var(--sub); }
     .ctrl-link-group { display: flex; gap: 10px; font-size: 0.8rem; font-weight: bold; }
@@ -51,8 +50,10 @@
     .news-item:hover .news-title-text { color: var(--accent); }
     .news-summary-text { font-size: 0.8rem; color: var(--sub); line-height: 1.4; }
     
-    .speaker-btn { background: rgba(255,255,255,0.2); border: none; color: white; padding: 3px 8px; border-radius: 10px; font-size: 0.75rem; cursor: pointer; margin-left: 6px; font-weight: bold; }
-    .speaker-btn:hover { background: rgba(255,255,255,0.3); }
+    .speaker-btn { background: var(--purple); border: none; color: white; padding: 3px 8px; border-radius: 10px; font-size: 0.75rem; cursor: pointer; margin-left: 6px; font-weight: bold; }
+    .speaker-btn:hover { opacity: 0.85; }
+    
+    .native-ans-box { background: rgba(111,66,193,0.04); padding: 8px; border-radius: 6px; margin-top: 6px; font-size: 0.8rem; }
   </style>
 </head>
 <body>
@@ -62,33 +63,30 @@
       <button onclick="document.body.toggleAttribute('data-theme')" style="background:none; border:1px solid var(--border); padding:6px 12px; border-radius:20px; color:var(--main); cursor:pointer; font-size:0.8rem;">🌗 테마 전환</button>
     </div>
 
-    <div class="card learning-card">
+    <div class="card" style="border: 2px solid var(--purple);">
       <div class="card-header" onclick="toggleSection('learning-body')">
-        <span><i class="fa-solid fa-brain"></i> ✨ 오늘의 명언 & 3초 입트기 영어 <span id="learning-body-btn">▲</span></span>
-        <button class="btn-refresh" onclick="refreshDaily(event)" style="border-color:#fff; color:#fff;"><i class="fa-solid fa-arrows-rotate"></i> 다른 내용 보기</button>
+        <span><i class="fa-solid fa-brain" style="color:var(--purple);"></i> ✨ 오늘의 명언&영어 <span id="learning-body-btn">▲</span></span>
+        <button class="btn-refresh" onclick="refreshDaily(event)" style="border-color:var(--purple); color:var(--purple);"><i class="fa-solid fa-arrows-rotate"></i> 다른 내용 보기</button>
       </div>
       <div id="learning-body" style="padding-top:10px;">
-        <div style="font-size:0.8rem; font-weight:bold; color:#ffe066; margin-bottom:6px;">🎧 1단계: 3초 섀도잉 (원어민 발음 귀 열기)</div>
-        <div style="font-style:italic; font-size:0.88rem; margin-bottom:12px; line-height:1.4; color:#fff;">
+        <div style="font-size:0.8rem; font-weight:bold; color:var(--purple); margin-bottom:6px;">🎧 1단계: 3초 섀도잉 (원어민 발음 귀 열기)</div>
+        <div style="font-style:italic; font-size:0.88rem; margin-bottom:12px; line-height:1.4;">
           <span id="quote-text">데이터 로딩 중...</span>
           <button class="speaker-btn" onclick="playTTS(event)"><i class="fa-solid fa-volume-high"></i> 발음 듣기</button>
-          <br><span id="quote-ko" style="font-style:normal; font-size:0.8rem; opacity:0.85;"></span>
+          <br><span id="quote-ko" style="font-style:normal; font-size:0.8rem; color:var(--sub);"></span>
         </div>
         
-        <div style="font-size:0.8rem; font-weight:bold; color:#ffe066; margin-top:12px;">🗣️ 2단계: 오늘의 만능 회화 패턴 [<span id="pattern-title">-</span>]</div>
+        <div style="font-size:0.8rem; font-weight:bold; color:var(--purple); margin-top:12px;">🗣️ 2단계: 오늘의 만능 회화 패턴 [<span id="pattern-title">-</span>]</div>
         <div class="words-grid" id="words-display"></div>
         
-        <div style="font-size:0.8rem; font-weight:bold; color:#ffe066; margin-top:14px;">💬 3단계: 오늘의 3초 혼잣말 질문</div>
-        <div style="background:rgba(255,255,255,0.1); padding:10px; border-radius:8px; font-size:0.82rem; margin-top:4px;">
-          <b style="color:#ffe066;">Q: </b><span id="quiz-q-text">-</span><br>
-          <span id="quiz-hint-text" style="font-size:0.75rem; opacity:0.85;"></span>
-        </div>
+        <div style="font-size:0.8rem; font-weight:bold; color:var(--purple); margin-top:14px;">💬 3단계: 오늘의 문장</div>
+        <div id="questions-display" style="margin-top:6px;"></div>
       </div>
     </div>
 
     <div class="card" style="border: 2px solid var(--accent);">
       <div class="card-header" onclick="toggleSection('finance-body')">
-        <span><i class="fa-solid fa-graduation-cap"></i> ✏️ 3분 실전 경제 교실 <span id="finance-body-btn">▲</span></span>
+        <span><i class="fa-solid fa-graduation-cap" style="color:var(--accent);"></i> ✏️ 3분 실전 경제 교실 <span id="finance-body-btn">▲</span></span>
         <button class="btn-refresh" onclick="refreshFinance(event)"><i class="fa-solid fa-arrows-rotate"></i> 다른 내용 보기</button>
       </div>
       <div id="finance-body" style="padding-top:10px;">
@@ -110,7 +108,7 @@
 
     <div class="card" style="border: 2px solid #28a745;">
       <div class="card-header" onclick="toggleSection('news-body')">
-        <span><i class="fa-solid fa-newspaper"></i> 📰 신문 기사 보기 <span id="news-body-btn">▲</span></span>
+        <span><i class="fa-solid fa-newspaper" style="color:#28a745;"></i> 📰 신문 기사 보기 <span id="news-body-btn">▲</span></span>
         <button class="btn-refresh" onclick="refreshNews(event)" style="border-color:#28a745; color:#28a745;"><i class="fa-solid fa-arrows-rotate"></i> 기사 새로고침</button>
       </div>
       <div id="news-body" style="padding-top:10px;">
@@ -133,7 +131,6 @@
         
         if (db) {
           if (db.articles) {
-            // data.json 내부의 동적 카테고리를 그대로 바인딩
             enabledCats = Object.keys(db.articles);
             renderChips();
             renderNews();
@@ -178,17 +175,33 @@
         
         document.getElementById('pattern-title').innerText = d.pattern || '';
         
+        // 2단계: 5개 예시 출력
         if (d.words && Array.isArray(d.words)) {
-          document.getElementById('words-display').innerHTML = d.words.map(w => `
+          document.getElementById('words-display').innerHTML = d.words.slice(0, 5).map(w => `
             <div class="word-item">
-              • <b style="color:#ffe066; font-size:0.85rem;">${w.word}</b> ➔ <b>${w.example}</b> (${w.meaning})
+              • <b>${w.word}</b> ➔ <b>${w.example}</b> (${w.meaning})
             </div>
           `).join('');
         }
         
-        if (d.question) {
-          document.getElementById('quiz-q-text').innerText = d.question.q || '';
-          document.getElementById('quiz-hint-text').innerText = `💡 힌트: ${d.question.hint || ''}`;
+        // 3단계: 오늘의 문장 2개 + 현지인 답변 2개씩 출력
+        if (d.questions && Array.isArray(d.questions)) {
+          document.getElementById('questions-display').innerHTML = d.questions.slice(0, 2).map((qObj, idx) => `
+            <div class="native-ans-box">
+              <b style="color:var(--purple);">Q${idx+1}: ${qObj.q}</b>
+              <div style="margin-top:4px; padding-left:8px; border-left:2px solid var(--purple);">
+                ${qObj.answers ? qObj.answers.map(ans => `<div style="font-size:0.78rem; margin-top:2px;">🗣️ ${ans}</div>`).join('') : ''}
+              </div>
+            </div>
+          `).join('');
+        } else if (d.question) {
+          // 단일 구버전 데이터 호환
+          document.getElementById('questions-display').innerHTML = `
+            <div class="native-ans-box">
+              <b style="color:var(--purple);">Q: ${d.question.q}</b><br>
+              <span style="font-size:0.75rem;">💡 ${d.question.hint}</span>
+            </div>
+          `;
         }
         
         curDailyIdx = (curDailyIdx + 1) % sets.length;
