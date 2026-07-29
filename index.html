@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>지식 대시보드 2.0</title>
-  <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css)">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     :root {
       --bg: #f4f6f8;
@@ -161,50 +161,60 @@
         e.preventDefault();
       }
       
-      if (!db.learning || !db.learning.daily_sets || db.learning.daily_sets.length === 0) return;
-      
-      const sets = db.learning.daily_sets;
-      const d = sets[curDailyIdx % sets.length];
-      
-      if (d) {
-        if (d.quote) {
-          currentQuoteEN = d.quote.en || "";
-          document.getElementById('quote-text').innerText = `"${d.quote.en || ''}"`;
-          document.getElementById('quote-ko').innerText = `(${d.quote.ko || ''}) - ${d.quote.author || ''}`;
-        }
+      try {
+        if (!db.learning || !db.learning.daily_sets || db.learning.daily_sets.length === 0) return;
         
-        document.getElementById('pattern-title').innerText = d.pattern || '';
+        const sets = db.learning.daily_sets;
+        const d = sets[curDailyIdx % sets.length];
         
-        // 2단계: 5개 예시 모두 출력
-        if (d.words && Array.isArray(d.words)) {
-          document.getElementById('words-display').innerHTML = d.words.map(w => `
-            <div class="word-item">
-              • <b>${w.word}</b> ➔ <b>${w.example}</b> (${w.meaning})
-            </div>
-          `).join('');
-        }
-        
-        // 3단계: 오늘의 문장 2개 및 현지인 답변 2개씩 출력
-        if (d.questions && Array.isArray(d.questions)) {
-          document.getElementById('questions-display').innerHTML = d.questions.map((qObj, idx) => `
-            <div class="native-ans-box">
-              <b style="color:var(--purple);">Q${idx+1}: ${qObj.q}</b>
-              <div style="margin-top:4px; padding-left:6px;">
-                ${qObj.answers ? qObj.answers.map(ans => `<div style="font-size:0.8rem; margin-top:3px; color:var(--main);">🗣️ ${ans}</div>`).join('') : ''}
+        if (d) {
+          // 1단계 명언
+          if (d.quote) {
+            currentQuoteEN = d.quote.en || "";
+            document.getElementById('quote-text').innerText = `"${d.quote.en || ''}"`;
+            document.getElementById('quote-ko').innerText = `(${d.quote.ko || ''}) - ${d.quote.author || ''}`;
+          }
+          
+          // 2단계 패턴
+          document.getElementById('pattern-title').innerText = d.pattern || '';
+          
+          if (d.words && Array.isArray(d.words)) {
+            document.getElementById('words-display').innerHTML = d.words.map(w => `
+              <div class="word-item">
+                • <b>${w.word || ''}</b> ➔ <b>${w.example || ''}</b> (${w.meaning || ''})
               </div>
-            </div>
-          `).join('');
-        } else if (d.question) {
-          // 구버전 단일 질문 호환 처리
-          document.getElementById('questions-display').innerHTML = `
-            <div class="native-ans-box">
-              <b style="color:var(--purple);">Q: ${d.question.q}</b><br>
-              <span style="font-size:0.8rem;">💡 ${d.question.hint}</span>
-            </div>
-          `;
+            `).join('');
+          }
+          
+          // 3단계 오늘의 문장 (복수형 questions와 단수형 question 모두 지원하는 안전장치)
+          const qContainer = document.getElementById('questions-display');
+          if (d.questions && Array.isArray(d.questions) && d.questions.length > 0) {
+            qContainer.innerHTML = d.questions.map((qObj, idx) => `
+              <div class="native-ans-box">
+                <b style="color:var(--purple);">Q${idx + 1}: ${qObj.q || ''}</b>
+                <div style="margin-top:4px; padding-left:6px;">
+                  ${qObj.answers && Array.isArray(qObj.answers) ? qObj.answers.map(ans => `<div style="font-size:0.8rem; margin-top:3px; color:var(--main);">🗣️ ${ans}</div>`).join('') : ''}
+                </div>
+              </div>
+            `).join('');
+          } else if (d.question) {
+            qContainer.innerHTML = `
+              <div class="native-ans-box">
+                <b style="color:var(--purple);">Q: ${d.question.q || ''}</b><br>
+                <span style="font-size:0.8rem;">💡 ${d.question.hint || ''}</span>
+              </div>
+            `;
+          } else {
+            qContainer.innerHTML = `<div class="native-ans-box">오늘의 문장 정보를 준비 중입니다.</div>`;
+          }
         }
-        
-        curDailyIdx = (curDailyIdx + 1) % sets.length;
+      } catch (err) {
+        console.error("refreshDaily 실행 중 에러:", err);
+      } finally {
+        // 에러가 나더라도 무조건 다음 인덱스로 넘어가서 버튼이 안 먹히는 현상을 원천 방지
+        if (db.learning && db.learning.daily_sets && db.learning.daily_sets.length > 0) {
+          curDailyIdx = (curDailyIdx + 1) % db.learning.daily_sets.length;
+        }
       }
     }
 
@@ -248,26 +258,36 @@
         e.preventDefault();
       }
       
-      if (!db.learning || !db.learning.finance_sets || db.learning.finance_sets.length === 0) return;
-      
-      const sets = db.learning.finance_sets;
-      const f = sets[curFinanceIdx % sets.length];
-      
-      if (f) {
-        const formattedTerm = formatTerm(f.stock.term);
+      try {
+        if (!db.learning || !db.learning.finance_sets || db.learning.finance_sets.length === 0) return;
         
-        document.getElementById('stock-box').innerHTML = `<b>📈 오늘의 실전 주식 용어</b><br><b>• 용어:</b> ${formattedTerm}<br><b>• 3초 개념:</b> ${f.stock.concept}<br><b>• 쉽게 말해:</b> ${f.stock.analogy}<br><b>• 신호등 판단:</b> ${f.stock.signal}<br><b>📍 MTS 위치:</b> <span style="color:var(--accent); font-weight:bold;">${f.stock.mts}</span>`;
-        document.getElementById('economy-box').innerHTML = `<b>💡 오늘의 생활 경제 상식</b><br><b>• 주제:</b> ${f.economy.title}<br><b>• 핵심:</b> ${f.economy.concept}<br><b>• 삶의 영향:</b> ${f.economy.impact}`;
+        const sets = db.learning.finance_sets;
+        const f = sets[curFinanceIdx % sets.length];
         
-        let quizHtml = `<b>🎯 3초 실전 퀴즈</b><br><div style="margin:5px 0;">Q. ${f.quiz.q}</div>`;
-        if (f.quiz.opts && Array.isArray(f.quiz.opts)) {
-          quizHtml += f.quiz.opts.map((o, i) => `
-            <button onclick="alert('${i === f.quiz.ans ? '🎉 정답입니다!\n\n💡 해설: ' + f.quiz.exp : '❌ 오답입니다. 다시 한번 읽어보세요!'}')" style="width:100%; text-align:left; margin-top:6px; padding:8px; border:1px solid #28a745; background:var(--card); color:var(--main); border-radius:6px; cursor:pointer; font-size:0.8rem;">${i + 1}. ${o}</button>
-          `).join('');
+        if (f) {
+          const stock = f.stock || {};
+          const economy = f.economy || {};
+          const quiz = f.quiz || {};
+          
+          const formattedTerm = formatTerm(stock.term || '');
+          
+          document.getElementById('stock-box').innerHTML = `<b>📈 오늘의 실전 주식 용어</b><br><b>• 용어:</b> ${formattedTerm}<br><b>• 3초 개념:</b> ${stock.concept || '-'}<br><b>• 쉽게 말해:</b> ${stock.analogy || '-'}<br><b>• 신호등 판단:</b> ${stock.signal || '-'}<br><b>📍 MTS 위치:</b> <span style="color:var(--accent); font-weight:bold;">${stock.mts || '-'}</span>`;
+          document.getElementById('economy-box').innerHTML = `<b>💡 오늘의 생활 경제 상식</b><br><b>• 주제:</b> ${economy.title || '-'}<br><b>• 핵심:</b> ${economy.concept || '-'}<br><b>• 삶의 영향:</b> ${economy.impact || '-'}`;
+          
+          let quizHtml = `<b>🎯 3초 실전 퀴즈</b><br><div style="margin:5px 0;">Q. ${quiz.q || ''}</div>`;
+          if (quiz.opts && Array.isArray(quiz.opts)) {
+            quizHtml += quiz.opts.map((o, i) => `
+              <button onclick="alert('${i === quiz.ans ? '🎉 정답입니다!\n\n💡 해설: ' + (quiz.exp || '') : '❌ 오답입니다. 다시 한번 읽어보세요!'}')" style="width:100%; text-align:left; margin-top:6px; padding:8px; border:1px solid #28a745; background:var(--card); color:var(--main); border-radius:6px; cursor:pointer; font-size:0.8rem;">${i + 1}. ${o}</button>
+            `).join('');
+          }
+          document.getElementById('quiz-box').innerHTML = quizHtml;
         }
-        document.getElementById('quiz-box').innerHTML = quizHtml;
-        
-        curFinanceIdx = (curFinanceIdx + 1) % sets.length;
+      } catch (err) {
+        console.error("refreshFinance 실행 중 에러:", err);
+      } finally {
+        if (db.learning && db.learning.finance_sets && db.learning.finance_sets.length > 0) {
+          curFinanceIdx = (curFinanceIdx + 1) % db.learning.finance_sets.length;
+        }
       }
     }
 
