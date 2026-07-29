@@ -7,7 +7,7 @@
           "concept": "버는 돈 대비 주가 수준",
           "analogy": "1년 이익 대비 가게 매매가 비율",
           "signal": "🟢 10배 이하 저평가",
-          "mts": "종목검색 -> 기업정보"
+          "mts": "종목검색 -> 企业정보"
         },
         "economy": {
           "title": "기준금리",
@@ -22,98 +22,6 @@
           ],
           "ans": 0,
           "exp": "이익 대비 주가가 싼 상태입니다."
-        }
-      },
-      {
-        "stock": {
-          "term": "PBR",
-          "concept": "가진 재산 대비 주가 수준",
-          "analogy": "가게 장비 다 판 값과 주가의 비교",
-          "signal": "🟢 1배 미만 저평가",
-          "mts": "종목검색 -> 재무지표"
-        },
-        "economy": {
-          "title": "환율",
-          "concept": "외국 돈과의 교환 비율",
-          "impact": "수출입 물가 영향"
-        },
-        "quiz": {
-          "q": "PBR이 1배 미만이라는 의미는?",
-          "opts": [
-            "장부상 재산보다 주가가 저렴함",
-            "비쌈"
-          ],
-          "ans": 0,
-          "exp": "재산 가치보다 주가가 낮은 상태입니다."
-        }
-      },
-      {
-        "stock": {
-          "term": "ROE",
-          "concept": "투자한 돈으로 얼마나 버는가",
-          "analogy": "자본금 대비 연간 순이익 비율",
-          "signal": "🟢 10% 이상 우수",
-          "mts": "기업분석 -> 투자지표"
-        },
-        "economy": {
-          "title": "인플레이션",
-          "concept": "물가가 지속적으로 오르는 현상",
-          "impact": "화폐 가치가 떨어져요."
-        },
-        "quiz": {
-          "q": "ROE가 높을수록 어떤 기업일까요?",
-          "opts": [
-            "경영 효율이 좋은 기업",
-            "돈을 못 버는 기업"
-          ],
-          "ans": 0,
-          "exp": "투입한 자본 대비 돈을 효율적으로 잘 번다는 의미입니다."
-        }
-      },
-      {
-        "stock": {
-          "term": "CPI",
-          "concept": "소비자가 사는 물건들의 평균 가격 변동",
-          "analogy": "장바구니 물가 성적표",
-          "signal": "🔴 3% 이상 상승 시 인플레 우려",
-          "mts": "해외 경제 지표 -> 미국 CPI"
-        },
-        "economy": {
-          "title": "무역수지",
-          "concept": "수출액과 수입액의 차이",
-          "impact": "적자가 지속되면 환율이 올라요."
-        },
-        "quiz": {
-          "q": "무역수지 흑자는 어떤 상황을 뜻할까요?",
-          "opts": [
-            "수출이 수입보다 많음",
-            "수입이 수출보다 많음"
-          ],
-          "ans": 0,
-          "exp": "벌어들인 외화가 수입으로 나간 돈보다 많은 유익한 상태입니다."
-        }
-      },
-      {
-        "stock": {
-          "term": "시가총액",
-          "concept": "기업의 총 덩치와 가격",
-          "analogy": "주식 수와 현재 주가를 곱한 값",
-          "signal": "🟢 덩치가 클수록 안정적",
-          "mts": "종목 검색 -> 기본정보"
-        },
-        "economy": {
-          "title": "스태그플레이션",
-          "concept": "불경기인데 물가도 오르는 현상",
-          "impact": "서민 경제에 가장 부담이 큽니다."
-        },
-        "quiz": {
-          "q": "시가총액은 어떻게 계산하나요?",
-          "opts": [
-            "주가와 발행주식수를 곱함",
-            "매출액과 자산을 곱함"
-          ],
-          "ans": 0,
-          "exp": "현재 주가에 발행된 총 주식 수를 곱해 산출합니다."
         }
       }
     ],
@@ -168,237 +76,208 @@
             ]
           }
         ]
-      },
-      {
-        "pattern": "I want to ~ (~하고 싶어요)",
-        "words": [
-          {
-            "word": "Go home (집에 가다)",
-            "example": "I want to go home.",
-            "meaning": "집에 가고 싶어요."
-          },
-          {
-            "word": "Drink water (물을 마시다)",
-            "example": "I want to drink water.",
-            "meaning": "물 마시고 싶어요."
-          },
-          {
-            "word": "Buy this (이걸 사다)",
-            "example": "I want to buy this.",
-            "meaning": "이것을 사고 싶어요."
-          },
-          {
-            "word": "Take a rest (쉬다)",
-            "example": "I want to take a rest.",
-            "meaning": "좀 쉬고 싶어요."
-          },
-          {
-            "word": "Learn English (영어 공부하다)",
-            "example": "I want to learn English.",
-            "meaning": "영어 공부하고 싶어요."
-          }
-        ],
-        "quote": {
-          "en": "Change your thoughts and you change your world.",
-          "ko": "생각을 바꾸면 세상이 바뀐다.",
-          "author": "Norman Vincent Peale"
-        },
-        "questions": [
-          {
-            "q": "What do you feel like eating today?",
-            "answers": [
-              "I'm in the mood for something spicy! (오늘 매콤한 게 땡기네!)",
-              "A burger sounds good to me. (버거나 하나 먹을까 해)"
-            ]
-          },
-          {
-            "q": "Where do you want to travel next?",
-            "answers": [
-              "I'd love to go somewhere sunny! (햇살 좋은 따뜻한 곳으로 가고 싶어!)",
-              "Anywhere with a nice beach! (멋진 해변이 있는 곳이라면 어디든!)"
-            ]
-          }
-        ]
       }
     ]
   },
   "articles": {
     "1면/종합": [
       {
-        "title": "SK하이닉스 2분기 영업이익 60조...영업이익률 76%",
-        "link": "https://www.mk.co.kr/news/business/12110157",
+        "title": "[단독] 태양광 확 늘렸더니…효율 떨어진 원전, 올해만 15번 출력제어",
+        "link": "https://www.mk.co.kr/news/economy/12110767",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T22:59:16"
+        "date": "2026-07-29T08:52:19"
       },
       {
-        "title": "“내가 항상 그에게 갔다, 권력은”…미국 차기 대권주자 과거 불륜女 ‘폭로’",
-        "link": "https://www.mk.co.kr/news/world/12110156",
+        "title": "부동산원, 주택도시기금 수탁은행과 맞손…“건전 가계부채 관리 지원”",
+        "link": "https://www.mk.co.kr/news/realestate/12110766",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T22:59:15"
+        "date": "2026-07-29T08:51:18"
       },
       {
-        "title": "“쏘니 보러 직관 갔다”…‘구단주’ 임영웅, 손흥민과 인연 공개",
-        "link": "https://www.mk.co.kr/news/culture/12110153",
+        "title": "[표] 오늘의 날씨",
+        "link": "https://www.mk.co.kr/news/society/12110764",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T22:48:54"
+        "date": "2026-07-29T08:51:07"
       },
       {
-        "title": "“시도해본 사람일수록 위험해요”…정부, 자살 고위험군 일상복귀 끝까지 챙긴다",
-        "link": "https://www.mk.co.kr/news/it/12110152",
+        "title": "경남 양산 올해 첫 40도…부산도 역대 최고 38.8도",
+        "link": "https://www.mk.co.kr/news/society/12110761",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T22:48:02"
+        "date": "2026-07-29T08:51:06"
       },
       {
-        "title": "서울 외국인 집주인, 1년새 1058명 늘었다…어느 동네 많이 샀나 봤더니",
-        "link": "https://www.mk.co.kr/news/realestate/12110151",
+        "title": "\"휴가도 없다\"…줄이은 특검 재판에 법원 '방전'",
+        "link": "https://www.mk.co.kr/news/society/12110762",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T22:47:20"
+        "date": "2026-07-29T08:51:06"
       },
       {
-        "title": "김용범 “주가 변동, 전반적으로 점검할 것...우리만 그런 것은 아냐”",
-        "link": "https://www.chosun.com/politics/politics_general/2026/07/29/2SXMIEL6AVAFNFBO5O6TZKIZFM/",
+        "title": "[포토] \"태권V 50주년 우표 멋지죠\"",
+        "link": "https://www.mk.co.kr/news/society/12110763",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T22:51:13"
+        "date": "2026-07-29T08:51:06"
       },
       {
-        "title": "[단독] ‘실탄’ 없는 중기관총으로 GP 경계 서는 軍",
-        "link": "https://www.chosun.com/politics/diplomacy-defense/2026/07/29/EREI5HI6KBCZZPMLNRJO66OC6E/",
+        "title": "또 들고나온 ‘공소기각’... 與 한밤 끼워넣었다",
+        "link": "https://www.chosun.com/politics/assembly/2026/07/29/XEONM7SDNJGC5DOPVYTBFPIBSA/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T20:00:00"
+        "date": "2026-07-29T06:20:41"
       },
       {
-        "title": "[단독] 비상계엄 연루됐다고 불명예 전역 당했는데 특검은 “무혐의” 결론",
-        "link": "https://www.chosun.com/politics/diplomacy-defense/2026/07/29/WSX7NBF7PZDCVMDO2LXTB2SGSY/",
+        "title": "한동훈 보완수사권 토론회, 친전 받은 與 한 명도 안왔다",
+        "link": "https://www.chosun.com/politics/assembly/2026/07/29/DGKMFD7BFBHB5I5FKYRNPVSWCQ/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T20:00:00"
+        "date": "2026-07-29T07:28:18"
       },
       {
-        "title": "李대통령 “韓·브라질, 최적 파트너...민항기·핵심광물·K뷰티로 시너지\"",
-        "link": "https://www.chosun.com/politics/politics_general/2026/07/29/V4YMOSXZBNBMRPYSAQXM4E3HCI/",
+        "title": "무연고 중국인 치료비 8억 독박 쓴 병원… 권익위 “정부가 병원 지원해야”",
+        "link": "https://www.chosun.com/politics/goverment/2026/07/29/CYZIGEVPB5CUXLVIBB3EALJN24/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T20:53:01"
+        "date": "2026-07-29T07:22:36"
       },
       {
-        "title": "보완수사권 폐지, 패스트트랙 단축… 與 2박3일 ‘입법 벼락치기’",
-        "link": "https://www.chosun.com/politics/assembly/2026/07/29/RWGEXAVSFJBVHBLWIHUIYDKHZQ/",
+        "title": "국힘, 올공 청년들과 간담회 “선관위 특검법 통과 안되면 李정권 몰락 시작될 것\"",
+        "link": "https://www.chosun.com/politics/assembly/2026/07/29/IYBRWG7E2BFLFFEAZOZOPKUXQI/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T15:49:00"
+        "date": "2026-07-29T07:14:25"
       },
       {
-        "title": "친명 국회의장이 띄운 ‘현직 대통령 연임 개헌’",
-        "link": "https://www.chosun.com/politics/assembly/2026/07/29/AUECSJAPKRCZJHBUOMK27ACEQU/",
+        "title": "“삼전닉스 레버리지 폐기하라” 국회 앞 근조화환 행렬",
+        "link": "https://www.chosun.com/politics/assembly/2026/07/29/7CPCP7UJGVGIXF7GHWPBDCSZT4/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T15:53:00"
+        "date": "2026-07-29T06:57:23"
       },
       {
-        "title": "미군 “이란, 중동 미군에 다수 탄도미사일 발사···모두 요격”",
-        "link": "https://www.khan.co.kr/article/202607290750001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
+        "title": "野, 주가폭락 사태 맹공 “국민은 李 운영 리딩방 피해자”",
+        "link": "https://www.chosun.com/politics/politics_general/2026/07/29/SHH2PE3JFJFNJHSV2W2D4T2TSY/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T23:07:54"
+        "date": "2026-07-29T06:54:57"
       },
       {
-        "title": "조정식, 이 대통령 연임 개헌론 논란에 “개헌 논의 대상 아냐”",
-        "link": "https://www.khan.co.kr/article/202607290748001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
+        "title": "교육감들 “학생 수 줄어도 교육재정 못 줄여”…교부금 개편 공동 반발",
+        "link": "https://www.khan.co.kr/article/202607291749001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T23:07:54"
+        "date": "2026-07-29T08:53:58"
       },
       {
-        "title": "엔화 환전 19개월 만에 최대···엔저로 일본여행·환테크&#8593;",
-        "link": "https://www.khan.co.kr/article/202607290738001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
+        "title": "농식품부, ‘계란 가격 고시’ 산란계협회 설립허가 취소",
+        "link": "https://www.khan.co.kr/article/202607291748011/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T23:07:54"
+        "date": "2026-07-29T08:53:58"
       },
       {
-        "title": "일본 구마모토 강진 이후 폭발한 쇼핑몰서 2명 사망···“밤샘 구조 작업 난항”",
-        "link": "https://www.khan.co.kr/article/202607290736001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
+        "title": "‘현직 대통령 연임 개헌론’ 민주당 전당대회 여파는?···정청래 측 ‘명픽 후보 거부감’, 김민석 측 ‘거리두기’",
+        "link": "https://www.khan.co.kr/article/202607291748001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T23:07:54"
+        "date": "2026-07-29T08:53:58"
       },
       {
-        "title": "[점선면]탈원전에서 ‘유턴’한 이유",
-        "link": "https://www.khan.co.kr/article/202607290700001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
+        "title": "카스피해 이란 선박 폭발 후폭풍···이란서 ‘우크라이나 보복’ 놓고 내부 분열",
+        "link": "https://www.khan.co.kr/article/202607291747001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T23:07:54"
+        "date": "2026-07-29T08:53:58"
+      },
+      {
+        "title": "북러 첫 육로 연결 임박···‘위성 감시 피하는’ 우크라전 군사 통로 되나",
+        "link": "https://www.khan.co.kr/article/202607291738001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-29T08:53:58"
+      },
+      {
+        "title": "“1만5000 간다”던 코스피, 한 달 만에 5000선까지 추락…“악재보다는 수급·심리가 좌우”",
+        "link": "https://www.khan.co.kr/article/202607291727011/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-29T08:53:58"
       }
     ],
     "신문 사설": [
@@ -469,70 +348,70 @@
         "date": "2026-07-28T14:12:00"
       },
       {
-        "title": "“쏘니 보러 직관 갔다”…‘구단주’ 임영웅, 손흥민과 인연 공개",
-        "link": "https://www.mk.co.kr/news/culture/12110153",
+        "title": "국민 여동생 문근영 \"저 시집갔어요\"",
+        "link": "https://www.mk.co.kr/news/culture/12110778",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T22:48:54"
+        "date": "2026-07-29T08:53:36"
       },
       {
-        "title": "“난 글렀어”…SK하닉 251만원에 산 서동주, 주식 언급하자 남편이 한 말",
-        "link": "https://www.mk.co.kr/news/stock/12110149",
+        "title": "[매일경제TV] 여성·아동 곁 지킨 이명숙 변호사",
+        "link": "https://www.mk.co.kr/news/culture/12110668",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T22:37:29"
+        "date": "2026-07-29T08:12:00"
       },
       {
-        "title": "“최고의 반전은 작가님의 죽음”…히가시노 게이고 추모 물결, 서점가도 애도",
-        "link": "https://www.mk.co.kr/news/culture/12109845",
+        "title": "제주의 바람·디지털 선율 … 한여름 두 축제",
+        "link": "https://www.mk.co.kr/news/culture/12110669",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T11:48:08"
+        "date": "2026-07-29T08:12:00"
       },
       {
-        "title": "“하이브, 어서 캐스팅 해!”…BTS 뷔, 여중생 실력에 샤라웃",
-        "link": "https://www.mk.co.kr/news/culture/12109595",
+        "title": "조계종 차기 총무원장 선거, 내달 11~13일에 후보 등록",
+        "link": "https://www.mk.co.kr/news/culture/12110665",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T08:42:34"
+        "date": "2026-07-29T08:11:59"
       },
       {
-        "title": "해금과 거문고의 산조 … 관현악 협주곡 재탄생",
-        "link": "https://www.mk.co.kr/news/culture/12109568",
+        "title": "BTS, 그래미상 전격 보이콧",
+        "link": "https://www.mk.co.kr/news/culture/12110666",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T08:19:12"
+        "date": "2026-07-29T08:11:59"
       },
       {
-        "title": "[매일경제TV] FOMC·빅테크 실적 겹친 '슈퍼위크'",
-        "link": "https://www.mk.co.kr/news/culture/12109565",
+        "title": "[MBN] 탈북 1호 된장 명인과 유기견 집사",
+        "link": "https://www.mk.co.kr/news/culture/12110667",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T08:19:11"
+        "date": "2026-07-29T08:11:59"
       }
     ],
     "글로벌/해외이슈": [
@@ -611,7 +490,7 @@
           "-",
           "-"
         ],
-        "date": "2026-07-28T21:43:17"
+        "date": "2026-07-29T06:38:00"
       },
       {
         "title": "As U.S. Pauses Strikes, Iran Is No Rush to Resume Cease-Fire Talks",
@@ -644,7 +523,7 @@
           "-",
           "-"
         ],
-        "date": "2026-07-28T18:48:25"
+        "date": "2026-07-29T03:26:59"
       },
       {
         "title": "France and Spain Race to Contain Fires Before Some Areas Reach 104 Degrees",
@@ -655,7 +534,7 @@
           "-",
           "-"
         ],
-        "date": "2026-07-28T17:14:59"
+        "date": "2026-07-29T07:08:52"
       },
       {
         "title": "Iran Hangs Protesters as Executions Surge, Rights Groups Say",
@@ -669,6 +548,61 @@
         "date": "2026-07-28T19:59:06"
       },
       {
+        "title": "Japan in a ‘race against time’ to rescue people trapped beneath rubble after quake",
+        "link": "https://www.bbc.co.uk/news/videos/c3r0pg0dgrgo?at_medium=RSS&at_campaign=rss",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-29T06:10:19"
+      },
+      {
+        "title": "Saudi Arabia joins US in strikes on Iran-backed militias in Iraq",
+        "link": "https://www.bbc.co.uk/news/articles/c70g6y24d76o?at_medium=RSS&at_campaign=rss",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-29T08:43:46"
+      },
+      {
+        "title": "How Mexican drug cartels have outsourced meth labs to Nigeria",
+        "link": "https://www.bbc.co.uk/news/articles/crmrnxp4nllo?at_medium=RSS&at_campaign=rss",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-28T23:25:53"
+      },
+      {
+        "title": "Four women accuse Jared Leto of criminal sexual conduct",
+        "link": "https://www.bbc.co.uk/news/articles/cd7lg2nz2x2o?at_medium=RSS&at_campaign=rss",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-29T05:00:07"
+      },
+      {
+        "title": "Trump administration bans new Chinese humanoid robots",
+        "link": "https://www.bbc.co.uk/news/articles/cp9e2ex3ekyo?at_medium=RSS&at_campaign=rss",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-29T02:30:50"
+      },
+      {
         "title": "Wildfires in south-west France flare up as region braces for new 40C heatwave",
         "link": "https://www.bbc.co.uk/news/articles/c5yd8gly1ydo?at_medium=RSS&at_campaign=rss",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
@@ -677,65 +611,21 @@
           "-",
           "-"
         ],
-        "date": "2026-07-28T16:14:03"
-      },
-      {
-        "title": "Uefa and PM criticise Infantino World Cup plan",
-        "link": "https://www.bbc.co.uk/sport/football/articles/c8xng9894z0o?at_medium=RSS&at_campaign=rss",
-        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
-        "detail": [
-          "-",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-28T15:36:29"
-      },
-      {
-        "title": "Ghana mourns its tallest man - a 'generous and popular giant'",
-        "link": "https://www.bbc.co.uk/news/articles/crk52jk0131o?at_medium=RSS&at_campaign=rss",
-        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
-        "detail": [
-          "-",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-28T18:19:57"
-      },
-      {
-        "title": "Mysterious deaths of 14 elephants in Kenya prompts urgent inquiry",
-        "link": "https://www.bbc.co.uk/news/articles/c3w0d7yeqlxo?at_medium=RSS&at_campaign=rss",
-        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
-        "detail": [
-          "-",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-28T16:37:02"
-      },
-      {
-        "title": "Odyssey translator writes scathing review of Nolan film adaptation",
-        "link": "https://www.bbc.co.uk/news/articles/cd692n215ndo?at_medium=RSS&at_campaign=rss",
-        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
-        "detail": [
-          "-",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-28T15:11:28"
-      },
-      {
-        "title": "The cocaine superhighway from Ecuador to Europe - the BBC reports on gangs and the police fightback",
-        "link": "https://www.bbc.co.uk/news/articles/cdx7n1r54nno?at_medium=RSS&at_campaign=rss",
-        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
-        "detail": [
-          "-",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-28T05:01:19"
+        "date": "2026-07-29T04:43:36"
       }
     ],
     "해외 테크/AI": [
+      {
+        "title": "Cyera agrees to acquire Oasis Security for $1B to safeguard proliferating AI agents",
+        "link": "https://techcrunch.com/2026/07/28/cyera-agrees-to-acquire-oasis-security-for-1b-to-safeguard-proliferating-ai-agents/",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-29T00:09:05"
+      },
       {
         "title": "Bot-detection startup Spur nabs $200M from Insight",
         "link": "https://techcrunch.com/2026/07/28/bot-detection-startup-spur-nabs-200m-from-insight/",
@@ -781,7 +671,7 @@
         "date": "2026-07-28T19:09:18"
       },
       {
-        "title": "The robot NASA hired to lift a orbital telescope is tumbling out of control",
+        "title": "The robot NASA hired to lift a orbital telescope tumbled out of control",
         "link": "https://techcrunch.com/2026/07/28/the-robot-nasa-hired-to-lift-a-orbital-telescope-is-tumbling-out-of-control/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
@@ -790,17 +680,6 @@
           "-"
         ],
         "date": "2026-07-28T19:07:31"
-      },
-      {
-        "title": "Waymo, robotaxi operators face fresh scrutiny over emergency response failures",
-        "link": "https://techcrunch.com/2026/07/28/waymo-robotaxi-operators-face-fresh-scrutiny-over-emergency-response-failures/",
-        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
-        "detail": [
-          "-",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-28T19:06:33"
       },
       {
         "title": "The US is banning foreign robots",
@@ -847,7 +726,7 @@
         "date": "2026-07-28T21:11:11"
       },
       {
-        "title": "AI leaders sign statement asking the government to do something about automated AI",
+        "title": "AI leaders sign a statement asking the government to do something about automated AI",
         "link": "https://www.theverge.com/ai-artificial-intelligence/972161/ai-leaders-us-government-openai-anthropic-google-meta",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
@@ -871,204 +750,193 @@
     ],
     "경제/정책": [
       {
-        "title": "대기업 믿고 빌려주고, 취약기업 챙겨주고…‘허리기업’ 대출만 말랐다",
-        "link": "https://www.mk.co.kr/news/economy/12110107",
+        "title": "하나은행, 어린이 직업체험관 개관",
+        "link": "https://www.mk.co.kr/news/economy/12110775",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T21:02:12"
+        "date": "2026-07-29T08:53:35"
       },
       {
-        "title": "“中 CXMT 상장보다 ‘이것’ 개발이 더 큰 충격”…반도체주 흔든 주범, 따로 있었다",
-        "link": "https://www.mk.co.kr/news/economy/12109892",
+        "title": "[단독] 태양광 확 늘렸더니…효율 떨어진 원전, 올해만 15번 출력제어",
+        "link": "https://www.mk.co.kr/news/economy/12110767",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T12:48:47"
+        "date": "2026-07-29T08:52:19"
       },
       {
-        "title": "서킷브레이커 4회·사이드카 23회 역대급 변동성…전문가들 하는 말이",
-        "link": "https://www.mk.co.kr/news/economy/12109859",
+        "title": "외국인 주식 매도 대만의 3배…한국이 유독 타깃이 된 까닭 [BOK WATCHER]",
+        "link": "https://www.mk.co.kr/news/economy/12110740",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T12:08:20"
+        "date": "2026-07-29T08:46:02"
       },
       {
-        "title": "“AI 전력난, 원전이 답”… 野 “대형 원전 4기·SMR 2기 더 지어야” [두산에너빌리티 창원공장 르포]",
-        "link": "https://www.mk.co.kr/news/economy/12109719",
+        "title": "노동부, ILO '플랫폼노동협약' 비준 준비 착수",
+        "link": "https://www.mk.co.kr/news/economy/12110734",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T09:13:02"
+        "date": "2026-07-29T08:43:44"
       },
       {
-        "title": "‘복지 잣대’ 중위소득 기준 6.7% 쑥…4인가구 생계급여 207만→222만원",
-        "link": "https://www.mk.co.kr/news/economy/12109703",
+        "title": "구윤철 \"가상자산 과세 내년부터 시행\"",
+        "link": "https://www.mk.co.kr/news/economy/12110735",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T09:08:56"
+        "date": "2026-07-29T08:43:44"
       },
       {
-        "title": "[표] 외국환율고시표",
-        "link": "https://www.mk.co.kr/news/economy/12109701",
+        "title": "[단독]상반기만 47조 해외로…끝없는 코인 엑소더스",
+        "link": "https://www.sedaily.com/article/20073466",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T09:08:07"
+        "date": "2026-07-29T08:52:44"
       },
       {
-        "title": "[속보] SK하이닉스, 10여 개 기업과 장기공급계약 협상 마무리…빅테크 유치전 우위",
-        "link": "https://www.sedaily.com/article/20073084",
+        "title": "본고장 유럽도 반한 K뷰티, 수출액 북미 제쳤다",
+        "link": "https://www.sedaily.com/article/20073461",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T23:06:07"
+        "date": "2026-07-29T08:51:41"
       },
       {
-        "title": "[속보] SK하이닉스, 세전이익 122조 7083억 기록…코스피 역사상 최대치",
-        "link": "https://www.sedaily.com/article/20073083",
+        "title": "우리금융, 전북에 금융인프라 집결",
+        "link": "https://www.sedaily.com/article/20073457",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T23:00:55"
+        "date": "2026-07-29T08:51:03"
       },
       {
-        "title": "SK하이닉스, 영업이익률 76.3%로 빅테크 압도…시장 전망치는 하회",
-        "link": "https://www.sedaily.com/article/20073080",
+        "title": "달바글로벌, 프리미엄 향수 ‘쿠오카’에 146억 투자...지분 33.61% 확보",
+        "link": "https://www.sedaily.com/article/20073455",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T22:53:12"
+        "date": "2026-07-29T08:50:38"
       },
       {
-        "title": "한화시스템 “필리조선소 적자폭 축소…내년 턴어라운드 기대”",
-        "link": "https://www.sedaily.com/article/20073078",
+        "title": "출생아 23개월 연속 증가…1~5월 누적 15.2%↑",
+        "link": "https://www.sedaily.com/article/20073452",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T22:50:26"
+        "date": "2026-07-29T08:49:40"
       },
       {
-        "title": "[속보] SK하이닉스, 2분기 영업이익 예상치 4조 하회…60조 5426억 원 기록",
-        "link": "https://www.sedaily.com/article/20073077",
+        "title": "SK하닉 이익률 76%…올해 300조 넘본다",
+        "link": "https://www.sedaily.com/article/20073451",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T22:46:22"
-      },
-      {
-        "title": "“中, DUV 자체 양산”…핵심기술 자립 움직임에 경계심↑ [biz-플러스]",
-        "link": "https://www.sedaily.com/article/20073071",
-        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
-        "detail": [
-          "-",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-28T22:25:35"
+        "date": "2026-07-29T08:49:38"
       }
     ],
     "금융/증권": [
       {
-        "title": "“난 글렀어”…SK하닉 251만원에 산 서동주, 주식 언급하자 남편이 한 말",
-        "link": "https://www.mk.co.kr/news/stock/12110149",
+        "title": "외국인 주식 매도 대만의 3배…한국이 유독 타깃이 된 까닭 [BOK WATCHER]",
+        "link": "https://www.mk.co.kr/news/economy/12110740",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T22:37:29"
+        "date": "2026-07-29T08:46:02"
       },
       {
-        "title": "“자녀가 평생 돈 걱정없이 사는 방법은” … 한국 ETF 아버지의 선택",
-        "link": "https://www.mk.co.kr/news/stock/12109436",
+        "title": "롯데손보, 결국 공개매각하나",
+        "link": "https://www.mk.co.kr/news/stock/12110725",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T19:00:00"
+        "date": "2026-07-29T08:41:07"
       },
       {
-        "title": "“中 CXMT 상장보다 ‘이것’ 개발이 더 큰 충격”…반도체주 흔든 주범, 따로 있었다",
-        "link": "https://www.mk.co.kr/news/economy/12109892",
+        "title": "엇갈린 韓·中 배터리…CATL은 충전, 韓 기업은 방전",
+        "link": "https://www.mk.co.kr/news/stock/12110727",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T12:48:47"
+        "date": "2026-07-29T08:41:07"
       },
       {
-        "title": "서킷브레이커 4회·사이드카 23회 역대급 변동성…전문가들 하는 말이",
-        "link": "https://www.mk.co.kr/news/economy/12109859",
+        "title": "버핏이 왜 좋아하는지 알겠다, 코카콜라",
+        "link": "https://www.mk.co.kr/news/stock/12110724",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T12:08:20"
+        "date": "2026-07-29T08:41:06"
       },
       {
-        "title": "“업황은 여전한데 심리 무너졌다”...‘반도체 불장’ 맞췄던 센터장의 긴급진단",
-        "link": "https://www.mk.co.kr/news/stock/12109787",
+        "title": "올해 8조나 찍은 전환사채…급락장서 되레 부메랑 맞아",
+        "link": "https://www.mk.co.kr/news/stock/12110713",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T10:51:15"
+        "date": "2026-07-29T08:37:27"
       },
       {
-        "title": "“쉬는 것도 투자” “기계처럼 대응”…40년 고수들의 폭락장 생존법 [머니닥터 시장진단]",
-        "link": "https://www.mk.co.kr/news/stock/12109782",
+        "title": "‘사상 초유’ 이틀 연속 서킷 발동에…‘F4’ 회의 긴급 소집",
+        "link": "https://www.mk.co.kr/news/economy/12110700",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T10:42:16"
+        "date": "2026-07-29T08:35:19"
       },
       {
         "title": "Wall Street Banks Prepare to Sell Billions of Dollars of X Loans",
@@ -1128,463 +996,463 @@
     ],
     "산업/기업": [
       {
-        "title": "SK하이닉스 2분기 영업이익 60조...영업이익률 76%",
-        "link": "https://www.mk.co.kr/news/business/12110157",
+        "title": "SK하이닉스, 우주 반도체 개발 속도 낸다...원자력연 협력 공식화",
+        "link": "https://www.mk.co.kr/news/business/12110737",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T22:59:16"
+        "date": "2026-07-29T08:44:14"
       },
       {
-        "title": "로봇 눈은 물론 피부까지 만듭니다…요즘 뜨는 LG이노텍, 일본과 맞손",
-        "link": "https://www.mk.co.kr/news/business/12110144",
+        "title": "삼성물산, 분기 영업익 1조 돌파",
+        "link": "https://www.mk.co.kr/news/business/12110726",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T22:19:34"
+        "date": "2026-07-29T08:41:07"
       },
       {
-        "title": "“사장 없으면 망하는 가게” … 돈은 벌어도 브랜드는 아닌 이유",
-        "link": "https://www.mk.co.kr/news/business/12109415",
+        "title": "코오롱인더, 김천공장 증설…인조가죽 車소재 생산 나서",
+        "link": "https://www.mk.co.kr/news/business/12110719",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T20:25:00"
+        "date": "2026-07-29T08:38:44"
       },
       {
-        "title": "“中 CXMT 상장보다 ‘이것’ 개발이 더 큰 충격”…반도체주 흔든 주범, 따로 있었다",
-        "link": "https://www.mk.co.kr/news/economy/12109892",
+        "title": "효성重, 브라질 수력발전용 변압기 수주",
+        "link": "https://www.mk.co.kr/news/business/12110718",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T12:48:47"
+        "date": "2026-07-29T08:38:44"
       },
       {
-        "title": "휴넷, 10월 1일 ‘CEO 포럼 – 포사이트 코리아 2027’ 개최",
-        "link": "https://www.mk.co.kr/news/business/12109765",
+        "title": "철강업계 \"본업과 시너지 낼 벤처 찾아라\"",
+        "link": "https://www.mk.co.kr/news/business/12110716",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T10:21:46"
+        "date": "2026-07-29T08:38:43"
+      },
+      {
+        "title": "사무가구도 사려면 수천만원…월 120만원 내고 빌려 쓰세요",
+        "link": "https://www.mk.co.kr/news/business/12110711",
+        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
+        "detail": [
+          "-",
+          "-",
+          "-"
+        ],
+        "date": "2026-07-29T08:36:06"
       }
     ],
     "부동산": [
       {
-        "title": "서울 외국인 집주인, 1년새 1058명 늘었다…어느 동네 많이 샀나 봤더니",
-        "link": "https://www.mk.co.kr/news/realestate/12110151",
+        "title": "부동산원, 주택도시기금 수탁은행과 맞손…“건전 가계부채 관리 지원”",
+        "link": "https://www.mk.co.kr/news/realestate/12110766",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T22:47:20"
+        "date": "2026-07-29T08:51:18"
       },
       {
-        "title": "[7/29, MK 추천매물] 동탄2신도시 8.5% 커피전문점 5.6억원 등",
-        "link": "https://www.mk.co.kr/news/realestate/12110148",
+        "title": "성수동 삼표 용지에 81층  주상복합",
+        "link": "https://www.mk.co.kr/news/realestate/12110662",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T22:33:08"
+        "date": "2026-07-29T08:09:28"
       },
       {
-        "title": "“50억 집 보유세 5000만원?”…강남 ‘똘똘한 한 채’ 세금 폭탄 예고",
-        "link": "https://www.mk.co.kr/news/realestate/12110138",
+        "title": "코엑스 2.5배 마이스 … 잠실 개발 본궤도",
+        "link": "https://www.mk.co.kr/news/realestate/12110661",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T21:57:39"
+        "date": "2026-07-29T08:09:27"
       },
       {
-        "title": "압구정이 부러웠던 성수 … 72층 올리면 스카이라인 뒤집힌다",
-        "link": "https://www.mk.co.kr/news/realestate/12109417",
+        "title": "국민 10명 중 4명 토지주 … 60대가 전체의 30% 차지",
+        "link": "https://www.mk.co.kr/news/realestate/12110660",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T19:20:00"
+        "date": "2026-07-29T08:09:27"
       },
       {
-        "title": "PK건설사, 도산 두려워 이탈할 판 … 가덕도공항 연내 착공 빨간불",
-        "link": "https://www.mk.co.kr/news/realestate/12109706",
+        "title": "용산 개발 바람에 … 서부이촌동도 들썩",
+        "link": "https://www.mk.co.kr/news/realestate/12110659",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T09:09:28"
+        "date": "2026-07-29T08:09:26"
       },
       {
-        "title": "돈줄 마른데다 공사비 쇼크까지, 건설사 줄폐업…올 2457곳 최대",
-        "link": "https://www.mk.co.kr/news/realestate/12109705",
+        "title": "“사업 포트폴리오 다각화”…삼성물산 2분기 영업이익 1조320억원",
+        "link": "https://www.mk.co.kr/news/stock/12110642",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T09:09:27"
+        "date": "2026-07-29T07:43:26"
       },
       {
-        "title": "서울 아파트 거래 ‘급랭’…세금·대출 규제에 매수자 관망[집슐랭]",
-        "link": "https://www.sedaily.com/article/20073058",
+        "title": "현대건설, 업계 첫 ‘착용 로봇’ 도입…작업자 어깨 부하 60% 줄인다",
+        "link": "https://www.sedaily.com/article/20073458",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T22:16:05"
+        "date": "2026-07-29T08:51:05"
       },
       {
-        "title": "‘큰 집’ 공식 깨졌다…입지 좋은 소형이 대형보다 비싸다",
-        "link": "https://www.sedaily.com/article/20073060",
+        "title": "[단독] 준공업지역 공급, 지구단위계획 등 서울시 권한이 ‘마스터 키’",
+        "link": "https://www.sedaily.com/article/20073453",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T22:04:05"
+        "date": "2026-07-29T08:50:12"
       },
       {
-        "title": "전쟁으로 공사비 급등…가덕도 컨소, 국토부에 “공사비 인상 요청”",
-        "link": "https://www.sedaily.com/article/20073061",
+        "title": "불광2동 일대 신통기획 확정…3100가구 대단지로 탈바꿈",
+        "link": "https://www.sedaily.com/article/20073448",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T21:21:43"
+        "date": "2026-07-29T08:48:01"
       },
       {
-        "title": "기계설비건설협회, 서울과기대에 인재양성 지원금 전달",
-        "link": "https://www.sedaily.com/article/20073050",
+        "title": "삼성물산 건설부문, 2분기 영업익 2020억…전년比 71% ↑",
+        "link": "https://www.sedaily.com/article/20073403",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T14:47:52"
+        "date": "2026-07-29T07:45:52"
       },
       {
-        "title": "“月 500만원 벌면 빚 갚는 데 230만원 쓴다”…대출상환에 허리 휘는 사람들",
-        "link": "https://www.sedaily.com/article/20073040",
+        "title": "국토부, 비주택 리모델링 활성화…30일 사업자 간담회",
+        "link": "https://www.sedaily.com/article/20073334",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T14:03:02"
-      },
-      {
-        "title": "방학동에 2800가구 ‘숲세권 아파트’ 들어선다",
-        "link": "https://www.sedaily.com/article/20072985",
-        "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
-        "detail": [
-          "-",
-          "-",
-          "-"
-        ],
-        "date": "2026-07-28T09:47:55"
+        "date": "2026-07-29T06:11:09"
       }
     ],
     "IT/과학/Bio": [
       {
-        "title": "국내 주요 게임사, 2Q 실적발표 돌입…크래프톤, 또 어닝 서프라이즈?",
-        "link": "https://www.mk.co.kr/news/it/12109521",
+        "title": "[G-브리핑②] ‘아키텍트’, ‘대범람’ 최상위 난이도 확장",
+        "link": "https://www.mk.co.kr/news/it/12110523",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T07:47:01"
+        "date": "2026-07-29T08:15:00"
       },
       {
-        "title": "넷마블, ‘블소 레볼루션’ 랭킹 던전 본연 재미 강화",
-        "link": "https://www.mk.co.kr/news/it/12109454",
+        "title": "크래프톤, 2Q 매출 1조2902억·영업익 4109억원 ‘2분기 역대 최고치’",
+        "link": "https://www.mk.co.kr/news/it/12110579",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T06:36:04"
+        "date": "2026-07-29T07:00:48"
       },
       {
-        "title": "넷마블, ‘스톤에이지 키우기’ 최강의 부족 가린다",
-        "link": "https://www.mk.co.kr/news/it/12109362",
+        "title": "[VCT 퍼시픽 스테이지2] 젠지 3주차 GE 상대…PO 안정권 ‘관심’",
+        "link": "https://www.mk.co.kr/news/it/12110530",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T05:12:30"
+        "date": "2026-07-29T06:10:27"
       },
       {
-        "title": "엔씨, ‘TL’ 새 아크보스…인간형 ‘라무스’+용 ‘아티라트’ 등장",
-        "link": "https://www.mk.co.kr/news/it/12109352",
+        "title": "‘2026 전국 장애학생 e페스티벌’ 홍보대사에 방송인 ‘딘딘’ 위촉",
+        "link": "https://www.mk.co.kr/news/it/12110522",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T05:03:14"
+        "date": "2026-07-29T06:00:11"
       },
       {
-        "title": "[G-브리핑] 난치병 환아 소원 담은 ‘슈퍼 스피드런 마라톤 Lite’ 성료",
-        "link": "https://www.mk.co.kr/news/it/12109304",
+        "title": "게임처럼 배운다…서울대 나민애 교수의 ‘국어 대모험’ 출간",
+        "link": "https://www.mk.co.kr/news/it/12110480",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T03:15:00"
+        "date": "2026-07-29T05:36:06"
       },
       {
-        "title": "라이엇게임즈, ‘TFT 와일드 팬페스트 in 더현대 서울’ 29일 사전예약",
-        "link": "https://www.mk.co.kr/news/it/12109298",
+        "title": "스마일게이트 ‘카오스 제로 나이트메어’, 시즌4 ‘부서진 빛과 발톱’ 업데이트",
+        "link": "https://www.mk.co.kr/news/it/12110415",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T02:50:22"
+        "date": "2026-07-29T04:40:09"
       }
     ],
     "스포츠": [
       {
-        "title": "'골프황제' 우즈, PGA 투어 통산 상금 1위…26년 만에 깨지나",
-        "link": "https://www.chosun.com/sports/2026/07/29/EJJ7Y4CGNFGEVJHBUDSXKXT2W4/",
+        "title": "김경문 한화 감독, '수비 불안' 문현빈 격려 → \"이전보다는 어제 조금 아쉽긴 했다\" [대전 현장]",
+        "link": "https://www.chosun.com/sports/baseball/2026/07/29/GM3GGYTCG5RDAYRZGJRDAMDFGY/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T23:04:50"
+        "date": "2026-07-29T08:49:21"
       },
       {
-        "title": "[오피셜]'스승의 얼굴을 몸에 새겼다' 스페인 월드컵 챔피언 주역 쿠쿠레야 우승 공약 실천했다, 국대 감독 데 라 푸엔테 얼굴 문신을 왼팔에 박았다",
-        "link": "https://www.chosun.com/sports/world-football/2026/07/29/GQ4WGMZSGQZWMNLFGM4TAZBSGE/",
+        "title": "[속보] 충격 이물질 퇴장, 김기중 10G 출전 정지 철회됐다...KBO \"조사, 소명 후 징계 결정\"",
+        "link": "https://www.chosun.com/sports/baseball/2026/07/29/GVRGCMTEHE4DEOBUGYYGEZBTMY/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T23:04:50"
+        "date": "2026-07-29T08:48:32"
       },
       {
-        "title": "'충격' 메시 결승행 자체가 오심 확정... FAB가 인정한 VAR 월권 덕에 아르헨 살았다",
-        "link": "https://www.chosun.com/sports/world-football/2026/07/29/GEYTEM3EGQYTQNZWMNSTQNLCMY/",
+        "title": "선수 마지막은 박치기 퇴장, 감독 첫 홈경기도 이탈리아…지단의 20년짜리 리턴매치",
+        "link": "https://www.chosun.com/sports/world-football/2026/07/29/MM2DEM3EMQYGKNTGG5SDKMTEGE/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T22:48:00"
+        "date": "2026-07-29T08:48:00"
       },
       {
-        "title": "KBO에서도 '59번'...ML 112승 투수 \"내게는 특별한 번호, 양보한 박준성에게 선물 주겠다\"",
-        "link": "https://www.chosun.com/sports/baseball/2026/07/29/MY4DQOJTGQ3DEODBGY2DGZRTMY/",
+        "title": "“3년 후에 LG 중심타선 되어야 한다” 문정빈 송찬의 그리고 이재원, 염경엽의 청사진",
+        "link": "https://www.chosun.com/sports/baseball/2026/07/29/GY4TOZJZMRSDQYLCGNRGINLEHE/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T22:42:00"
+        "date": "2026-07-29T08:44:00"
       },
       {
-        "title": "'토트넘 선수 영입, 정말 달라졌다' 英 BBC, 브라질 국대 윙어 사비뉴, 맨체스터 시티→토트넘 이적 절차 진행중..'데 제르비 감독, 사비뉴의 빅팬'",
-        "link": "https://www.chosun.com/sports/world-football/2026/07/29/GU4TKNBUMI2TGMZYGFSTCNZUMM/",
+        "title": "'김백산 어게인인가' 최원태 5선발 통과하자 삼두근 미세손상 말소… 박진만 감독 \"주자 나가니 흔들리더라\"",
+        "link": "https://www.chosun.com/sports/baseball/2026/07/29/GQYTGMZQGIZDCYZWME2DQMJZGI/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T22:36:28"
+        "date": "2026-07-29T08:40:31"
       },
       {
-        "title": "\"잠실 다녀와서 긴가민가\" 전력질주, 확신 못한 시즌 11호 3점포, 홈런보다 가치 있었던 팀 퍼스트",
-        "link": "https://www.chosun.com/sports/baseball/2026/07/29/MI3TSZJXGI3WEZDFGVRDQOJRMM/",
+        "title": "올러 1이닝 8실점에도 감싼 꽃감독, \"몸 상태 문제 없다, 삼성 타자들이 잘쳤다\" [오!쎈 대구]",
+        "link": "https://www.chosun.com/sports/baseball/2026/07/29/MRQTMMRVMU2TMY3BGZSWCMZUGU/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T22:25:18"
+        "date": "2026-07-29T08:37:00"
       }
     ],
     "헬스/건강": [
       {
-        "title": "단순 부종이라고 여겼는데…선명한 ‘양말 자국’ 무시하면 안 되는 이유",
-        "link": "https://kormedi.com/2838603/",
+        "title": "HK이노엔, 2026년 2분기 영업이익 300억900만원…전년동기 대비 53.6% 증가",
+        "link": "https://kormedi.com/2839555/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T23:03:00"
+        "date": "2026-07-29T08:20:04"
       },
       {
-        "title": "“아침에 요구르트에 ‘이것’ 같이 먹었더니”…무릎 관절염 통증 줄었다고?",
-        "link": "https://kormedi.com/2838401/",
+        "title": "나보타 해외서 날았다…대웅제약 2분기 영업익 18%↑",
+        "link": "https://kormedi.com/2839434/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T22:03:00"
+        "date": "2026-07-29T08:09:24"
       },
       {
-        "title": "권은비, 필라테스 기구서 아찔 추락…“너무 조그매서 쏙 빠져”",
-        "link": "https://kormedi.com/2838513/",
+        "title": "강스템바이오텍 오스카 2a상 성과…통증 줄고 관절 구조도 달라졌다",
+        "link": "https://kormedi.com/2839533/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T21:05:00"
+        "date": "2026-07-29T08:05:34"
       },
       {
-        "title": "“다이어트 식품 아녔어?” 흰쌀밥보다 탄수화물 많은 뜻밖의 음식 4가지",
-        "link": "https://kormedi.com/2839103/",
+        "title": "“1500만분의 1 확률” 호주女 자연 임신 일란성 네쌍둥이 출산",
+        "link": "https://kormedi.com/2837447/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T21:01:00"
+        "date": "2026-07-29T08:03:00"
       },
       {
-        "title": "“밥 대신 먹었더니 혈당 껑충?”…살 뺄 때 자주 먹는 ‘이 음식’의 함정 / “이 얼굴이 60세?”…전인화, 민낯 ‘꿀피부’ 비결 봤더니? / 정자 운동성 떨어뜨리는 음식 따로 있다... 가장 위험한 건?",
-        "link": "https://kormedi.com/2839096/",
+        "title": "비트컴퓨터, 10억1623만원 규모 자기주식 취득 결정",
+        "link": "https://kormedi.com/2839545/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T21:00:00"
+        "date": "2026-07-29T07:15:01"
       },
       {
-        "title": "‘20kg 감량’ 최희, 뱃살 사라지고 선명한 복근… “‘이 운동’ 30분 최고”",
-        "link": "https://kormedi.com/2839163/",
+        "title": "프로티나, 임직원 4명에 스톡옵션 1만1225주 부여…행사가 2만5500원",
+        "link": "https://kormedi.com/2839544/",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T15:29:50"
+        "date": "2026-07-29T07:05:02"
       },
       {
-        "title": "“중년 여성의 심혈관질환 막는다”… 덜 먹고 더 먹어야 할 것은?",
-        "link": "https://health.chosun.com/site/data/html_dir/2026/07/28/2026072802216.html",
+        "title": "“한 끗 차이로 다른 결과”…혈압 관리에 좋은 운동vs위험한 운동",
+        "link": "https://health.chosun.com/site/data/html_dir/2026/07/29/2026072902308.html",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T23:10:31"
+        "date": "2026-07-29T08:54:19"
       },
       {
-        "title": "아침마다 뻣뻣한 사타구니·엉덩이… 고관절염 의심을",
-        "link": "https://health.chosun.com/site/data/html_dir/2026/07/28/2026072802195.html",
+        "title": "냉방병으로 오해하면 안 될 ‘저혈압 증상’ 4가지",
+        "link": "https://health.chosun.com/site/data/html_dir/2026/07/29/2026072902882.html",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T23:10:31"
+        "date": "2026-07-29T08:54:19"
       },
       {
-        "title": "깜빡하고 집중 못 하면 ADHD? 진짜 구분법은…",
-        "link": "https://health.chosun.com/site/data/html_dir/2026/07/28/2026072802289.html",
+        "title": "글로벌 의료기기 업계 구조조정 바람… 국내도 예의주시",
+        "link": "https://health.chosun.com/site/data/html_dir/2026/07/29/2026072902820.html",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T23:10:31"
+        "date": "2026-07-29T08:54:19"
       },
       {
-        "title": "“장 망가진다” 화장실에서 절대 해선 안 되는 3가지",
-        "link": "https://health.chosun.com/site/data/html_dir/2026/07/28/2026072801772.html",
+        "title": "‘명품 복근’ 김무열 밝힌 운동 루틴은?",
+        "link": "https://health.chosun.com/site/data/html_dir/2026/07/29/2026072902817.html",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T23:10:31"
+        "date": "2026-07-29T08:54:19"
       },
       {
-        "title": "올리브유 말고도… 샐러드 영양가 ‘확’ 높이는 기름",
-        "link": "https://health.chosun.com/site/data/html_dir/2026/07/28/2026072802348.html",
+        "title": "아기와 ‘눈 맞추며’ 말하면, 언어 학습 효과 커진다",
+        "link": "https://health.chosun.com/site/data/html_dir/2026/07/29/2026072902514.html",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T23:10:31"
+        "date": "2026-07-29T08:54:19"
       },
       {
-        "title": "‘이곳’에 쌓인 지방은 뇌를 공격한다",
-        "link": "https://health.chosun.com/site/data/html_dir/2026/07/28/2026072802204.html",
+        "title": "휴가지 감염병 확인하고 떠나라… 동남아는 뎅기열·홍역, 미국은 동물 접촉 주의",
+        "link": "https://health.chosun.com/site/data/html_dir/2026/07/29/2026072902606.html",
         "summary": "클릭 시 해당 언론사의 뉴스 상세 원문 페이지로 바로 연결됩니다.",
         "detail": [
           "-",
           "-",
           "-"
         ],
-        "date": "2026-07-28T23:10:31"
+        "date": "2026-07-29T08:54:19"
       }
     ]
   }
